@@ -1,0 +1,3 @@
+# ai.txt (root)
+# Canonical AI policy is located at:
+See: /.well-known/ai.txt

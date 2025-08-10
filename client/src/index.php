@@ -18,13 +18,13 @@ if (!isset($_SESSION['csrf_token'])) {
 
 // Configuration
 $config = [
-    'site_title' => 'Velletti Consulting - Professional Business Solutions',
-    'meta_description' => 'Expert consulting services for modern businesses. Strategic planning, digital transformation, and growth optimization.',
-    'meta_keywords' => 'consulting, business strategy, digital transformation, professional services',
-    'company_name' => 'Velletti Consulting',
-    'company_email' => 'info@velletti-consulting.com',
-    'company_phone' => '+1 (555) 123-4567',
-    'company_address' => '123 Business District, Suite 100, Professional City, PC 12345'
+    'site_title' => 'Amerigo Velletti — Portfolio & Projects',
+    'meta_description' => 'Amerigo Velletti — Information Systems (B.Sc., TUM). Projects, experience, and interests across data, AI, and modern software.',
+    'meta_keywords' => 'Amerigo Velletti, TUM, Portfolio, Information Systems, AI, Software, Projects',
+    'company_name' => 'Amerigo Velletti',
+    'company_email' => 'vel-consulting@ame.velletti.de',
+    'company_phone' => '+49 176 45531533',
+    'company_address' => 'Munich, Bavaria, Germany'
 ];
 
 // Color scheme variables
@@ -676,13 +676,74 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                 box-shadow: none !important;
             }
         }
+        
+        /* Dark theme support */
+        :root[data-theme='light'] {
+            --color-background: <?php echo $colors['background']; ?>;
+            --color-text: <?php echo $colors['text']; ?>;
+        }
+        :root[data-theme='dark'] {
+            --color-background: #0d1117;
+            --color-text: #e6edf3;
+            --color-secondary: #e6edf3;
+            --color-accent1: #1f2937;
+            --color-accent2: #0b1220;
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.5);
+        }
+
+        /* Header actions */
+        .header__actions { display: flex; align-items: center; gap: var(--spacing-sm); }
+        .social-buttons { display: flex; gap: var(--spacing-xs); }
+        .social-btn, .theme-toggle {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 40px; height: 40px; border-radius: 8px; border: 1px solid rgba(16,37,66,0.12);
+            background: var(--color-white); color: var(--color-secondary);
+            box-shadow: var(--shadow-sm); transition: transform var(--transition-fast), background var(--transition-fast);
+        }
+        :root[data-theme='dark'] .social-btn, :root[data-theme='dark'] .theme-toggle {
+            background: #161b22; border-color: rgba(255,255,255,0.1); color: var(--color-text);
+        }
+        .social-btn:hover, .theme-toggle:hover { transform: translateY(-1px); }
+        .social-btn svg, .theme-toggle svg { width: 20px; height: 20px; }
+
+        /* Modals */
+        .modal { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; z-index: 2000; }
+        .modal[aria-hidden='false'] { display: flex; }
+        .modal__overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.45); backdrop-filter: blur(2px); }
+        .modal__content { position: relative; max-width: 720px; width: calc(100% - 2rem); background: var(--color-white); color: var(--color-text); border-radius: 12px; box-shadow: var(--shadow-lg); padding: var(--spacing-lg); z-index: 1; }
+        :root[data-theme='dark'] .modal__content { background: #0f172a; }
+        .modal__header { display:flex; align-items:center; justify-content: space-between; margin-bottom: var(--spacing-md); }
+        .modal__title { font-size: 1.25rem; }
+        .modal__close { background: transparent; border: none; font-size: 1.5rem; line-height: 1; cursor: pointer; color: inherit; }
+        .modal__body { max-height: 70vh; overflow: auto; }
+        .badge-fallback { border: 1px solid rgba(16,37,66,0.12); border-radius: 12px; padding: var(--spacing-md); display: grid; grid-template-columns: 72px 1fr; gap: var(--spacing-md); align-items: center; }
+        .fallback-avatar { width:72px; height:72px; border-radius: 50%; background: linear-gradient(135deg,var(--color-accent1), var(--color-primary)); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; }
+        .gh-profile { display:grid; grid-template-columns: 96px 1fr; gap: var(--spacing-md); align-items:flex-start; }
+        .repo-list { margin-top: var(--spacing-sm); display:grid; gap: var(--spacing-sm); }
+        .repo-card { border:1px solid rgba(16,37,66,0.12); border-radius:10px; padding: var(--spacing-sm); }
+        .repo-card a { font-weight:600; }
+        .chip { display:inline-flex; align-items:center; gap:6px; padding:2px 8px; border-radius:999px; background: rgba(16,37,66,0.06); font-size: 0.85rem; }
+        :root[data-theme='dark'] .repo-card { border-color: rgba(255,255,255,0.1); }
+
+        .visually-hidden { position:absolute !important; height:1px; width:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap; }
     </style>
+    <!-- Prefers color scheme initialization (prevents FOUC) -->
+    <script>
+      (function() {
+        try {
+          const stored = localStorage.getItem('theme');
+          const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const theme = stored || (prefersDark ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {}
+      })();
+    </script>
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <div class="container header__container">
-            <a href="#home" class="logo" aria-label="Velletti Consulting Home">
+            <a href="#home" class="logo" aria-label="Amerigo Velletti Home">
                 <?php echo htmlspecialchars($config['company_name']); ?>
             </a>
             
@@ -690,6 +751,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                 <a href="#services" class="nav__link">Services</a>
                 <a href="#contact" class="nav__link">Contact</a>
             </nav>
+            
+            <div class="header__actions">
+                <div class="social-buttons">
+                    <a id="btnLinkedIn" class="social-btn" href="https://www.linkedin.com/in/amerigo-velletti-b888a9304" target="_blank" rel="noopener" aria-label="Open LinkedIn profile (opens in new tab)" data-modal-target="#linkedinModal">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-9.5 6H7v8h2.5V9zm.13-2.75a1.38 1.38 0 1 0-2.76 0 1.38 1.38 0 0 0 2.76 0zM20 13.25c0-2.52-1.35-3.7-3.16-3.7-1.46 0-2.12.8-2.49 1.37v-1.17H12v8h2.5v-4.46c0-1.17.22-2.3 1.67-2.3 1.43 0 1.45 1.33 1.45 2.37V17H20v-3.75z"/></svg>
+                    </a>
+                    <a id="btnGitHub" class="social-btn" href="https://github.com/Amerigo2020" target="_blank" rel="noopener" aria-label="Open GitHub profile (opens in new tab)" data-modal-target="#githubModal">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 .5A11.5 11.5 0 0 0 .5 12.3c0 5.23 3.4 9.66 8.12 11.23.59.12.8-.26.8-.58v-2.2c-3.3.73-3.99-1.43-3.99-1.43-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.72.08-.72 1.2.09 1.84 1.27 1.84 1.27 1.07 1.86 2.8 1.32 3.48 1.01.11-.8.42-1.32.76-1.62-2.64-.31-5.42-1.36-5.42-6.06 0-1.34.47-2.43 1.24-3.28-.12-.3-.54-1.54.12-3.21 0 0 1.01-.33 3.3 1.25a11.1 11.1 0 0 1 6 0c2.28-1.58 3.29-1.25 3.29-1.25.67 1.67.25 2.9.13 3.21.77.85 1.24 1.94 1.24 3.28 0 4.71-2.79 5.75-5.45 6.05.43.37.81 1.1.81 2.22v3.29c0 .32.21.71.81.58A11.52 11.52 0 0 0 23.5 12.3 11.5 11.5 0 0 0 12 .5z"/></svg>
+                    </a>
+                </div>
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+                    <svg id="iconSun" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.8 1.42-1.42zM1 13h3v-2H1v2zm10 10h2v-3h-2v3zm7.04-19.95l1.79-1.79 1.41 1.41-1.79 1.79-1.41-1.41zM20 11v2h3v-2h-3zM4.96 19.95l-1.79 1.79 1.41 1.41 1.79-1.79-1.41-1.41zM17 20.24l1.8 1.79 1.41-1.41-1.79-1.8-1.42 1.42zM12 6a6 6 0 100 12 6 6 0 000-12z"/></svg>
+                </button>
+            </div>
             
             <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu" aria-expanded="false">
                 ☰
@@ -709,12 +784,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         <section id="home" class="section section--hero">
             <div class="container">
                 <div class="hero__content">
-                    <h1 class="hero__title">Transform Your Business with Expert Consulting</h1>
+                    <h1 class="hero__title">Amerigo Velletti — Information Systems @ TUM</h1>
                     <p class="hero__subtitle">
-                        We help modern businesses navigate digital transformation, optimize operations, 
-                        and achieve sustainable growth through strategic consulting and innovative solutions.
+                        Building modern software and exploring AI, data, and systems. Munich, Bavaria.
+                        Check my LinkedIn and GitHub or drop me a message.
                     </p>
-                    <a href="#contact" class="cta-button" role="button">Get Started Today</a>
+                    <a href="#contact" class="cta-button" role="button">Contact Me</a>
                 </div>
             </div>
         </section>
@@ -760,100 +835,44 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         <section id="contact" class="section contact">
             <div class="container">
                 <h2>Get In Touch</h2>
-                <p>Ready to transform your business? Contact us today for a consultation.</p>
-                
-                <?php if ($form_success): ?>
-                    <div class="contact-form">
-                        <div class="form-success">
-                            <strong>Thank you for your message!</strong><br>
-                            We've received your inquiry and will get back to you within 24 hours.
-                        </div>
+                <p>Ready to collaborate or just say hi? I’ll get back to you soon.</p>
+
+                <div id="contactResponse" class="form-success" style="display:none"></div>
+
+                <form id="contactForm" class="contact-form" method="POST" action="contact.php" novalidate>
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name *</label>
+                        <input type="text" id="name" name="name" class="form-input" required autocomplete="name">
+                        <div class="form-error visually-hidden" id="name-error"></div>
                     </div>
-                <?php else: ?>
-                    <form class="contact-form" method="POST" action="#contact" novalidate>
-                        <?php if (isset($form_errors['csrf']) || isset($form_errors['rate_limit'])): ?>
-                            <div class="form-error">
-                                <?php echo isset($form_errors['csrf']) ? htmlspecialchars($form_errors['csrf']) : htmlspecialchars($form_errors['rate_limit']); ?>
-                            </div>
-                        <?php endif; ?>
-                        
-                        <div class="form-group">
-                            <label for="name" class="form-label">Name *</label>
-                            <input 
-                                type="text" 
-                                id="name" 
-                                name="name" 
-                                class="form-input" 
-                                value="<?php echo htmlspecialchars($form_data['name']); ?>"
-                                required 
-                                aria-describedby="name-error"
-                                autocomplete="name"
-                            >
-                            <?php if (isset($form_errors['name'])): ?>
-                                <div class="form-error" id="name-error"><?php echo htmlspecialchars($form_errors['name']); ?></div>
-                            <?php endif; ?>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email *</label>
-                            <input 
-                                type="email" 
-                                id="email" 
-                                name="email" 
-                                class="form-input" 
-                                value="<?php echo htmlspecialchars($form_data['email']); ?>"
-                                required 
-                                aria-describedby="email-error"
-                                autocomplete="email"
-                            >
-                            <?php if (isset($form_errors['email'])): ?>
-                                <div class="form-error" id="email-error"><?php echo htmlspecialchars($form_errors['email']); ?></div>
-                            <?php endif; ?>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone" class="form-label">Phone</label>
-                            <input 
-                                type="tel" 
-                                id="phone" 
-                                name="phone" 
-                                class="form-input" 
-                                value="<?php echo htmlspecialchars($form_data['phone']); ?>"
-                                aria-describedby="phone-error"
-                                autocomplete="tel"
-                            >
-                            <?php if (isset($form_errors['phone'])): ?>
-                                <div class="form-error" id="phone-error"><?php echo htmlspecialchars($form_errors['phone']); ?></div>
-                            <?php endif; ?>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message" class="form-label">Message *</label>
-                            <textarea 
-                                id="message" 
-                                name="message" 
-                                class="form-textarea" 
-                                required 
-                                aria-describedby="message-error"
-                                placeholder="Tell us about your project and how we can help..."
-                            ><?php echo htmlspecialchars($form_data['message']); ?></textarea>
-                            <?php if (isset($form_errors['message'])): ?>
-                                <div class="form-error" id="message-error"><?php echo htmlspecialchars($form_errors['message']); ?></div>
-                            <?php endif; ?>
-                        </div>
-                        
-                        <!-- Honeypot field for spam protection -->
-                        <div class="honeypot">
-                            <label for="website">Website (leave blank)</label>
-                            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
-                        </div>
-                        
-                        <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token']); ?>">
-                        <input type="hidden" name="contact_form" value="1">
-                        
-                        <button type="submit" class="form-submit">Send Message</button>
-                    </form>
-                <?php endif; ?>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email *</label>
+                        <input type="email" id="email" name="email" class="form-input" required autocomplete="email">
+                        <div class="form-error visually-hidden" id="email-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input type="tel" id="phone" name="phone" class="form-input" autocomplete="tel">
+                        <div class="form-error visually-hidden" id="phone-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message *</label>
+                        <textarea id="message" name="message" class="form-textarea" required placeholder="How can I help?"></textarea>
+                        <div class="form-error visually-hidden" id="message-error"></div>
+                    </div>
+
+                    <!-- Honeypot -->
+                    <div class="honeypot">
+                        <label for="website">Website (leave blank)</label>
+                        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token']); ?>">
+                    <button type="submit" class="form-submit">Send Message</button>
+                </form>
             </div>
         </section>
     </main>
@@ -874,6 +893,49 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
             </div>
         </div>
     </footer>
+
+    <!-- LinkedIn Modal -->
+    <div class="modal" id="linkedinModal" aria-hidden="true" role="dialog" aria-labelledby="linkedinTitle">
+        <div class="modal__overlay" data-close-modal></div>
+        <div class="modal__content" role="document">
+            <div class="modal__header">
+                <h3 class="modal__title" id="linkedinTitle">LinkedIn Preview</h3>
+                <button class="modal__close" aria-label="Close" data-close-modal>&times;</button>
+            </div>
+            <div class="modal__body">
+                <div id="linkedinBadgeContainer">
+                    <div class="LI-profile-badge" data-version="v1" data-size="medium" data-locale="en_US" data-type="vertical" data-theme="light" data-vanity="amerigo-velletti-b888a9304">
+                        <a class="LI-simple-link" href="https://www.linkedin.com/in/amerigo-velletti-b888a9304">Amerigo Velletti</a>
+                    </div>
+                </div>
+                <div id="linkedinFallback" class="badge-fallback" style="display:none">
+                    <div class="fallback-avatar" aria-hidden="true">AV</div>
+                    <div>
+                        <strong>Amerigo Velletti</strong>
+                        <p>B.Sc. Information Systems (Semester 6), Technische Universität München</p>
+                        <p>Munich, Bavaria, Germany</p>
+                        <p>
+                            <a class="cta-button" href="https://www.linkedin.com/in/amerigo-velletti-b888a9304" target="_blank" rel="noopener">Open on LinkedIn</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GitHub Modal -->
+    <div class="modal" id="githubModal" aria-hidden="true" role="dialog" aria-labelledby="githubTitle">
+        <div class="modal__overlay" data-close-modal></div>
+        <div class="modal__content" role="document">
+            <div class="modal__header">
+                <h3 class="modal__title" id="githubTitle">GitHub Preview</h3>
+                <button class="modal__close" aria-label="Close" data-close-modal>&times;</button>
+            </div>
+            <div class="modal__body" id="githubContent">
+                <p>Loading GitHub profile…</p>
+            </div>
+        </div>
+    </div>
 
     <script>
         // Mobile menu toggle (minimal JavaScript as requested)
@@ -903,21 +965,155 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
             }
         });
         
-        // Handle form validation feedback
+        // Enhancements
         document.addEventListener('DOMContentLoaded', function() {
-            const form = document.querySelector('.contact-form');
-            if (form) {
-                const inputs = form.querySelectorAll('.form-input, .form-textarea');
-                inputs.forEach(input => {
-                    input.addEventListener('input', function() {
-                        // Remove error styling when user starts typing
-                        const errorDiv = document.getElementById(this.getAttribute('aria-describedby'));
-                        if (errorDiv) {
-                            this.style.borderColor = '';
-                        }
-                    });
+            // Theme toggle
+            const themeToggle = document.getElementById('themeToggle');
+            const setTheme = (t) => {
+                document.documentElement.setAttribute('data-theme', t);
+                localStorage.setItem('theme', t);
+                themeToggle?.setAttribute('aria-pressed', String(t === 'dark'));
+            };
+            themeToggle?.addEventListener('click', () => {
+                const current = document.documentElement.getAttribute('data-theme') || 'light';
+                setTheme(current === 'light' ? 'dark' : 'light');
+            });
+
+            // Social buttons open modal on primary click, otherwise follow link
+            function wireModalButton(btnId, modalSelector) {
+                const btn = document.getElementById(btnId);
+                const modal = document.querySelector(modalSelector);
+                if (!btn || !modal) return;
+                btn.addEventListener('click', (e) => {
+                    if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return; // let default open in new tab
+                    e.preventDefault();
+                    openModal(modal);
                 });
             }
+            wireModalButton('btnLinkedIn', '#linkedinModal');
+            wireModalButton('btnGitHub', '#githubModal');
+
+            // Modal open/close utilities
+            function openModal(modal) {
+                const previouslyFocused = document.activeElement;
+                modal.dataset.prevFocus = previouslyFocused ? previouslyFocused.id || '' : '';
+                modal.setAttribute('aria-hidden', 'false');
+                // focus first focusable
+                const focusable = modal.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+                focusable && focusable.focus();
+                if (modal.id === 'linkedinModal') initLinkedIn();
+                if (modal.id === 'githubModal') initGitHub();
+            }
+            function closeModal(modal) {
+                modal.setAttribute('aria-hidden', 'true');
+                const prevId = modal.dataset.prevFocus;
+                if (prevId) {
+                    const prev = document.getElementById(prevId);
+                    prev && prev.focus();
+                }
+            }
+            document.querySelectorAll('[data-close-modal]').forEach(el => {
+                el.addEventListener('click', (e) => {
+                    const modal = e.currentTarget.closest('.modal');
+                    modal && closeModal(modal);
+                });
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    document.querySelectorAll('.modal[aria-hidden="false"]').forEach(m => closeModal(m));
+                }
+            });
+
+            // LinkedIn badge lazy init with fallback
+            let liLoaded = false, liTried = false;
+            function initLinkedIn() {
+                const container = document.getElementById('linkedinBadgeContainer');
+                const fallback = document.getElementById('linkedinFallback');
+                const theme = (document.documentElement.getAttribute('data-theme') || 'light');
+                // Ensure theme on badge
+                const badge = container.querySelector('.LI-profile-badge');
+                if (badge) badge.setAttribute('data-theme', theme === 'dark' ? 'dark' : 'light');
+                if (liLoaded) return;
+                if (liTried) { fallback.style.display = 'block'; return; }
+                liTried = true;
+                const s = document.createElement('script');
+                s.src = 'https://platform.linkedin.com/badges/js/profile.js';
+                s.async = true; s.defer = true; s.onload = () => { liLoaded = true; };
+                s.onerror = () => { fallback.style.display = 'block'; };
+                document.body.appendChild(s);
+                // Fallback if not rendered within 2s
+                setTimeout(() => {
+                    if (!liLoaded) fallback.style.display = 'block';
+                }, 2000);
+            }
+
+            // GitHub profile + repos
+            let ghLoaded = false;
+            async function initGitHub() {
+                if (ghLoaded) return;
+                ghLoaded = true;
+                const el = document.getElementById('githubContent');
+                try {
+                    const [userRes, repoRes] = await Promise.all([
+                        fetch('https://api.github.com/users/Amerigo2020'),
+                        fetch('https://api.github.com/users/Amerigo2020/repos?per_page=100')
+                    ]);
+                    if (!userRes.ok) throw new Error('Failed to load profile');
+                    const user = await userRes.json();
+                    const reposAll = repoRes.ok ? await repoRes.json() : [];
+                    const repos = Array.isArray(reposAll) ? reposAll : [];
+                    repos.sort((a,b)=> (b.stargazers_count||0)-(a.stargazers_count||0));
+                    const top = repos.filter(r=>!r.fork).slice(0,5);
+                    const repoHtml = top.map(r => `
+                        <div class="repo-card">
+                            <a href="${r.html_url}" target="_blank" rel="noopener">${r.name}</a>
+                            <p>${r.description ? r.description : ''}</p>
+                            <div class="chip">⭐ ${r.stargazers_count||0}${r.language ? ` • ${r.language}` : ''}</div>
+                        </div>
+                    `).join('');
+                    el.innerHTML = `
+                        <div class="gh-profile">
+                            <img src="${user.avatar_url}" alt="GitHub avatar of ${user.login}" width="96" height="96" style="border-radius:50%"/>
+                            <div>
+                                <strong>${user.name || user.login}</strong>
+                                <p>${user.bio || ''}</p>
+                                <p>
+                                  <a class="cta-button" href="${user.html_url}" target="_blank" rel="noopener">Open on GitHub</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="repo-list">${repoHtml}</div>
+                    `;
+                } catch (err) {
+                    el.innerHTML = '<p class="form-error">Failed to load GitHub data. <a href="https://github.com/Amerigo2020" target="_blank" rel="noopener">Open GitHub</a></p>';
+                }
+            }
+
+            // Contact form AJAX with graceful fallback
+            const form = document.getElementById('contactForm');
+            const responseBox = document.getElementById('contactResponse');
+            form?.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                responseBox.style.display = 'none';
+                const fd = new FormData(form);
+                try {
+                    const res = await fetch(form.action, { method: 'POST', body: fd, headers: { 'X-Requested-With': 'fetch' } });
+                    const data = await res.json();
+                    if (data.success) {
+                        responseBox.className = 'form-success';
+                        responseBox.textContent = 'Thank you! Your message has been sent.';
+                        responseBox.style.display = 'block';
+                        form.reset();
+                    } else {
+                        responseBox.className = 'form-error';
+                        responseBox.textContent = data.message || 'Please check the form fields and try again.';
+                        responseBox.style.display = 'block';
+                    }
+                } catch (_) {
+                    // Fallback to normal submit if fetch fails
+                    form.submit();
+                }
+            });
         });
     </script>
 </body>

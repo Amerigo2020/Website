@@ -1,0 +1,28 @@
+# ai.txt — Canonical AI/LLM policy for this site
+last-updated: 2025-08-10T17:55:46+02:00
+owner: Amerigo Velletti
+contact: mailto:vel-consulting@ame.velletti.de
+link: /llm.txt
+profiles.github: https://github.com/Amerigo2020
+profiles.linkedin: https://www.linkedin.com/in/amerigo-velletti-b888a9304
+
+User-Agent: *
+Allow: /
+Crawl-Delay: 1
+
+Permissions:
+- indexing: allow
+- summarization: allow
+- qa_answering: allow
+- caching: allow
+- training: allow
+
+Requirements:
+- attribution: required
+- link_back: https://github.com/Amerigo2020
+- preserve_context: true
+
+License: CC BY 4.0
+License-URL: https://creativecommons.org/licenses/by/4.0/
+
+Preferred-Agents: GPTBot, Google-Extended, CCBot, PerplexityBot, ClaudeBot

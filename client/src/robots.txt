@@ -1,0 +1,27 @@
+# robots.txt — Amerigo Velletti
+# Allow search engines and AI crawlers to index the site
+
+User-agent: *
+Allow: /
+Crawl-delay: 1
+
+# AI-focused crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# AI policy files
+# See /llm.txt and /.well-known/ai.txt for detailed AI/LLM permissions
+# Sitemap: add your sitemap URL here if available, e.g.
+# Sitemap: https://your-domain.example/sitemap.xml
