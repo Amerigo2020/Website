@@ -18,9 +18,9 @@ if (!isset($_SESSION['csrf_token'])) {
 
 // Configuration
 $config = [
-    'site_title' => 'Velletti Consulting — Portfolio & Projects',
-    'meta_description' => 'Velletti Consulting — Information Systems (B.Sc., TUM). Projects, experience, and interests across data, AI, and modern software.',
-    'meta_keywords' => 'Velletti Consulting, TUM, Student, Portfolio, Information Systems, AI, Software, Projects',
+    'site_title' => 'Velletti Consulting | AI, Automatisierung, Websites & Hosting',
+    'meta_description' => 'Velletti Consulting in München – AI (Künstliche Intelligenz), Automatisierung, Aufbau und Hosting moderner Websites. Beratung, Entwicklung und Betrieb.',
+    'meta_keywords' => 'Velletti Consulting, AI, Künstliche Intelligenz, Automatisierung, Webentwicklung, Webseiten, Website Hosting, DevOps, München, Beratung',
     'company_name' => 'Velletti Consulting',
     'company_email' => 'vel-consulting@ame.velletti.de',
     'company_phone' => '+49 176 45531533',
@@ -36,6 +36,11 @@ $colors = [
     'accent2' => '#22223B',
     'text' => '#23272F'
 ];
+
+// Canonical URL (home)
+$scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+$host = $_SERVER['HTTP_HOST'] ?? 'localhost:8000';
+$canonical = $scheme . '://' . $host . '/';
 
 // Form processing
 $form_errors = [];
@@ -139,21 +144,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php echo htmlspecialchars($config['meta_description']); ?>">
     <meta name="keywords" content="<?php echo htmlspecialchars($config['meta_keywords']); ?>">
     <meta name="author" content="<?php echo htmlspecialchars($config['company_name']); ?>">
+    <meta name="robots" content="index,follow">
     
     <!-- Open Graph meta tags -->
     <meta property="og:title" content="<?php echo htmlspecialchars($config['site_title']); ?>">
     <meta property="og:description" content="<?php echo htmlspecialchars($config['meta_description']); ?>">
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="<?php echo htmlspecialchars($config['company_name']); ?>">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:url" content="<?php echo htmlspecialchars($canonical); ?>">
+    <meta property="og:locale:alternate" content="en_US">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<?php echo htmlspecialchars($config['site_title']); ?>">
+    <meta name="twitter:description" content="<?php echo htmlspecialchars($config['meta_description']); ?>">
+    <meta name="twitter:url" content="<?php echo htmlspecialchars($canonical); ?>">
     
     <title><?php echo htmlspecialchars($config['site_title']); ?></title>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="canonical" href="<?php echo htmlspecialchars($canonical); ?>">
+
     <!-- Schema.org markup -->
     <script type="application/ld+json">
     {
@@ -163,9 +183,44 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         "description": "<?php echo htmlspecialchars($config['meta_description']); ?>",
         "email": "<?php echo htmlspecialchars($config['company_email']); ?>",
         "telephone": "<?php echo htmlspecialchars($config['company_phone']); ?>",
+        "url": "<?php echo htmlspecialchars($canonical); ?>",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "<?php echo htmlspecialchars($config['company_address']); ?>"
+        },
+        "areaServed": "Munich, Bavaria, Germany",
+        "sameAs": [
+            "https://github.com/Amerigo2020",
+            "https://www.linkedin.com/in/amerigo-velletti-b888a9304"
+        ],
+        "knowsAbout": [
+            "Artificial Intelligence",
+            "AI",
+            "Künstliche Intelligenz",
+            "Automation",
+            "Automatisierung",
+            "Web Development",
+            "Webseiten",
+            "Web Hosting",
+            "DevOps"
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "name": "AI & Automatisierung"
+                },
+                {
+                    "@type": "Offer",
+                    "name": "Websites & Hosting"
+                },
+                {
+                    "@type": "Offer",
+                    "name": "DevOps Enablement"
+                }
+            ]
         }
     }
     </script>
@@ -847,9 +902,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                     <img class="hero-avatar" src="assets/portrait.jpg" alt="Profile photo" loading="eager"/>
                     <h1 class="hero__title">Velletti Consulting</h1>
                     <p class="hero__subtitle">
-                    I build modern software and explore AI, automation, and data.
-                    <br>Munich, Bavaria.
-                    <br>Check my LinkedIn and GitHub or drop me a message.
+                        AI & Automatisierung · Websites & Hosting · Modern Software
+                        <br>Velletti Consulting · München, Bayern
+                        <br>LinkedIn & GitHub: gerne vernetzen oder direkt schreiben.
                     </p>
                     <a href="#contact" class="cta-button" role="button">Contact Me</a>
                 </div>
@@ -859,34 +914,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         <!-- Services Section -->
         <section id="services" class="section services">
             <div class="container">
-                <h2>Our Services</h2>
-                <p>We provide comprehensive consulting services tailored to your business needs.</p>
+                <h2>Leistungen</h2>
+                <p>Beratung, Entwicklung und Betrieb – klar fokussiert auf AI, Automatisierung sowie moderne Websites & Hosting.</p>
                 
                 <div class="services__grid">
                     <div class="service-card" tabindex="0">
-                        <div class="service-icon" aria-hidden="true">🎯</div>
-                        <h3>Strategic Planning</h3>
+                        <div class="service-icon" aria-hidden="true">🤖</div>
+                        <h3>AI & Automatisierung</h3>
                         <p>
-                            Develop comprehensive business strategies that align with your vision and market opportunities. 
-                            We analyze your competitive landscape and create actionable roadmaps for sustainable growth.
+                            Von Proof-of-Concept bis Produktion: KI-gestützte Workflows, Automatisierung von Prozessen,
+                            Integrationen und agentische Systeme zur Effizienzsteigerung.
                         </p>
                     </div>
                     
                     <div class="service-card" tabindex="0">
-                        <div class="service-icon" aria-hidden="true">💻</div>
-                        <h3>Digital Transformation</h3>
+                        <div class="service-icon" aria-hidden="true">🌐</div>
+                        <h3>Websites & Hosting</h3>
                         <p>
-                            Modernize your operations with cutting-edge technology solutions. From process automation 
-                            to digital workflows, we help you leverage technology for competitive advantage.
+                            Moderne Unternehmens-Websites: Performance, SEO, Barrierefreiheit – inkl. Hosting, Domain,
+                            Deployment und Monitoring für einen stabilen Betrieb.
                         </p>
                     </div>
                     
                     <div class="service-card" tabindex="0">
-                        <div class="service-icon" aria-hidden="true">📈</div>
-                        <h3>Growth Optimization</h3>
+                        <div class="service-icon" aria-hidden="true">⚙️</div>
+                        <h3>DevOps Enablement</h3>
                         <p>
-                            Identify and capitalize on growth opportunities through data-driven insights and proven methodologies. 
-                            Scale your business efficiently while maintaining operational excellence.
+                            Build-/Release-Pipelines, Infrastruktur als Code, Observability und Automatisierung –
+                            damit Teams schneller und sicherer liefern.
                         </p>
                     </div>
                 </div>

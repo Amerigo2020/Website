@@ -1,5 +1,5 @@
 # ai.txt — Canonical AI/LLM policy for this site
-last-updated: 2025-08-10T17:55:46+02:00
+last-updated: 2025-08-11T00:14:19+02:00
 owner: Amerigo Velletti
 contact: mailto:vel-consulting@ame.velletti.de
 link: /llm.txt
@@ -26,3 +26,7 @@ License: CC BY 4.0
 License-URL: https://creativecommons.org/licenses/by/4.0/
 
 Preferred-Agents: GPTBot, Google-Extended, CCBot, PerplexityBot, ClaudeBot
+
+# Topics & Services (informational)
+Topics: AI; Künstliche Intelligenz; Automatisierung; Webentwicklung; Websites; Hosting; DevOps
+Services: AI Consulting; Automation; Web Development; Website Hosting; DevOps Enablement

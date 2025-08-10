@@ -3,11 +3,14 @@
 # Format: Human-readable key:value lines. Unknown keys may be ignored by crawlers.
 
 version: 1.0
-last_updated: 2025-08-10T17:55:46+02:00
+last_updated: 2025-08-11T00:09:08+02:00
 
-site.name: Amerigo Velletti
-site.description: Portfolio & projects — Information Systems (B.Sc., TUM). Interests: AI, data, modern software.
+site.name: Velletti Consulting
+site.description: Velletti Consulting in München — AI (Künstliche Intelligenz), Automatisierung, Aufbau und Hosting moderner Websites. Beratung, Entwicklung und Betrieb.
 site.language: en
+site.languages: en, de
+site.keywords: Velletti Consulting, AI, Künstliche Intelligenz, Automatisierung, Webentwicklung, Webseiten, Website Hosting, DevOps, München, Beratung
+site.topics: AI; Künstliche Intelligenz; Automatisierung; Webentwicklung; Websites; Hosting; DevOps; Data; Modern Software
 site.location: Munich, Bavaria, Germany
 owner.name: Amerigo Velletti
 owner.email: vel-consulting@ame.velletti.de
@@ -29,6 +32,7 @@ requirements.preserve_context: true # Avoid misleading quotes out of context
 # Optional crawler guidance (non-standard; informative only)
 preferred_agents: GPTBot, Google-Extended, CCBot, PerplexityBot, ClaudeBot
 crawl.delay_seconds: 1
+services: AI Consulting; Automation; Web Development; Website Hosting; DevOps Enablement
 
 # Paths that are less useful for AI experiences (informational only)
 notes.ignore_paths: /contact.php

@@ -28,6 +28,7 @@ This is a complete implementation of the Velletti Consulting landing page as spe
   - Accent 1: `#B5BFE2` (Light Blue)
   - Accent 2: `#22223B` (Dark Violet)
   - Text: `#23272F` (Dark Gray)
+ - **Favicon**: SVG favicon included at `client/src/assets/favicon.svg` and referenced in `client/src/index.php` via `<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">`
 
 ### ✅ Components
 1. **Sticky Header** with responsive navigation, dark/light mode toggle, and LinkedIn/GitHub buttons (with modals)
@@ -55,6 +56,15 @@ This is a complete implementation of the Velletti Consulting landing page as spe
 - Schema.org markup for business information
 - Open Graph meta tags
 - Semantic HTML5 structure
+  
+#### 2025-08-11 SEO/AI Enhancements
+- Updated `$config` meta: title, description, keywords to emphasize "Velletti Consulting", AI, Automatisierung, Websites & Hosting (in `client/src/index.php`).
+- Set `<html lang="de">`, added `<meta name="robots" content="index,follow">`.
+- Added canonical URL computation and tags: `<link rel="canonical">`, `og:url`, `twitter:url`.
+- Added `og:site_name`, `og:locale` (de_DE) and `og:locale:alternate` (en_US).
+- Added Twitter Card meta (`summary_large_image`).
+- Expanded JSON-LD (`ProfessionalService`) with `url`, `areaServed`, `sameAs`, `knowsAbout` and an `hasOfferCatalog` of services.
+- Services section content updated to: AI & Automatisierung, Websites & Hosting, DevOps Enablement (German copy).
 
 ### Performance
 - Inline CSS for fast loading
@@ -68,12 +78,26 @@ client/
 └── src/
     ├── index.php               # Main application
     ├── contact.php             # AJAX contact form handler (JSON/HTML fallback)
+    ├── assets/
+    │   ├── favicon.svg         # Site favicon (SVG)
+    │   └── portrait.jpg        # Optional hero avatar (place your photo here)
     ├── robots.txt
     ├── llm.txt
     ├── ai.txt                  # points to /.well-known/ai.txt
     └── .well-known/
         └── ai.txt              # canonical AI policy
 ```
+
+## Favicon
+
+- Path: `client/src/assets/favicon.svg`
+- Referenced in `client/src/index.php` `<head>` as:
+
+```html
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+```
+
+To replace it, overwrite `favicon.svg` (recommended SVG, 120×120+ viewBox). Browsers may cache favicons—use a hard refresh if changes don't show immediately.
 
 ## How to Run
 
@@ -190,6 +214,11 @@ Following WORKFLOW guidelines:
 - `client/src/robots.txt` — allows web + AI crawlers
 
 These complement SEO meta and help AI systems understand usage rights and attribution.
+
+### 2025-08-11 Updates
+- `llm.txt`: updated `last_updated`, site name/description, `site.languages` (en, de), `site.keywords`, `site.topics`, and `services`.
+- `.well-known/ai.txt`: refreshed `last-updated`; added informational `Topics` and `Services` lines.
+- `ai.txt`: unchanged, still points to `/.well-known/ai.txt`.
 
 ## Deployment
 
