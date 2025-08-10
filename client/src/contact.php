@@ -32,6 +32,23 @@ function sanitize($v): string { return htmlspecialchars(trim((string)$v), ENT_QU
 function validate_email($e): bool { return filter_var($e, FILTER_VALIDATE_EMAIL) !== false; }
 function validate_phone($p): bool { return $p === '' || preg_match('/^[\+]?[-0-9\s()]{10,}$/', $p) === 1; }
 
+// Capture warnings from mail() so they don't output before headers
+function send_mail_safely(string $to, string $subject, string $body, string $headers): array {
+    $warning = null;
+    $prev = set_error_handler(function ($errno, $errstr) use (&$warning) {
+        // store and suppress warning output
+        $warning = $errstr;
+        return true;
+    });
+    $ok = mail($to, $subject, $body, $headers);
+    if ($prev !== null) {
+        set_error_handler($prev);
+    } else {
+        restore_error_handler();
+    }
+    return [$ok, $warning];
+}
+
 $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
 if ($method !== 'POST') {
     if (is_ajax_request()) json_response(['success' => false, 'message' => 'Method not allowed'], 405);
@@ -84,20 +101,60 @@ if (!empty($errors)) {
     html_response('Form Error', $msg, 422);
 }
 
-// Optionally send email (uncomment and configure if mail() is available)
-$sendTo = 'amerigo@velletti.de';
-$subject = 'Website Contact — ' . $name;
-$body = "Name: $name\nEmail: $email\nPhone: $phone\nIP: $ip\n\n$message\n";
-$headers = 'From: noreply@' . ($_SERVER['SERVER_NAME'] ?? 'localhost') . "\r\nReply-To: $email\r\nX-Mailer: PHP/" . phpversion();
-//$sent = mail($sendTo, $subject, $body, $headers);
+// Send email via PHP mail(); simulate success on localhost/dev to avoid warnings
+$from = 'server@ame.velletti.de';
+$to   = 'info@ame.velletti.de';
+$nameSafe = str_replace(["\r", "\n"], '', $name);
+$subject = 'Website Contact - ' . $nameSafe;
+$body  = "This is a contact request from the website.\n\n";
+$body .= "Form Data:\n";
+$body .= "Name: $name\n";
+$body .= "Email: $email\n";
+$body .= "Phone: $phone\n";
+$body .= "IP: $ip\n\n";
+$body .= "Message:\n$message\n";
+
+// Prevent header injection in Reply-To
+$emailSafe = str_replace(["\r", "\n"], '', $email);
+
+$headers  = "From: $from\r\n";
+$headers .= "Reply-To: $emailSafe\r\n";
+$headers .= 'X-Mailer: PHP/' . phpversion() . "\r\n";
+$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+$headers .= "Content-Transfer-Encoding: 8bit\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "X-Priority: 3\r\n";
+
+$host = $_SERVER['SERVER_NAME'] ?? '';
+$isDev = (PHP_SAPI === 'cli-server') || $host === 'localhost' || $host === '127.0.0.1' || $host === '::1';
+
+if ($isDev) {
+    // Simulate success locally to avoid SMTP setup; log the message for debugging
+    $sent = true;
+    error_log('[DEV] Simulated email send to ' . $to . ' | subject: ' . $subject . ' | reply-to: ' . $emailSafe);
+} else {
+    // Real send with warning capture (prevents "headers already sent")
+    $warn = null; $sent = false;
+    list($sent, $warn) = send_mail_safely($to, $subject, $body, $headers);
+    if (!$sent && $warn) {
+        error_log('mail() warning: ' . $warn);
+    }
+}
+
+if (!$sent) {
+    $failMsg = 'We could not send your message at this time. Please try again later.';
+    if (is_ajax_request()) json_response(['success' => false, 'message' => $failMsg], 500);
+    html_response('Delivery Failed', $failMsg, 500);
+}
 
 // Update rate limit
 $_SESSION[$key] = ['count' => $rate['count'] + 1, 'last_submit' => $now];
-// Regenerate CSRF token for next submission
-$_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+// Regenerate CSRF token for next submission and return it for AJAX clients
+$newToken = bin2hex(random_bytes(32));
+$_SESSION['csrf_token'] = $newToken;
 
 if (is_ajax_request()) {
-    json_response(['success' => true, 'message' => 'Thank you! Your message has been sent.']);
+    json_response(['success' => true, 'message' => 'Thank you! Your message has been sent.', 'csrf_token' => $newToken]);
 }
 
 html_response('Thank you', 'Your message has been sent successfully.');

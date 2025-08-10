@@ -7,8 +7,8 @@ This is a complete implementation of the Velletti Consulting landing page as spe
 
 ### ✅ Technical Requirements Met
 - **Pure PHP Implementation**: All logic, rendering, and styling via PHP
-- **No External Dependencies**: No JavaScript frameworks, CDN resources, or external libraries
-- **Single File Solution**: Complete application in one `index.php` file
+- **No JS Frameworks/Build Tools**: No front-end frameworks; optional LinkedIn badge script loads client-side; GitHub data fetched via public API
+- **Single-file Core**: Main UI in `index.php`; form posting handled by `contact.php`
 - **PHP Compatibility**: Compatible with PHP 7.4+ and PHP 8.x
 - **Responsive Design**: Mobile-first approach with CSS Grid/Flexbox
 
@@ -30,11 +30,13 @@ This is a complete implementation of the Velletti Consulting landing page as spe
   - Text: `#23272F` (Dark Gray)
 
 ### ✅ Components
-1. **Sticky Header** with responsive navigation
-2. **Hero Section** with compelling headline and CTA
+1. **Sticky Header** with responsive navigation, dark/light mode toggle, and LinkedIn/GitHub buttons (with modals)
+2. **Hero Section** with dual CTAs (Contact, Events & Experience)
 3. **Services Section** with 3 service cards and CSS-based icons
-4. **Contact Form** with comprehensive validation
-5. **Footer** with contact information and links
+4. **Experience & Events (2025)** section with LinkedIn/GitHub profile cards and event cards (LinkedIn search links)
+5. **Contact Form** with comprehensive validation and AJAX submission to `contact.php`
+6. **Legal Sections**: German-compliant **Impressum** and **Datenschutzerklärung** (Privacy Policy)
+7. **Footer** with contact information and legal links
 
 ### ✅ Responsive Breakpoints
 - Mobile: up to 768px
@@ -54,17 +56,23 @@ This is a complete implementation of the Velletti Consulting landing page as spe
 - Open Graph meta tags
 - Semantic HTML5 structure
 
-### ✅ Performance
+### Performance
 - Inline CSS for fast loading
 - Optimized HTML structure
 - CSS-based graphics (no external images)
-- Minimal JavaScript (only for mobile menu)
+- Minimal JavaScript (mobile menu, theme toggle, LinkedIn/GitHub modals, AJAX contact)
 
 ## File Structure
 ```
 client/
 └── src/
-    └── index.php (Complete application - 900+ lines)
+    ├── index.php               # Main application
+    ├── contact.php             # AJAX contact form handler (JSON/HTML fallback)
+    ├── robots.txt
+    ├── llm.txt
+    ├── ai.txt                  # points to /.well-known/ai.txt
+    └── .well-known/
+        └── ai.txt              # canonical AI policy
 ```
 
 ## How to Run
@@ -96,7 +104,19 @@ $config = [
 
 ## Form Handling
 
-The contact form currently shows a success message. To implement email sending, modify the form processing section around line 100 in `index.php`.
+The contact form submits via AJAX to `contact.php` and gracefully falls back to a normal POST if fetch fails.
+
+- Endpoint: `POST /contact.php`
+- Fields: `name`, `email`, `phone` (optional), `message`, `website` (honeypot), `csrf_token`
+- Response (AJAX): JSON `{ success: boolean, message: string, errors?: object }`
+- Security: CSRF check, honeypot, basic session rate limiting, server-side validation
+
+Email sending is ENABLED:
+- From: `server@ame.velletti.de`
+- To: `info@ame.velletti.de`
+- Subject: `Website Contact - {name}` (CR/LF stripped)
+- Reply-To: visitor email with injection protection
+- Content-Type: `text/plain; charset=UTF-8`
 
 ## Security Notes
 
@@ -134,12 +154,16 @@ Following WORKFLOW guidelines:
 ## Testing Checklist
 
 ### ✅ Functional Tests
-- [x] Header navigation works (smooth scroll)
+- [x] Header navigation anchors work
 - [x] Mobile menu toggles properly
 - [x] Contact form validation works
 - [x] CSRF protection active
 - [x] Rate limiting functional
 - [x] Honeypot spam protection
+- [x] Dark/light mode toggle persists via `localStorage`
+- [x] LinkedIn/GitHub modals open and close correctly
+- [x] "Events" nav/CTA links jump to `#experience`
+- [x] Footer legal links jump to `#impressum` and `#privacy`
 
 ### ✅ Responsive Tests
 - [x] Mobile (< 768px): Single column layout
@@ -158,6 +182,15 @@ Following WORKFLOW guidelines:
 - [x] Focus indicators visible
 - [x] Color contrast AA compliant
 
+## AI/LLM Indexing & Robots
+
+- `client/src/llm.txt` — human-readable AI/LLM permissions and preferences (CC BY 4.0 attribution)
+- `client/src/.well-known/ai.txt` — canonical AI policy
+- `client/src/ai.txt` — pointer to the canonical policy
+- `client/src/robots.txt` — allows web + AI crawlers
+
+These complement SEO meta and help AI systems understand usage rights and attribution.
+
 ## Deployment
 
 1. Upload `index.php` to web server
@@ -168,11 +201,10 @@ Following WORKFLOW guidelines:
 
 ## Future Enhancements
 
-1. **Email Integration**: Add actual email sending functionality
-2. **Database Storage**: Store form submissions in database
-3. **Content Management**: Add admin panel for content updates
-4. **Analytics**: Integrate Google Analytics or similar
-5. **Performance**: Add caching for production use
+1. **Database Storage**: Store form submissions in database
+2. **Content Management**: Add admin panel for content updates
+3. **Analytics**: Integrate Google Analytics or similar
+4. **Performance**: Add caching for production use
 
 ## Compliance
 
@@ -181,6 +213,25 @@ Following WORKFLOW guidelines:
 - ✅ **Security Standards**: OWASP guidelines followed
 - ✅ **Accessibility**: WCAG 2.1 AA compliance
 - ✅ **Performance**: Load time < 3 seconds target
+ - ✅ **Legal**: Includes Impressum and Datenschutz sections (Germany)
+
+## Architecture Diagram
+
+```mermaid
+flowchart TD
+  A[Browser] -->|anchors, modals, theme| B[index.php]
+  B -->|AJAX POST| C[contact.php]
+  B --> D[Header/Nav + Theme Toggle]
+  B --> E[Hero + CTAs]
+  B --> F[Services]
+  B --> G[Experience & Events]
+  B --> H[Contact Form]
+  B --> I[Legal: Impressum & Datenschutz]
+  J[robots.txt] -. guides .-> A
+  K[llm.txt] -. informs .-> A
+  L[.well-known/ai.txt] -. canonical .-> A
+  M[ai.txt] -. pointer .-> A
+```
 
 ## Support
 
@@ -192,7 +243,7 @@ For technical support or customization:
 
 ---
 
-**Implementation Date**: 2025-07-07  
-**Version**: 1.0.0  
+**Implementation Date**: 2025-08-10  
+**Version**: 1.1.0  
 **PHP Version**: 7.4+ / 8.x compatible  
 **License**: Custom implementation for Velletti Consulting

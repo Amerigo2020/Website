@@ -18,10 +18,10 @@ if (!isset($_SESSION['csrf_token'])) {
 
 // Configuration
 $config = [
-    'site_title' => 'Amerigo Velletti — Portfolio & Projects',
-    'meta_description' => 'Amerigo Velletti — Information Systems (B.Sc., TUM). Projects, experience, and interests across data, AI, and modern software.',
-    'meta_keywords' => 'Amerigo Velletti, TUM, Portfolio, Information Systems, AI, Software, Projects',
-    'company_name' => 'Amerigo Velletti',
+    'site_title' => 'Velletti Consulting — Portfolio & Projects',
+    'meta_description' => 'Velletti Consulting — Information Systems (B.Sc., TUM). Projects, experience, and interests across data, AI, and modern software.',
+    'meta_keywords' => 'Velletti Consulting, TUM, Student, Portfolio, Information Systems, AI, Software, Projects',
+    'company_name' => 'Velletti Consulting',
     'company_email' => 'vel-consulting@ame.velletti.de',
     'company_phone' => '+49 176 45531533',
     'company_address' => 'Munich, Bavaria, Germany'
@@ -394,6 +394,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
             opacity: 0.8;
         }
         
+        /* Hero avatar (circular image) */
+        .hero-avatar {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto var(--spacing-md);
+            border: 4px solid var(--color-white);
+            box-shadow: var(--shadow-lg);
+            background: var(--color-white);
+        }
+        @media (max-width: 480px) {
+            .hero-avatar { width: 128px; height: 128px; }
+        }
+        
         .cta-button {
             display: inline-block;
             background: var(--color-primary);
@@ -549,6 +565,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
             height: 1px;
             overflow: hidden;
         }
+        
+        /* Legal Sections */
+        .legal { background: var(--color-background); }
+        .legal h2 { margin-bottom: var(--spacing-sm); }
+        .legal h3 { margin-top: var(--spacing-sm); }
+        .legal p { opacity: 0.9; }
         
         /* Footer */
         .footer {
@@ -724,6 +746,42 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         .repo-card a { font-weight:600; }
         .chip { display:inline-flex; align-items:center; gap:6px; padding:2px 8px; border-radius:999px; background: rgba(16,37,66,0.06); font-size: 0.85rem; }
         :root[data-theme='dark'] .repo-card { border-color: rgba(255,255,255,0.1); }
+        
+        /* Dark theme readability fixes */
+        :root[data-theme='dark'] .contact-form { background: #0f172a; color: var(--color-text); }
+        :root[data-theme='dark'] .form-input,
+        :root[data-theme='dark'] .form-textarea { background: #0b1220; color: var(--color-text); border-color: rgba(255,255,255,0.1); }
+        :root[data-theme='dark'] .form-input::placeholder,
+        :root[data-theme='dark'] .form-textarea::placeholder { color: rgba(230,237,243,0.6); }
+        :root[data-theme='dark'] .form-label { color: var(--color-text); }
+        :root[data-theme='dark'] .form-error { color: #fca5a5; }
+        :root[data-theme='dark'] .form-success { background: rgba(34,197,94,0.12); border-color: rgba(34,197,94,0.25); color: #86efac; }
+
+        :root[data-theme='dark'] .footer { background: #0b1220; color: var(--color-text); }
+        :root[data-theme='dark'] .footer a { color: var(--color-primary); }
+        :root[data-theme='dark'] .footer a:hover,
+        :root[data-theme='dark'] .footer a:focus { color: var(--color-white); }
+
+        /* Header & nav in dark mode */
+        :root[data-theme='dark'] .header { background: rgba(13,17,23,0.95); border-bottom: 1px solid rgba(255,255,255,0.08); }
+        :root[data-theme='dark'] .logo { color: var(--color-text); }
+        :root[data-theme='dark'] .nav__link { color: var(--color-text); }
+        :root[data-theme='dark'] .mobile-menu { background: #0f172a; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        :root[data-theme='dark'] .mobile-menu .nav__link { border-bottom: 1px solid rgba(255,255,255,0.08); }
+
+        /* Services wrapper in dark mode */
+        :root[data-theme='dark'] .services { background: #0f172a; }
+
+        /* Experience/Events cards */
+        .cards-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--spacing-md); }
+        .profile-card, .event-card { border:1px solid rgba(16,37,66,0.12); border-radius:12px; padding: var(--spacing-md); background: var(--color-white); }
+        :root[data-theme='dark'] .profile-card, :root[data-theme='dark'] .event-card { background: #0f172a; border-color: rgba(255,255,255,0.1); }
+        .profile-card__header { display:flex; align-items:center; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm); }
+        .profile-card__icon { width:28px; height:28px; }
+        .event-card .title { font-weight:600; }
+        .event-card .meta { margin-top: 6px; display:flex; gap:8px; flex-wrap:wrap; }
+        .event-card .actions { margin-top: var(--spacing-sm); }
+        .small { font-size: 0.9rem; opacity: 0.85; }
 
         .visually-hidden { position:absolute !important; height:1px; width:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap; }
     </style>
@@ -743,12 +801,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
     <!-- Header -->
     <header class="header">
         <div class="container header__container">
-            <a href="#home" class="logo" aria-label="Amerigo Velletti Home">
+            <a href="#home" class="logo" aria-label="<?php echo htmlspecialchars($config['company_name']); ?> Home">
                 <?php echo htmlspecialchars($config['company_name']); ?>
             </a>
             
             <nav class="nav" role="navigation" aria-label="Main navigation">
                 <a href="#services" class="nav__link">Services</a>
+                <a href="#experience" class="nav__link">Events</a>
                 <a href="#contact" class="nav__link">Contact</a>
             </nav>
             
@@ -773,6 +832,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
             <div class="mobile-menu" id="mobileMenu">
                 <nav class="nav" role="navigation" aria-label="Mobile navigation">
                     <a href="#services" class="nav__link" onclick="closeMobileMenu()">Services</a>
+                    <a href="#experience" class="nav__link" onclick="closeMobileMenu()">Events</a>
                     <a href="#contact" class="nav__link" onclick="closeMobileMenu()">Contact</a>
                 </nav>
             </div>
@@ -784,16 +844,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         <section id="home" class="section section--hero">
             <div class="container">
                 <div class="hero__content">
-                    <h1 class="hero__title">Amerigo Velletti — Information Systems @ TUM</h1>
+                    <img class="hero-avatar" src="assets/portrait.jpg" alt="Profile photo" loading="eager"/>
+                    <h1 class="hero__title">Velletti Consulting</h1>
                     <p class="hero__subtitle">
-                        Building modern software and exploring AI, data, and systems. Munich, Bavaria.
-                        Check my LinkedIn and GitHub or drop me a message.
+                    I build modern software and explore AI, automation, and data.
+                    <br>Munich, Bavaria.
+                    <br>Check my LinkedIn and GitHub or drop me a message.
                     </p>
                     <a href="#contact" class="cta-button" role="button">Contact Me</a>
                 </div>
             </div>
         </section>
-
+        
         <!-- Services Section -->
         <section id="services" class="section services">
             <div class="container">
@@ -826,6 +888,160 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                             Identify and capitalize on growth opportunities through data-driven insights and proven methodologies. 
                             Scale your business efficiently while maintaining operational excellence.
                         </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience / Events Section -->
+        <section id="experience" class="section experience">
+            <div class="container">
+                <h2>Events & Experience (2025)</h2>
+                <p>Recent events, hackathons and a paper. Links open LinkedIn searches; use the header icons for profile previews.</p>
+
+                <div class="cards-grid" style="margin-bottom: var(--spacing-md);">
+                    <a id="btnLinkedIn2" class="profile-card" href="https://www.linkedin.com/in/amerigo-velletti-b888a9304" target="_blank" rel="noopener" aria-label="Open LinkedIn profile (opens in new tab)">
+                        <div class="profile-card__header">
+                            <svg class="profile-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-9.5 6H7v8h2.5V9zm.13-2.75a1.38 1.38 0 1 0-2.76 0 1.38 1.38 0 0 0 2.76 0zM20 13.25c0-2.52-1.35-3.7-3.16-3.7-1.46 0-2.12.8-2.49 1.37v-1.17H12v8h2.5v-4.46c0-1.17.22-2.3 1.67-2.3 1.43 0 1.45 1.33 1.45 2.37V17H20v-3.75z"/></svg>
+                            <div>
+                                <strong>LinkedIn</strong>
+                                <p class="small">Preview in modal or open profile</p>
+                            </div>
+                        </div>
+                        <span class="chip">Profile</span>
+                    </a>
+                    <a id="btnGitHub2" class="profile-card" href="https://github.com/Amerigo2020" target="_blank" rel="noopener" aria-label="Open GitHub profile (opens in new tab)">
+                        <div class="profile-card__header">
+                            <svg class="profile-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5A11.5 11.5 0 0 0 .5 12.3c0 5.23 3.4 9.66 8.12 11.23.59.12.8-.26.8-.58v-2.2c-3.3.73-3.99-1.43-3.99-1.43-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.72.08-.72 1.2.09 1.84 1.27 1.84 1.27 1.07 1.86 2.8 1.32 3.48 1.01.11-.8.42-1.32.76-1.62-2.64-.31-5.42-1.36-5.42-6.06 0-1.34.47-2.43 1.24-3.28-.12-.3-.54-1.54.12-3.21 0 0 1.01-.33 3.3 1.25a11.1 11.1  0 0 1 6 0c2.28-1.58 3.29-1.25 3.29-1.25.67 1.67.25 2.9.13 3.21.77.85 1.24 1.94 1.24 3.28 0 4.71-2.79 5.75-5.45 6.05.43.37.81 1.1.81 2.22v3.29c0 .32.21.71.81.58A11.52 11.52 0 0 0 23.5 12.3 11.5 11.5 0 0 0 12 .5z"/></svg>
+                            <div>
+                                <strong>GitHub</strong>
+                                <p class="small">Preview in modal or open profile</p>
+                            </div>
+                        </div>
+                        <span class="chip">Repos</span>
+                    </a>
+                </div>
+
+                <div class="cards-grid">
+                    <div class="event-card">
+                        <div class="title">Blaise Pascal Quantum Challenge</div>
+                        <div class="meta">
+                            <span class="chip">Top ten</span>
+                            <span class="chip">2025</span>
+                        </div>
+                        <div class="actions">
+                            <a class="cta-button" href="https://www.linkedin.com/search/results/content/?keywords=Blaise%20Pascal%20Quantum%20Challenge%20Amerigo%20Velletti" target="_blank" rel="noopener">LinkedIn posts</a>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="title">Scenario Factory 2.0</div>
+                        <div class="meta">
+                            <span class="chip">Grade 1.0</span>
+                            <span class="chip">2025</span>
+                        </div>
+                        <div class="actions">
+                            <a class="cta-button" href="https://www.linkedin.com/search/results/content/?keywords=Scenario%20Factory%202.0%20Amerigo%20Velletti" target="_blank" rel="noopener">LinkedIn posts</a>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="title">EuroTeQ Collider Challenge</div>
+                        <div class="meta">
+                            <span class="chip">Top ten</span>
+                            <span class="chip">2025</span>
+                        </div>
+                        <div class="actions">
+                            <a class="cta-button" href="https://www.linkedin.com/search/results/content/?keywords=EuroTeQ%20Collider%20Challenge%20Amerigo%20Velletti" target="_blank" rel="noopener">LinkedIn posts</a>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="title">Helmut Schmidt Zukunftsfestival</div>
+                        <div class="meta">
+                            <span class="chip">Done</span>
+                            <span class="chip">2025</span>
+                        </div>
+                        <div class="actions">
+                            <a class="cta-button" href="https://www.linkedin.com/search/results/content/?keywords=Helmut%20Schmidt%20Zukunftsfestival%20Amerigo%20Velletti" target="_blank" rel="noopener">LinkedIn posts</a>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="title">UnternehmerTUM Innovationsprint</div>
+                        <div class="meta">
+                            <span class="chip">Done</span>
+                            <span class="chip">2025</span>
+                        </div>
+                        <div class="actions">
+                            <a class="cta-button" href="https://www.linkedin.com/search/results/content/?keywords=UnternehmerTUM%20Innovationsprint%20Amerigo%20Velletti" target="_blank" rel="noopener">LinkedIn posts</a>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="title">MSG Hackathon — Code & Create</div>
+                        <div class="meta">
+                            <span class="chip">Top three</span>
+                            <span class="chip">2025</span>
+                        </div>
+                        <div class="actions">
+                            <a class="cta-button" href="https://www.linkedin.com/search/results/content/?keywords=MSG%20Hackathon%20Code%20and%20Create%20Amerigo%20Velletti" target="_blank" rel="noopener">LinkedIn posts</a>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="title">YFN EU Hackathon</div>
+                        <div class="meta">
+                            <span class="chip">Top ten</span>
+                            <span class="chip">2025</span>
+                        </div>
+                        <div class="actions">
+                            <a class="cta-button" href="https://www.linkedin.com/search/results/content/?keywords=YFN%20EU%20Hackathon%20Amerigo%20Velletti" target="_blank" rel="noopener">LinkedIn posts</a>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="title">Vibecoding Hackathon — Windsurf & Aparavi</div>
+                        <div class="meta">
+                            <span class="chip">Done</span>
+                            <span class="chip">2025</span>
+                        </div>
+                        <div class="actions">
+                            <a class="cta-button" href="https://www.linkedin.com/search/results/content/?keywords=Vibecoding%20Hackathon%20Windsurf%20Aparavi%20Amerigo%20Velletti" target="_blank" rel="noopener">LinkedIn posts</a>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="title">Founder Speedrun Hackathon — Google Cloud</div>
+                        <div class="meta">
+                            <span class="chip">Done</span>
+                            <span class="chip">2025</span>
+                        </div>
+                        <div class="actions">
+                            <a class="cta-button" href="https://www.linkedin.com/search/results/content/?keywords=Founder%20Speedrun%20Hackathon%20Google%20Cloud%20Amerigo%20Velletti" target="_blank" rel="noopener">LinkedIn posts</a>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="title">Hack Nation Global AI Hackathon (MIT Sloan AI Club)</div>
+                        <div class="meta">
+                            <span class="chip">Round four</span>
+                            <span class="chip">2025</span>
+                        </div>
+                        <div class="actions">
+                            <a class="cta-button" href="https://www.linkedin.com/search/results/content/?keywords=Hack%20Nation%20Global%20AI%20Hackathon%20MIT%20Sloan%20Amerigo%20Velletti" target="_blank" rel="noopener">LinkedIn posts</a>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="title">Co-Organizer — LeRobot Hackathon Munich</div>
+                        <div class="meta">
+                            <span class="chip">Done</span>
+                            <span class="chip">2025</span>
+                        </div>
+                        <div class="actions">
+                            <a class="cta-button" href="https://www.linkedin.com/search/results/content/?keywords=LeRobot%20Hackathon%20Munich%20Amerigo%20Velletti" target="_blank" rel="noopener">LinkedIn posts</a>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="title">Enactus Germany NC — Innovation Category Winner</div>
+                        <div class="meta">
+                            <span class="chip">Winner</span>
+                            <span class="chip">2025</span>
+                        </div>
+                        <div class="actions">
+                            <a class="cta-button" href="https://www.linkedin.com/search/results/content/?keywords=Enactus%20Germany%20NC%20Innovation%20Category%20Winner%20Amerigo%20Velletti" target="_blank" rel="noopener">LinkedIn posts</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -875,6 +1091,50 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                 </form>
             </div>
         </section>
+
+        <!-- Legal: Impressum (Germany) -->
+        <section id="impressum" class="section legal">
+            <div class="container">
+                <h2>Impressum</h2>
+                <p>Dienstanbieter gemäß § 5 TMG</p>
+                <p>
+                    <strong><?php echo htmlspecialchars($config['company_name']); ?></strong><br>
+                    <?php echo htmlspecialchars($config['company_address']); ?><br>
+                    Telefon: <a href="tel:<?php echo htmlspecialchars($config['company_phone']); ?>"><?php echo htmlspecialchars($config['company_phone']); ?></a><br>
+                    E-Mail: <a href="mailto:<?php echo htmlspecialchars($config['company_email']); ?>"><?php echo htmlspecialchars($config['company_email']); ?></a>
+                </p>
+                <h3>Haftung für Inhalte</h3>
+                <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+                <h3>Haftung für Links</h3>
+                <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für diese fremden Inhalte übernehmen wir keine Gewähr. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich.</p>
+                <h3>Urheberrecht</h3>
+                <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+            </div>
+        </section>
+
+        <!-- Legal: Datenschutz (Privacy Policy) -->
+        <section id="privacy" class="section legal">
+            <div class="container">
+                <h2>Datenschutzerklärung</h2>
+                <p>Verantwortlicher im Sinne der DSGVO:</p>
+                <p>
+                    <strong><?php echo htmlspecialchars($config['company_name']); ?></strong><br>
+                    <?php echo htmlspecialchars($config['company_address']); ?><br>
+                    E-Mail: <a href="mailto:<?php echo htmlspecialchars($config['company_email']); ?>"><?php echo htmlspecialchars($config['company_email']); ?></a>
+                </p>
+                <h3>Allgemeines</h3>
+                <p>Wir verarbeiten personenbezogene Daten nur, soweit dies zur Bereitstellung einer funktionsfähigen Website sowie unserer Inhalte und Leistungen erforderlich ist. Rechtsgrundlagen sind insbesondere Art. 6 Abs. 1 lit. a, b und f DSGVO.</p>
+                <h3>Server-Logs</h3>
+                <p>Beim Aufruf dieser Website können durch den Hoster technisch notwendige Daten (z. B. IP-Adresse, Zeitpunkt, abgerufene Seiten) in Logfiles verarbeitet werden. Die Speicherung erfolgt aus Sicherheitsgründen und zur Sicherstellung der Funktionsfähigkeit.</p>
+                <h3>Kontaktformular</h3>
+                <p>Bei Nutzung des Kontaktformulars verarbeiten wir die von Ihnen eingegebenen Daten (Name, E-Mail, Nachricht; optional Telefon) zur Bearbeitung Ihrer Anfrage. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO. Die Daten werden nur so lange gespeichert, wie es zur Bearbeitung erforderlich ist.</p>
+                <h3>Externe Dienste</h3>
+                <p>Beim Öffnen der verlinkten LinkedIn- oder GitHub-Profile werden Daten an die jeweiligen Anbieter übertragen. Es gelten die Datenschutzbestimmungen dieser Anbieter.</p>
+                <h3>Ihre Rechte</h3>
+                <p>Sie haben Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie Widerspruch (Art. 15–21 DSGVO). Zudem besteht ein Beschwerderecht bei einer Aufsichtsbehörde.</p>
+                <p>Stand: <?php echo date('Y-m-d'); ?></p>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -889,7 +1149,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                 </div>
                 
                 <p>&copy; <?php echo date('Y'); ?> <?php echo htmlspecialchars($config['company_name']); ?>. All rights reserved.</p>
-                <p><a href="#privacy" onclick="alert('Privacy policy would be linked here')">Privacy Policy</a></p>
+                <p>
+                    <a href="#impressum">Impressum</a> ·
+                    <a href="#privacy">Datenschutz</a>
+                </p>
             </div>
         </div>
     </footer>
@@ -992,6 +1255,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
             }
             wireModalButton('btnLinkedIn', '#linkedinModal');
             wireModalButton('btnGitHub', '#githubModal');
+            wireModalButton('btnLinkedIn2', '#linkedinModal');
+            wireModalButton('btnGitHub2', '#githubModal');
 
             // Modal open/close utilities
             function openModal(modal) {
@@ -1104,6 +1369,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                         responseBox.textContent = 'Thank you! Your message has been sent.';
                         responseBox.style.display = 'block';
                         form.reset();
+                        if (data.csrf_token) {
+                            const csrfEl = form.querySelector('input[name="csrf_token"]');
+                            if (csrfEl) csrfEl.value = data.csrf_token;
+                        }
                     } else {
                         responseBox.className = 'form-error';
                         responseBox.textContent = data.message || 'Please check the form fields and try again.';
