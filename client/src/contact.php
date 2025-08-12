@@ -24,7 +24,8 @@ function json_response(array $payload, int $status = 200): void {
 function html_response(string $title, string $message, int $status = 200): void {
     http_response_code($status);
     header('Content-Type: text/html; charset=UTF-8');
-    echo "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>" . htmlspecialchars($title) . "</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;line-height:1.6;padding:2rem;background:#f7f7ff;color:#23272f} .card{max-width:640px;margin:2rem auto;background:#fff;padding:1.5rem;border-radius:12px;border:1px solid rgba(16,37,66,.12)} a.btn{display:inline-block;margin-top:1rem;padding:.5rem 1rem;border-radius:8px;background:#F87060;color:#fff;text-decoration:none} a.btn:hover{background:#102542}</style></head><body><div class=\"card\"><h1>" . htmlspecialchars($title) . "</h1><p>" . htmlspecialchars($message) . "</p><p><a class=\"btn\" href=\"/index.php#contact\">Back</a></p></div></body></html>";
+    $cssVersion = @filemtime(__DIR__ . '/assets/css/app.css') ?: time();
+    echo "<!DOCTYPE html><html lang=\"de\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>" . htmlspecialchars($title) . "</title><link rel=\"icon\" type=\"image/svg+xml\" href=\"assets/favicon.svg\"><link rel=\"stylesheet\" href=\"assets/css/app.css?v=" . $cssVersion . "\"></head><body><div class=\"card\"><h1>" . htmlspecialchars($title) . "</h1><p>" . htmlspecialchars($message) . "</p><p><a class=\"btn\" href=\"/index.php#contact\">Zurück</a></p></div></body></html>";
     exit;
 }
 

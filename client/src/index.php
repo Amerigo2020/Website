@@ -37,6 +37,9 @@ $colors = [
     'text' => '#23272F'
 ];
 
+// Cache-busting for CSS
+$cssVersion = @filemtime(__DIR__ . '/assets/css/app.css') ?: time();
+
 // Canonical URL (home)
 $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
 $host = $_SERVER['HTTP_HOST'] ?? 'localhost:8000';
@@ -173,6 +176,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="canonical" href="<?php echo htmlspecialchars($canonical); ?>">
+    <link rel="stylesheet" href="assets/css/app.css?v=<?php echo $cssVersion; ?>">
 
     <!-- Schema.org markup -->
     <script type="application/ld+json">
@@ -225,7 +229,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
     }
     </script>
     
-    <style>
+    <style id="migrated-inline-styles" media="not all">
         /* CSS Custom Properties (Variables) */
         :root {
             --color-primary: <?php echo $colors['primary']; ?>;
@@ -839,6 +843,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         .small { font-size: 0.9rem; opacity: 0.85; }
 
         .visually-hidden { position:absolute !important; height:1px; width:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap; }
+    </style>
+    <style>
+      :root {
+          --color-primary: <?php echo $colors['primary']; ?>;
+          --color-secondary: <?php echo $colors['secondary']; ?>;
+          --color-background: <?php echo $colors['background']; ?>;
+          --color-accent1: <?php echo $colors['accent1']; ?>;
+          --color-accent2: <?php echo $colors['accent2']; ?>;
+          --color-text: <?php echo $colors['text']; ?>;
+          --color-white: #ffffff;
+          --color-success: #22c55e;
+          --color-error: #ef4444;
+      }
+      :root[data-theme='light'] {
+          --color-background: <?php echo $colors['background']; ?>;
+          --color-text: <?php echo $colors['text']; ?>;
+      }
     </style>
     <!-- Prefers color scheme initialization (prevents FOUC) -->
     <script>

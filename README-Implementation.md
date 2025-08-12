@@ -66,10 +66,16 @@ This is a complete implementation of the Velletti Consulting landing page as spe
 - Expanded JSON-LD (`ProfessionalService`) with `url`, `areaServed`, `sameAs`, `knowsAbout` and an `hasOfferCatalog` of services.
 - Services section content updated to: AI & Automatisierung, Websites & Hosting, DevOps Enablement (German copy).
 
+#### 2025-08-11 CSS/Structure & Cache Busting
+- Extracted the large inline CSS from `client/src/index.php` into external stylesheet `client/src/assets/css/app.css`.
+- Linked the stylesheet with cache busting: `assets/css/app.css?v={filemtime}` set via PHP.
+- Kept a minimal inline `<style>` that only defines PHP-driven CSS variables (`:root`) so theme colors stay dynamic.
+- Updated `client/src/contact.php` HTML fallback to use the external stylesheet (and `lang="de"`) instead of inline CSS.
+
 ### Performance
-- Inline CSS for fast loading
-- Optimized HTML structure
-- CSS-based graphics (no external images)
+- External stylesheet `assets/css/app.css` with cache-busting via `filemtime()`
+- Minimal inline CSS for PHP-driven color variables only
+- Optimized HTML structure and CSS-based graphics (no external images for icons)
 - Minimal JavaScript (mobile menu, theme toggle, LinkedIn/GitHub modals, AJAX contact)
 
 ## File Structure
@@ -79,6 +85,8 @@ client/
     ├── index.php               # Main application
     ├── contact.php             # AJAX contact form handler (JSON/HTML fallback)
     ├── assets/
+    │   ├── css/
+    │   │   └── app.css         # Global styles (extracted from inline CSS)
     │   ├── favicon.svg         # Site favicon (SVG)
     │   └── portrait.jpg        # Optional hero avatar (place your photo here)
     ├── robots.txt
