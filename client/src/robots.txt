@@ -4,6 +4,7 @@
 User-agent: *
 Allow: /
 Crawl-delay: 1
+Sitemap: https://ame.velletti.de/sitemap.xml
 
 # AI-focused crawlers
 User-agent: GPTBot

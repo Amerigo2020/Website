@@ -72,6 +72,11 @@ This is a complete implementation of the Velletti Consulting landing page as spe
 - Kept a minimal inline `<style>` that only defines PHP-driven CSS variables (`:root`) so theme colors stay dynamic.
 - Updated `client/src/contact.php` HTML fallback to use the external stylesheet (and `lang="de"`) instead of inline CSS.
 
+#### 2025-08-13 SEO: Sitemap & OG Image
+- Added Open Graph/Twitter image tags in `client/src/index.php` using `assets/portrait.jpg` and included `image` in JSON-LD (`ProfessionalService`).
+- Created `client/src/sitemap.xml` with homepage URL and weekly changefreq; updated `client/src/robots.txt` to reference `https://ame.velletti.de/sitemap.xml`.
+- Purpose: improve discovery and rich previews for social/SERP.
+
 ### Performance
 - External stylesheet `assets/css/app.css` with cache-busting via `filemtime()`
 - Minimal inline CSS for PHP-driven color variables only
@@ -90,6 +95,7 @@ client/
     │   ├── favicon.svg         # Site favicon (SVG)
     │   └── portrait.jpg        # Optional hero avatar (place your photo here)
     ├── robots.txt
+    ├── sitemap.xml
     ├── llm.txt
     ├── ai.txt                  # points to /.well-known/ai.txt
     └── .well-known/

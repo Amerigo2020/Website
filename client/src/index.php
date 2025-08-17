@@ -164,6 +164,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
     <meta property="og:locale" content="de_DE">
     <meta property="og:url" content="<?php echo htmlspecialchars($canonical); ?>">
     <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:image" content="<?php echo htmlspecialchars($scheme . '://' . $host . '/assets/portrait.jpg'); ?>">
+    <meta property="og:image:alt" content="Porträt – Velletti Consulting">
+    <meta name="twitter:image" content="<?php echo htmlspecialchars($scheme . '://' . $host . '/assets/portrait.jpg'); ?>">
+    <meta name="twitter:image:alt" content="Porträt – Velletti Consulting">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
@@ -188,6 +192,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         "email": "<?php echo htmlspecialchars($config['company_email']); ?>",
         "telephone": "<?php echo htmlspecialchars($config['company_phone']); ?>",
         "url": "<?php echo htmlspecialchars($canonical); ?>",
+        "image": "<?php echo htmlspecialchars($scheme . '://' . $host . '/assets/portrait.jpg'); ?>",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "<?php echo htmlspecialchars($config['company_address']); ?>"
