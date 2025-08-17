@@ -155,6 +155,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
     <meta name="keywords" content="<?php echo htmlspecialchars($config['meta_keywords']); ?>">
     <meta name="author" content="<?php echo htmlspecialchars($config['company_name']); ?>">
     <meta name="robots" content="index,follow">
+    <meta name="google-site-verification" content="S8XgRO3zITWu2fLmLr5jS7O_vZM_sEskdm2DiaGHrzc" />
     
     <!-- Open Graph meta tags -->
     <meta property="og:title" content="<?php echo htmlspecialchars($config['site_title']); ?>">
@@ -231,6 +232,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                 }
             ]
         }
+    }
+    </script>
+    
+    <!-- Organization JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "<?php echo htmlspecialchars($canonical); ?>#organization",
+      "name": "<?php echo htmlspecialchars($config['company_name']); ?>",
+      "url": "<?php echo htmlspecialchars($canonical); ?>",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "<?php echo htmlspecialchars($scheme . '://' . $host . '/assets/portrait.jpg'); ?>"
+      },
+      "sameAs": [
+        "https://github.com/Amerigo2020",
+        "https://www.linkedin.com/in/amerigo-velletti-b888a9304"
+      ]
     }
     </script>
     

@@ -77,6 +77,17 @@ This is a complete implementation of the Velletti Consulting landing page as spe
 - Created `client/src/sitemap.xml` with homepage URL and weekly changefreq; updated `client/src/robots.txt` to reference `https://ame.velletti.de/sitemap.xml`.
 - Purpose: improve discovery and rich previews for social/SERP.
 
+#### 2025-08-17 Brand & Entity Markup
+- Verified brand presence:
+  - `<title>` includes "Velletti Consulting" via `$config['site_title']`.
+  - Prominent `<h1>` set to `Velletti Consulting` in the hero section.
+- Added separate `Organization` JSON-LD in `client/src/index.php` with:
+  - `name`, `url`, `@id`, `logo` (points to `assets/portrait.jpg`), and `sameAs` (GitHub, LinkedIn).
+- Confirmed brand discoverability basics:
+  - `client/src/robots.txt` allows indexing and references the sitemap URL.
+  - `client/src/sitemap.xml` lists the homepage `https://ame.velletti.de/`.
+  - Google site verification meta tag present in `<head>` for Search Console validation.
+
 ### Performance
 - External stylesheet `assets/css/app.css` with cache-busting via `filemtime()`
 - Minimal inline CSS for PHP-driven color variables only
