@@ -1167,28 +1167,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                         <div class="meta">
                             <span class="chip">B.Sc. Information Systems</span>
                         </div>
-                        <p class="small">Semester 7 • Grade 2.6 • Until March 2026</p>
+                        <p class="small">Semester 7 • Until March 2026</p>
                     </div>
                     <div class="event-card">
                         <div class="title">Gymnasium Fürstenried West</div>
                         <div class="meta">
                             <span class="chip">Abitur</span>
                         </div>
-                        <p class="small">Grade 2.1 • Until Jul 2022</p>
+                        <p class="small">Until Jul 2022</p>
                     </div>
                 </div>
 
                 <h3 style="margin-top: var(--spacing-lg); margin-bottom: var(--spacing-md);">Professional Experience</h3>
                 <div class="cards-grid">
                     <div class="event-card">
-                        <div class="title">EY / Ernst & Young</div>
+                        <div class="title">EY</div>
                         <div class="meta">
                             <span class="chip">Transfer Pricing</span>
                         </div>
                         <p class="small">Intern → Working Student • March 2025 – Today</p>
                     </div>
                     <div class="event-card">
-                        <div class="title">Bavaria LB / univativ GmbH</div>
+                        <div class="title">Bavaria LB</div>
                         <div class="meta">
                             <span class="chip">IT Service Desk</span>
                         </div>
@@ -1206,7 +1206,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                 <h3 style="margin-top: var(--spacing-lg); margin-bottom: var(--spacing-md);">Leadership & Memberships</h3>
                 <div class="cards-grid">
                     <div class="event-card">
-                        <div class="title">TUM EuroTeQ & MingaMentor</div>
+                        <div class="title">TUM EuroTeQ</div>
+                        <div class="meta">
+                            <span class="chip">Ambassador</span>
+                        </div>
+                        <p class="small">Aug 2025 – Today</p>
+                    </div>
+                    <div class="event-card">
+                        <div class="title">MingaMentor</div>
                         <div class="meta">
                             <span class="chip">Ambassador</span>
                         </div>
