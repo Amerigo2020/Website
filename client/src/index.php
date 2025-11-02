@@ -757,20 +757,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
             .cards-grid:first-of-type {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
-            .profile-card, .event-card {
-                text-align: center;
-            }
-            
-            .profile-card__header {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .profile-card__icon {
-                width: 36px;
-                height: 36px;
-            }
         }
         
         @media (min-width: 769px) {
@@ -906,15 +892,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
 
         /* Experience/Events cards */
         .cards-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--spacing-md); }
-        .cards-grid:first-of-type { grid-template-columns: repeat(3, 1fr); align-items: stretch; margin-bottom: var(--spacing-md); }
-        .profile-card, .event-card { border:1px solid rgba(16,37,66,0.12); border-radius:12px; padding: var(--spacing-md); background: var(--color-white); display: flex; flex-direction: column; justify-content: center; }
+        .cards-grid:first-of-type { grid-template-columns: repeat(2, 1fr); align-items: stretch; margin-bottom: var(--spacing-md); }
+        .profile-card, .event-card { border:1px solid rgba(16,37,66,0.12); border-radius:12px; padding: var(--spacing-md); background: var(--color-white); display: flex; flex-direction: column; justify-content: space-between; }
         :root[data-theme='dark'] .profile-card, :root[data-theme='dark'] .event-card { background: #0f172a; border-color: rgba(255,255,255,0.1); }
-        .profile-card__header { display:flex; align-items:center; justify-content: center; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm); flex-direction: column; text-align: center; }
+        .profile-card__header { display:flex; align-items:center; justify-content: center; gap: var(--spacing-sm); margin-bottom: 0; flex-direction: column; text-align: center; }
         .profile-card__icon { width:40px; height:40px; }
         .event-card .title { font-weight:600; }
         .event-card .meta { margin-top: 6px; display:flex; gap:8px; flex-wrap:wrap; }
         .event-card .actions { margin-top: var(--spacing-sm); }
-        .small { font-size: 0.9rem; opacity: 0.85; }
+        .small { font-size: 0.9rem; opacity: 0.85; margin-top: auto; }
 
         .visually-hidden { position:absolute !important; height:1px; width:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap; }
     </style>
@@ -1071,17 +1057,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                         </div>
                         <span class="chip">Repos</span>
                     </a>
-                    <div class="profile-card">
-                        <div class="profile-card__header">
-                            <svg class="profile-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/></svg>
-                            <div>
-                                <strong>Contact</strong>
-                                <p class="small">amerigo@velletti.de</p>
-                                <p class="small">+49 176 45531533</p>
-                            </div>
-                        </div>
-                        <span class="chip">Munich, Bavaria</span>
-                    </div>
                 </div>
 
                 <div class="cards-grid">
