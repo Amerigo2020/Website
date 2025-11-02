@@ -492,6 +492,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         }
         @media (max-width: 480px) {
             .hero-avatar { width: 128px; height: 128px; }
+            
+            /* Mobile: Profile Cards - 1 Spalte, gestapelt */
+            .cards-grid:first-of-type {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-card, .event-card {
+                text-align: center;
+                padding: var(--spacing-md);
+            }
+            
+            .profile-card__header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-card__icon {
+                width: 32px;
+                height: 32px;
+                margin-bottom: var(--spacing-sm);
+            }
+            
+            .profile-card__title {
+                font-size: 1rem;
+            }
+            
+            .profile-card__link {
+                font-size: 0.9rem;
+            }
         }
         
         .cta-button {
@@ -723,6 +752,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                 margin: var(--spacing-lg) auto 0;
                 padding: var(--spacing-lg);
             }
+            
+            /* Tablet: Profile Cards - 2 Spalten oder 1 Spalte */
+            .cards-grid:first-of-type {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .profile-card, .event-card {
+                text-align: center;
+            }
+            
+            .profile-card__header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-card__icon {
+                width: 36px;
+                height: 36px;
+            }
         }
         
         @media (min-width: 769px) {
@@ -858,10 +906,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
 
         /* Experience/Events cards */
         .cards-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--spacing-md); }
-        .profile-card, .event-card { border:1px solid rgba(16,37,66,0.12); border-radius:12px; padding: var(--spacing-md); background: var(--color-white); }
+        .cards-grid:first-of-type { grid-template-columns: repeat(3, 1fr); align-items: stretch; margin-bottom: var(--spacing-md); }
+        .profile-card, .event-card { border:1px solid rgba(16,37,66,0.12); border-radius:12px; padding: var(--spacing-md); background: var(--color-white); display: flex; flex-direction: column; justify-content: center; }
         :root[data-theme='dark'] .profile-card, :root[data-theme='dark'] .event-card { background: #0f172a; border-color: rgba(255,255,255,0.1); }
-        .profile-card__header { display:flex; align-items:center; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm); }
-        .profile-card__icon { width:28px; height:28px; }
+        .profile-card__header { display:flex; align-items:center; justify-content: center; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm); flex-direction: column; text-align: center; }
+        .profile-card__icon { width:40px; height:40px; }
         .event-card .title { font-weight:600; }
         .event-card .meta { margin-top: 6px; display:flex; gap:8px; flex-wrap:wrap; }
         .event-card .actions { margin-top: var(--spacing-sm); }
