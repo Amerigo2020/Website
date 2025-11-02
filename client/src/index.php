@@ -997,16 +997,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         <!-- Experience / Events Section -->
         <section id="experience" class="section experience">
             <div class="container">
-                <h2>Events & Experience (2025)</h2>
-                <p>Recent events, hackathons and a paper. Links open LinkedIn searches; use the header icons for profile previews.</p>
+                <h2>About Amerigo Velletti</h2>
+                <p>Events, hackathons, and professional experience in 2025. Use the header icons for LinkedIn and GitHub previews.</p>
 
+                <!-- Contact & Location Card -->
                 <div class="cards-grid" style="margin-bottom: var(--spacing-md);">
                     <a id="btnLinkedIn2" class="profile-card" href="https://www.linkedin.com/in/amerigo-velletti-b888a9304" target="_blank" rel="noopener" aria-label="Open LinkedIn profile (opens in new tab)">
                         <div class="profile-card__header">
                             <svg class="profile-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-9.5 6H7v8h2.5V9zm.13-2.75a1.38 1.38 0 1 0-2.76 0 1.38 1.38 0 0 0 2.76 0zM20 13.25c0-2.52-1.35-3.7-3.16-3.7-1.46 0-2.12.8-2.49 1.37v-1.17H12v8h2.5v-4.46c0-1.17.22-2.3 1.67-2.3 1.43 0 1.45 1.33 1.45 2.37V17H20v-3.75z"/></svg>
                             <div>
                                 <strong>LinkedIn</strong>
-                                <p class="small">Preview in modal or open profile</p>
+                                <p class="small">linkedin.com/in/amerigo-velletti-b888a9304</p>
                             </div>
                         </div>
                         <span class="chip">Profile</span>
@@ -1016,22 +1017,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                             <svg class="profile-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5A11.5 11.5 0 0 0 .5 12.3c0 5.23 3.4 9.66 8.12 11.23.59.12.8-.26.8-.58v-2.2c-3.3.73-3.99-1.43-3.99-1.43-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.72.08-.72 1.2.09 1.84 1.27 1.84 1.27 1.07 1.86 2.8 1.32 3.48 1.01.11-.8.42-1.32.76-1.62-2.64-.31-5.42-1.36-5.42-6.06 0-1.34.47-2.43 1.24-3.28-.12-.3-.54-1.54.12-3.21 0 0 1.01-.33 3.3 1.25a11.1 11.1  0 0 1 6 0c2.28-1.58 3.29-1.25 3.29-1.25.67 1.67.25 2.9.13 3.21.77.85 1.24 1.94 1.24 3.28 0 4.71-2.79 5.75-5.45 6.05.43.37.81 1.1.81 2.22v3.29c0 .32.21.71.81.58A11.52 11.52 0 0 0 23.5 12.3 11.5 11.5 0 0 0 12 .5z"/></svg>
                             <div>
                                 <strong>GitHub</strong>
-                                <p class="small">Preview in modal or open profile</p>
+                                <p class="small">github.com/Amerigo2020</p>
                             </div>
                         </div>
                         <span class="chip">Repos</span>
                     </a>
+                    <div class="profile-card">
+                        <div class="profile-card__header">
+                            <svg class="profile-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/></svg>
+                            <div>
+                                <strong>Contact</strong>
+                                <p class="small">amerigo@velletti.de</p>
+                                <p class="small">+49 176 45531533</p>
+                            </div>
+                        </div>
+                        <span class="chip">Munich, Bavaria</span>
+                    </div>
                 </div>
 
                 <div class="cards-grid">
                     <div class="event-card">
                         <div class="title">Blaise Pascal Quantum Challenge</div>
                         <div class="meta">
-                            <span class="chip">Top ten</span>
+                            <span class="chip">Top 10</span>
                             <span class="chip">2025</span>
-                        </div>
-                        <div class="actions">
-                            <a class="cta-button" href="https://www.linkedin.com/search/results/content/?keywords=Blaise%20Pascal%20Quantum%20Challenge%20Amerigo%20Velletti" target="_blank" rel="noopener">LinkedIn posts</a>
                         </div>
                     </div>
                     <div class="event-card">
@@ -1040,109 +1049,165 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                             <span class="chip">Grade 1.0</span>
                             <span class="chip">2025</span>
                         </div>
-                        <div class="actions">
-                            <a class="cta-button" href="https://www.linkedin.com/search/results/content/?keywords=Scenario%20Factory%202.0%20Amerigo%20Velletti" target="_blank" rel="noopener">LinkedIn posts</a>
-                        </div>
                     </div>
                     <div class="event-card">
                         <div class="title">EuroTeQ Collider Challenge</div>
                         <div class="meta">
-                            <span class="chip">Top ten</span>
+                            <span class="chip">Top 10</span>
                             <span class="chip">2025</span>
-                        </div>
-                        <div class="actions">
-                            <a class="cta-button" href="https://www.linkedin.com/search/results/content/?keywords=EuroTeQ%20Collider%20Challenge%20Amerigo%20Velletti" target="_blank" rel="noopener">LinkedIn posts</a>
                         </div>
                     </div>
                     <div class="event-card">
                         <div class="title">Helmut Schmidt Zukunftsfestival</div>
                         <div class="meta">
-                            <span class="chip">Done</span>
+                            <span class="chip">Participant</span>
                             <span class="chip">2025</span>
-                        </div>
-                        <div class="actions">
-                            <a class="cta-button" href="https://www.linkedin.com/search/results/content/?keywords=Helmut%20Schmidt%20Zukunftsfestival%20Amerigo%20Velletti" target="_blank" rel="noopener">LinkedIn posts</a>
                         </div>
                     </div>
                     <div class="event-card">
                         <div class="title">UnternehmerTUM Innovationsprint</div>
                         <div class="meta">
-                            <span class="chip">Done</span>
+                            <span class="chip">Participant</span>
                             <span class="chip">2025</span>
-                        </div>
-                        <div class="actions">
-                            <a class="cta-button" href="https://www.linkedin.com/search/results/content/?keywords=UnternehmerTUM%20Innovationsprint%20Amerigo%20Velletti" target="_blank" rel="noopener">LinkedIn posts</a>
                         </div>
                     </div>
                     <div class="event-card">
                         <div class="title">MSG Hackathon — Code & Create</div>
                         <div class="meta">
-                            <span class="chip">Top three</span>
+                            <span class="chip">Top 3</span>
                             <span class="chip">2025</span>
-                        </div>
-                        <div class="actions">
-                            <a class="cta-button" href="https://www.linkedin.com/search/results/content/?keywords=MSG%20Hackathon%20Code%20and%20Create%20Amerigo%20Velletti" target="_blank" rel="noopener">LinkedIn posts</a>
                         </div>
                     </div>
                     <div class="event-card">
                         <div class="title">YFN EU Hackathon</div>
                         <div class="meta">
-                            <span class="chip">Top ten</span>
+                            <span class="chip">Top 10</span>
                             <span class="chip">2025</span>
-                        </div>
-                        <div class="actions">
-                            <a class="cta-button" href="https://www.linkedin.com/search/results/content/?keywords=YFN%20EU%20Hackathon%20Amerigo%20Velletti" target="_blank" rel="noopener">LinkedIn posts</a>
                         </div>
                     </div>
                     <div class="event-card">
                         <div class="title">Vibecoding Hackathon — Windsurf & Aparavi</div>
                         <div class="meta">
-                            <span class="chip">Done</span>
+                            <span class="chip">Participant</span>
                             <span class="chip">2025</span>
-                        </div>
-                        <div class="actions">
-                            <a class="cta-button" href="https://www.linkedin.com/search/results/content/?keywords=Vibecoding%20Hackathon%20Windsurf%20Aparavi%20Amerigo%20Velletti" target="_blank" rel="noopener">LinkedIn posts</a>
                         </div>
                     </div>
                     <div class="event-card">
                         <div class="title">Founder Speedrun Hackathon — Google Cloud</div>
                         <div class="meta">
-                            <span class="chip">Done</span>
+                            <span class="chip">Participant</span>
                             <span class="chip">2025</span>
-                        </div>
-                        <div class="actions">
-                            <a class="cta-button" href="https://www.linkedin.com/search/results/content/?keywords=Founder%20Speedrun%20Hackathon%20Google%20Cloud%20Amerigo%20Velletti" target="_blank" rel="noopener">LinkedIn posts</a>
                         </div>
                     </div>
                     <div class="event-card">
-                        <div class="title">Hack Nation Global AI Hackathon (MIT Sloan AI Club)</div>
+                        <div class="title">Hack Nation Global AI Hackathon</div>
                         <div class="meta">
-                            <span class="chip">Round four</span>
-                            <span class="chip">2025</span>
-                        </div>
-                        <div class="actions">
-                            <a class="cta-button" href="https://www.linkedin.com/search/results/content/?keywords=Hack%20Nation%20Global%20AI%20Hackathon%20MIT%20Sloan%20Amerigo%20Velletti" target="_blank" rel="noopener">LinkedIn posts</a>
+                            <span class="chip">Round 4</span>
+                            <span class="chip">MIT Sloan AI Club</span>
                         </div>
                     </div>
                     <div class="event-card">
                         <div class="title">Co-Organizer — LeRobot Hackathon Munich</div>
                         <div class="meta">
-                            <span class="chip">Done</span>
+                            <span class="chip">Organizer</span>
                             <span class="chip">2025</span>
-                        </div>
-                        <div class="actions">
-                            <a class="cta-button" href="https://www.linkedin.com/search/results/content/?keywords=LeRobot%20Hackathon%20Munich%20Amerigo%20Velletti" target="_blank" rel="noopener">LinkedIn posts</a>
                         </div>
                     </div>
                     <div class="event-card">
-                        <div class="title">Enactus Germany NC — Innovation Category Winner</div>
+                        <div class="title">Enactus Germany NC</div>
                         <div class="meta">
-                            <span class="chip">Winner</span>
+                            <span class="chip">Innovation Winner</span>
                             <span class="chip">2025</span>
                         </div>
-                        <div class="actions">
-                            <a class="cta-button" href="https://www.linkedin.com/search/results/content/?keywords=Enactus%20Germany%20NC%20Innovation%20Category%20Winner%20Amerigo%20Velletti" target="_blank" rel="noopener">LinkedIn posts</a>
+                    </div>
+                    <div class="event-card">
+                        <div class="title">Hack the Case | Celonis | Lovable</div>
+                        <div class="meta">
+                            <span class="chip">Top 2</span>
+                            <span class="chip">Academy Consult</span>
                         </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="title">Enactus Germany Worldcup</div>
+                        <div class="meta">
+                            <span class="chip">Winner</span>
+                            <span class="chip">Bangkok 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: var(--spacing-lg); margin-bottom: var(--spacing-md);">Education</h3>
+                <div class="cards-grid">
+                    <div class="event-card">
+                        <div class="title">Technische Universität Munich (TUM)</div>
+                        <div class="meta">
+                            <span class="chip">B.Sc. Information Systems</span>
+                        </div>
+                        <p class="small">Semester 7 • Grade 2.6 • Until March 2026</p>
+                    </div>
+                    <div class="event-card">
+                        <div class="title">Gymnasium Fürstenried West</div>
+                        <div class="meta">
+                            <span class="chip">Abitur</span>
+                        </div>
+                        <p class="small">Grade 2.1 • Until Jul 2022</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: var(--spacing-lg); margin-bottom: var(--spacing-md);">Professional Experience</h3>
+                <div class="cards-grid">
+                    <div class="event-card">
+                        <div class="title">EY / Ernst & Young</div>
+                        <div class="meta">
+                            <span class="chip">Transfer Pricing</span>
+                        </div>
+                        <p class="small">Intern → Working Student • March 2025 – Today</p>
+                    </div>
+                    <div class="event-card">
+                        <div class="title">Bavaria LB / univativ GmbH</div>
+                        <div class="meta">
+                            <span class="chip">IT Service Desk</span>
+                        </div>
+                        <p class="small">Working Student • Feb 2024 – Dec 2024</p>
+                    </div>
+                    <div class="event-card">
+                        <div class="title">Jörg Velletti EDV Service</div>
+                        <div class="meta">
+                            <span class="chip">EDV-Service</span>
+                        </div>
+                        <p class="small">Temporary Assistant • Jan 2020 – Feb 2024</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: var(--spacing-lg); margin-bottom: var(--spacing-md);">Leadership & Memberships</h3>
+                <div class="cards-grid">
+                    <div class="event-card">
+                        <div class="title">TUM EuroTeQ & MingaMentor</div>
+                        <div class="meta">
+                            <span class="chip">Ambassador</span>
+                        </div>
+                        <p class="small">Aug 2025 – Today</p>
+                    </div>
+                    <div class="event-card">
+                        <div class="title">Enactus Munich</div>
+                        <div class="meta">
+                            <span class="chip">Finance & Relations Teamlead</span>
+                        </div>
+                        <p class="small">Oct 2024 – Today</p>
+                    </div>
+                    <div class="event-card">
+                        <div class="title">Evolve — Early-stage Startup</div>
+                        <div class="meta">
+                            <span class="chip">Business Dev, Tech & Robotics</span>
+                        </div>
+                        <p class="small">March 2025 – Today</p>
+                    </div>
+                    <div class="event-card">
+                        <div class="title">Active Member: AIM, FFI, YFN Munich</div>
+                        <div class="meta">
+                            <span class="chip">Networking & Innovation</span>
+                        </div>
+                        <p class="small">Sep 2024 – Today</p>
                     </div>
                 </div>
             </div>
