@@ -241,7 +241,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
     }
     </script>
 
-    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 </head>
 
 <body>
@@ -299,14 +298,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         <section id="home" class="section section--hero">
             <div class="container">
                 <div class="hero__content">
-                    <h1 class="hero__title">Software. KI. Automatisierung.</h1>
+                    <h1 class="hero__title">I build complete systems — from backend to UI — for startups that need one person to own the technical side.</h1>
                     <p class="hero__subtitle">
-                        Wir entwickeln zukunftssichere digitale Lösungen für Ihr Unternehmen.
-                        <br>Von der ersten Idee bis zum Betrieb maßgeschneiderter Systeme.
+                        From the first conversation to production. I own the architecture, the code, and the deployment — so you don't have to manage a developer.
                     </p>
                     <div style="display: flex; gap: var(--spacing-sm); justify-content: center; flex-wrap: wrap;">
-                        <a href="#contact" class="cta-button" role="button">Projektanfrage starten</a>
-                        <a href="#services" class="cta-button cta-button--outline" role="button">Unsere Leistungen</a>
+                        <a href="#contact" class="cta-button" role="button">Start a project</a>
+                        <a href="#services" class="cta-button cta-button--outline" role="button">What I build</a>
                     </div>
                 </div>
             </div>
@@ -540,8 +538,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                     </div>
                 </div>
 
-                <h3 style="margin-top: var(--spacing-lg); margin-bottom: var(--spacing-md);">Netzwerk & Mitgliedschaften
-                </h3>
+                <h3 style="margin-top: var(--spacing-lg); margin-bottom: var(--spacing-md);">Networks & Memberships</h3>
                 <div class="cards-grid">
                     <div class="event-card">
                         <div class="title">TUM EuroTeQ</div>
