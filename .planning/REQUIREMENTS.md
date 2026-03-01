@@ -85,17 +85,17 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DS-01 | Phase 1 — CSS Foundation Reset | Pending |
-| DS-02 | Phase 1 — CSS Foundation Reset | Pending |
-| DS-03 | Phase 1 — CSS Foundation Reset | Pending |
-| DS-04 | Phase 1 — CSS Foundation Reset | Pending |
-| DS-05 | Phase 1 — CSS Foundation Reset | Pending |
-| DS-06 | Phase 1 — CSS Foundation Reset | Pending |
-| CP-01 | Phase 2 — Copy & Voice Rewrite | Pending |
-| CP-02 | Phase 2 — Copy & Voice Rewrite | Pending |
-| CP-03 | Phase 2 — Copy & Voice Rewrite | Pending |
-| CP-04 | Phase 2 — Copy & Voice Rewrite | Pending |
-| CP-05 | Phase 2 — Copy & Voice Rewrite | Pending |
+| DS-01 | Phase 1 — CSS Foundation Reset | Complete |
+| DS-02 | Phase 1 — CSS Foundation Reset | Complete |
+| DS-03 | Phase 1 — CSS Foundation Reset | Complete |
+| DS-04 | Phase 1 — CSS Foundation Reset | Complete |
+| DS-05 | Phase 1 — CSS Foundation Reset | Complete |
+| DS-06 | Phase 1 — CSS Foundation Reset | Complete |
+| CP-01 | Phase 2 — Copy & Voice Rewrite | Complete |
+| CP-02 | Phase 2 — Copy & Voice Rewrite | Complete |
+| CP-03 | Phase 2 — Copy & Voice Rewrite | Complete |
+| CP-04 | Phase 2 — Copy & Voice Rewrite | Complete |
+| CP-05 | Phase 2 — Copy & Voice Rewrite | Complete |
 | NAV-01 | Phase 3 — Navigation & Layout Primitives | Pending |
 | NAV-02 | Phase 3 — Navigation & Layout Primitives | Pending |
 | NAV-03 | Phase 3 — Navigation & Layout Primitives | Pending |

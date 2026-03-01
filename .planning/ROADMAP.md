@@ -12,8 +12,8 @@ The existing site has three structural problems that block conversion: it speaks
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: CSS Foundation Reset** — Eliminate competing color systems; establish single dark-first token source of truth
-- [ ] **Phase 2: Copy & Voice Rewrite** — Replace all corporate/plural copy with first-person English; write positioning statement and origin story
+- [x] **Phase 1: CSS Foundation Reset** — Eliminate competing color systems; establish single dark-first token source of truth
+- [x] **Phase 2: Copy & Voice Rewrite** — Replace all corporate/plural copy with first-person English; write positioning statement and origin story
 - [ ] **Phase 3: Navigation & Layout Primitives** — Build fixed nav, container/section primitives, and hero section
 - [ ] **Phase 4: Content Sections** — Story, capabilities, and proof sections with final copy wired in
 - [ ] **Phase 5: Contact & CTA** — Dual CTA contact section; Stripe removed from main page
@@ -118,8 +118,8 @@ Phases execute in strict dependency order: 1 → 2 → 3 → 4 → 5 → 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. CSS Foundation Reset | 0/3 | Not started | - |
-| 2. Copy & Voice Rewrite | 0/3 | Not started | - |
+| 1. CSS Foundation Reset | 3/3 | Complete | 2026-03-01 |
+| 2. Copy & Voice Rewrite | 3/3 | Complete | 2026-03-01 |
 | 3. Navigation & Layout Primitives | 0/2 | Not started | - |
 | 4. Content Sections | 0/3 | Not started | - |
 | 5. Contact & CTA | 0/2 | Not started | - |
