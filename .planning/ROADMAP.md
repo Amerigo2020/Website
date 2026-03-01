@@ -30,12 +30,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. A developer inspecting `app.css` finds exactly one color system — CSS custom properties at `:root` — with no competing values from PHP injection or inline `<style>` blocks.
   3. Inter loads as the body typeface and JetBrains Mono appears only on technical labels — no system fallback fonts visible in the rendered page.
   4. The theme toggle button and all related JS are gone from the DOM; dark is the only state.
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 01-01: Audit and remove PHP color injection system and all inline `<style>` blocks from index.php
-- [ ] 01-02: Write dark-first CSS token layer in app.css (colors, type scale, spacing, motion)
-- [ ] 01-03: Load Inter (variable) and JetBrains Mono via Google Fonts CDN; remove WebGL canvas; add CSS grid background
+- [ ] 01-01-PLAN.md — Delete PHP $colors array, both inline style blocks (~950-line migrated block + active PHP color injection), theme-init script, theme toggle button, theme toggle JS, canvas element, and WebGL animation script from index.php
+- [ ] 01-02-PLAN.md — Rewrite app.css :root block with dark-first token vocabulary; remove all data-theme override blocks; update all var(--color-*) references to new token names throughout component CSS
+- [ ] 01-03-PLAN.md — Add Google Fonts preconnect + Inter/JetBrains Mono stylesheet to index.php; add body::before CSS grid background to app.css; delete theme-manager.js and webgl.js stubs
 
 ### Phase 2: Copy & Voice Rewrite
 **Goal**: Every word on the site is first-person English — zero instances of "we", "our", "wir", or "unser" — and the positioning statement and origin story are written and approved.
