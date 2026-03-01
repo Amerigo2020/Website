@@ -85,19 +85,36 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DS-01 to DS-06 | Phase 1 | Pending |
-| CP-01 to CP-05 | Phase 2 | Pending |
-| SEC-01 | Phase 3 | Pending |
-| SEC-02, SEC-03, SEC-04 | Phase 4 | Pending |
-| SEC-05, CTA-01, CTA-02, CTA-03 | Phase 5 | Pending |
-| NAV-01, NAV-02, NAV-03 | Phase 3 | Pending |
-| ANI-01, ANI-02 | Phase 6 | Pending |
+| DS-01 | Phase 1 — CSS Foundation Reset | Pending |
+| DS-02 | Phase 1 — CSS Foundation Reset | Pending |
+| DS-03 | Phase 1 — CSS Foundation Reset | Pending |
+| DS-04 | Phase 1 — CSS Foundation Reset | Pending |
+| DS-05 | Phase 1 — CSS Foundation Reset | Pending |
+| DS-06 | Phase 1 — CSS Foundation Reset | Pending |
+| CP-01 | Phase 2 — Copy & Voice Rewrite | Pending |
+| CP-02 | Phase 2 — Copy & Voice Rewrite | Pending |
+| CP-03 | Phase 2 — Copy & Voice Rewrite | Pending |
+| CP-04 | Phase 2 — Copy & Voice Rewrite | Pending |
+| CP-05 | Phase 2 — Copy & Voice Rewrite | Pending |
+| NAV-01 | Phase 3 — Navigation & Layout Primitives | Pending |
+| NAV-02 | Phase 3 — Navigation & Layout Primitives | Pending |
+| NAV-03 | Phase 3 — Navigation & Layout Primitives | Pending |
+| SEC-01 | Phase 3 — Navigation & Layout Primitives | Pending |
+| SEC-02 | Phase 4 — Content Sections | Pending |
+| SEC-03 | Phase 4 — Content Sections | Pending |
+| SEC-04 | Phase 4 — Content Sections | Pending |
+| SEC-05 | Phase 5 — Contact & CTA | Pending |
+| CTA-01 | Phase 5 — Contact & CTA | Pending |
+| CTA-02 | Phase 5 — Contact & CTA | Pending |
+| CTA-03 | Phase 5 — Contact & CTA | Pending |
+| ANI-01 | Phase 6 — Animation & Polish | Pending |
+| ANI-02 | Phase 6 — Animation & Polish | Pending |
 
 **Coverage:**
-- v1 requirements: 22 total
-- Mapped to phases: 22
-- Unmapped: 0 ✓
+- v1 requirements: 24 total (corrected from earlier draft count of 22 — DS×6, CP×5, SEC×5, CTA×3, NAV×3, ANI×2)
+- Mapped to phases: 24
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-01*
-*Last updated: 2026-03-01 after initial definition*
+*Last updated: 2026-03-01 — traceability expanded to individual requirement rows; count corrected to 24*
