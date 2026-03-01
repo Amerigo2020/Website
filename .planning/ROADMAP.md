@@ -46,12 +46,12 @@ Plans:
   2. A one-sentence positioning statement exists that names what gets built and for whom — readable in under 5 seconds.
   3. A 3–5 sentence origin story exists connecting the family business, TUM, and the systems-thinking approach — written in first person with specific facts.
   4. Service/capability descriptions describe client outcomes, not technology categories — no section heading reads "AI & Automatisierung" or equivalent generic label.
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 02-01: Audit all existing copy for plural/corporate voice; replace with first-person English throughout
-- [ ] 02-02: Write and finalize positioning statement (CP-02) and origin story (CP-03)
-- [ ] 02-03: Rewrite capability and services copy as output-oriented descriptions; add response time commitment (CP-04, CP-05)
+- [ ] 02-01-PLAN.md — Replace PHP config metadata, html lang, OG/Twitter meta, Schema.org JSON-LD, hero section copy, and remove Stripe elements (CP-01, CP-02)
+- [ ] 02-02-PLAN.md — Replace experience section headers, insert origin story paragraph, replace contact CTA and response-time commitment, fix degree label in both locations (CP-03, CP-05)
+- [ ] 02-03-PLAN.md — Rewrite services section header and all three service card copy blocks as output-oriented English; run full zero-German verification sweep (CP-04, CP-01 final)
 
 ### Phase 3: Navigation & Layout Primitives
 **Goal**: The fixed navigation reflects the real section structure, legal links are in the footer only, and the hero section is visible and iterable on all screen sizes.
