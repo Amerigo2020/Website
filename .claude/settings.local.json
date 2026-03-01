@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat /c/Users/ameri/Documents/Programming/ContactLensesApp/lib/services/firebase_service.dart)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

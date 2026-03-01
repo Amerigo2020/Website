@@ -5,9 +5,6 @@ Entwicklung einer modernen, professionellen Landing Page für Velletti Consultin
 
 ## Technische Vorgaben
 - **Ausschließlich PHP**: Alle Logik, Rendering und Styling erfolgt über PHP
-- **Keine externen Abhängigkeiten**: Kein JavaScript, keine Frameworks, keine CDN-Ressourcen
-- **Single-File-Lösung**: Gesamte Anwendung in einer einzigen PHP-Datei
-- **PHP-Version**: Kompatibel mit PHP 7.4+ und PHP 8.x
 - **Responsive Design**: Mobile-first Ansatz mit CSS Grid/Flexbox
 
 ## Farbschema
