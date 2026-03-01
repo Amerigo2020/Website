@@ -346,12 +346,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                     </div>
                 </div>
 
-                <div
-                    style="display: flex; gap: var(--spacing-sm); justify-content: center; margin-top: var(--spacing-xl);">
-                    <stripe-buy-button buy-button-id="buy_btn_1T3floGp8U9WNcTwB18bEreC"
-                        publishable-key="pk_live_51SfJ7WGp8U9WNcTwCBs0VztMWzn1vAY8wi7LVVGOWUz7riLbxLHv0hqfFgqFWxbwqp87ctg1pBCvFOYlGYsorUVU00qcw1TIXV">
-                    </stripe-buy-button>
-                </div>
             </div>
         </section>
 
@@ -582,8 +576,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         <!-- Contact Section -->
         <section id="contact" class="section contact">
             <div class="container">
-                <h2>Projektanfrage starten</h2>
-                <p>Bereit für das nächste Projekt? Schreiben Sie uns und wir melden uns zeitnah bei Ihnen.</p>
+                <h2>Start a conversation</h2>
+                <p>Tell me about your project. I reply to every inquiry within 24 hours.</p>
 
                 <div id="contactResponse" class="form-success" style="display:none"></div>
 
@@ -736,7 +730,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                     <div class="fallback-avatar" aria-hidden="true">AV</div>
                     <div>
                         <strong>Amerigo Velletti</strong>
-                        <p>B.Sc. Information Systems (Semester 6), Technische Universität München</p>
+                        <p>Business Informatics, Technische Universität München (TUM)</p>
                         <p>Munich, Bavaria, Germany</p>
                         <p>
                             <a class="cta-button" href="https://www.linkedin.com/in/amerigo-velletti-b888a9304"
