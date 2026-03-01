@@ -5,33 +5,33 @@
 See: .planning/PROJECT.md (updated 2026-03-01)
 
 **Core value:** A cold visitor finishes reading and thinks "I trust this person" — then reaches out.
-**Current focus:** Phase 2 (Copy Rewrite) — plans 02-01 and 02-02 complete
+**Current focus:** Phase 2 (Copy Rewrite) — COMPLETE (all 3 plans executed)
 
 ## Current Position
 
-Phase: 2 of 6 (Copy and Voice Rewrite) — In Progress
-Plan: 2 of N in phase complete (02-01, 02-02 executed)
-Status: In progress — 02-01 (metadata/config/lang) and 02-02 (experience + contact copy) done
-Last activity: 2026-03-01 — Completed 02-02 (origin story, English headers, contact CTA, degree sync)
+Phase: 2 of 6 (Copy and Voice Rewrite) — Phase Complete
+Plan: 3 of 3 in phase complete (02-01, 02-02, 02-03 executed)
+Status: Phase 2 complete — all German marketing copy eliminated; full English voice established
+Last activity: 2026-03-01 — Completed 02-03 (services section output-oriented copy, Phase 2 final verification)
 
-Progress: [████░░░░░░] 22% (5/18 plans complete — estimated, depends on total plan count for phase 2+)
+Progress: [████░░░░░░] 33% (6/18 plans complete — estimated)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 5
+- Total plans completed: 6
 - Average duration: ~2 min
-- Total execution time: ~12 min
+- Total execution time: ~14 min
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-css-foundation-reset | 3 complete | ~8 min | ~3 min |
-| 02-copy-and-voice-rewrite | 2 complete | ~4 min | ~2 min |
+| 02-copy-and-voice-rewrite | 3 complete | ~6 min | ~2 min |
 
 **Recent Trend:**
-- Last 5 plans: ~2–3 min
+- Last 5 plans: ~2 min
 - Trend: Consistent, fast execution
 
 *Updated after each plan completion*
@@ -63,11 +63,14 @@ Recent decisions affecting current work:
 - [02-01]: PHP config uses English company_name/title; meta_description is positioning-anchored English copy
 - [02-01]: Services section headings synced with Schema.org hasOfferCatalog names: AI & Automation, Web Applications & Hosting, DevOps & Deployment
 - [02-01]: Stripe buy-button.js script tag and stripe-buy-button element removed from landing page; backend payment infrastructure untouched
-- [02-01]: Impressum German content starts at line 636 (not 648 as originally noted) — do not touch lines 636+
+- [02-01]: Impressum German content starts at line 614 (section) / 636 (body text) — do not touch this section
 - [02-02]: Origin story is a single 4-sentence `<p>` immediately after experience h2, before first cards-grid
 - [02-02]: Response-time commitment embedded inline in contact intro paragraph — no separate element needed
 - [02-02]: Semester number removed from LinkedIn fallback — stale data worse than no data
 - [02-02]: "Business Informatics" (not "B.Sc. Information Systems") — TUM's official English program name, synced across experience chip and LinkedIn fallback
+- [02-03]: Services intro rewritten as problem-to-delivery arc ("You describe a problem. Some weeks later...") — client experience framing, not technology listing
+- [02-03]: Service card bodies all start with "I" and name client outcomes, not technology categories (CP-04 satisfied)
+- [02-03]: h2 casing "What I build" (lowercase b) — matches sentence case convention throughout
 
 ### Open Questions (from research — must be resolved before execution)
 
@@ -78,17 +81,18 @@ Recent decisions affecting current work:
 
 ### Pending Todos
 
-- Continue Phase 2 remaining plans (hero, services/capabilities copy)
+- Phase 3 (Layout & Structure) is next — requires portrait photo question resolved first
 - Portrait photo question must be resolved before Phase 3
 
 ### Blockers/Concerns
 
-- Portrait photo question does not block Phase 2 but blocks Phase 3
-- Calendly account question does not block Phase 2 or 3
+- Portrait photo question does not block Phase 2 (complete) but blocks Phase 3
+- Calendly account question does not block Phase 3
 - Impressum and Datenschutz sections intentionally remain in German (legal obligation — do not translate)
+- Impressum section begins at line 614 in index.php — do not edit lines 614 onward
 
 ## Session Continuity
 
-Last session: 2026-03-01T20:59:22Z
-Stopped at: Completed 02-01-PLAN.md (PHP config/lang/meta rewrite, hero and services English copy, Stripe removal) — SUMMARY.md created
+Last session: 2026-03-01T21:04:13Z
+Stopped at: Completed 02-03-PLAN.md (services section output-oriented copy, Phase 2 final verification) — SUMMARY.md created
 Resume file: None
