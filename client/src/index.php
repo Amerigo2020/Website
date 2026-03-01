@@ -313,35 +313,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         <!-- Services Section -->
         <section id="services" class="section services">
             <div class="container">
-                <h2>Leistungen</h2>
-                <p>Beratung, Entwicklung und Betrieb – klar fokussiert auf AI, Automatisierung sowie moderne Websites &
-                    Hosting.</p>
+                <h2>What I Build</h2>
+                <p>End-to-end ownership — from architecture to deployment — so you don't have to coordinate multiple specialists.</p>
 
                 <div class="services__grid">
                     <div class="service-card" tabindex="0">
                         <div class="service-icon" aria-hidden="true">🤖</div>
-                        <h3>AI & Automatisierung</h3>
+                        <h3>AI & Automation</h3>
                         <p>
-                            Von Proof-of-Concept bis Produktion: KI-gestützte Workflows, Automatisierung von Prozessen,
-                            Integrationen und agentische Systeme zur Effizienzsteigerung.
+                            From proof-of-concept to production: AI-powered workflows, process automation,
+                            integrations, and agentic systems that eliminate repetitive work.
                         </p>
                     </div>
 
                     <div class="service-card" tabindex="0">
                         <div class="service-icon" aria-hidden="true">🌐</div>
-                        <h3>Websites & Hosting</h3>
+                        <h3>Web Applications & Hosting</h3>
                         <p>
-                            Moderne Unternehmens-Websites: Performance, SEO, Barrierefreiheit – inkl. Hosting, Domain,
-                            Deployment und Monitoring für einen stabilen Betrieb.
+                            Modern web applications: performance, SEO, accessibility — including hosting, domain,
+                            deployment, and monitoring for stable long-term operation.
                         </p>
                     </div>
 
                     <div class="service-card" tabindex="0">
                         <div class="service-icon" aria-hidden="true">⚙️</div>
-                        <h3>DevOps Enablement</h3>
+                        <h3>DevOps & Deployment</h3>
                         <p>
-                            Build-/Release-Pipelines, Infrastruktur als Code, Observability und Automatisierung –
-                            damit Teams schneller und sicherer liefern.
+                            Build and release pipelines, infrastructure as code, observability and automation —
+                            so teams ship faster and with confidence.
                         </p>
                     </div>
                 </div>
