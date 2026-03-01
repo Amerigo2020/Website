@@ -313,35 +313,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         <!-- Services Section -->
         <section id="services" class="section services">
             <div class="container">
-                <h2>What I Build</h2>
-                <p>End-to-end ownership — from architecture to deployment — so you don't have to coordinate multiple specialists.</p>
+                <h2>What I build</h2>
+                <p>You describe a problem. Some weeks later, you have a system that runs: a backend that handles your business logic, a front end your team can actually use, and deployments that don't require you to call me at 2am.</p>
 
                 <div class="services__grid">
                     <div class="service-card" tabindex="0">
                         <div class="service-icon" aria-hidden="true">🤖</div>
                         <h3>AI & Automation</h3>
-                        <p>
-                            From proof-of-concept to production: AI-powered workflows, process automation,
-                            integrations, and agentic systems that eliminate repetitive work.
-                        </p>
+                        <p>I automate the workflows your team wastes hours on. The result: AI-assisted processes that run without manual intervention, integrated into the systems you already use.</p>
                     </div>
 
                     <div class="service-card" tabindex="0">
                         <div class="service-icon" aria-hidden="true">🌐</div>
                         <h3>Web Applications & Hosting</h3>
-                        <p>
-                            Modern web applications: performance, SEO, accessibility — including hosting, domain,
-                            deployment, and monitoring for stable long-term operation.
-                        </p>
+                        <p>A complete web presence: fast, accessible, and maintained. I handle the domain, the hosting, the deployment pipeline, and the monitoring — so the site stays up and you stay focused on your business.</p>
                     </div>
 
                     <div class="service-card" tabindex="0">
                         <div class="service-icon" aria-hidden="true">⚙️</div>
                         <h3>DevOps & Deployment</h3>
-                        <p>
-                            Build and release pipelines, infrastructure as code, observability and automation —
-                            so teams ship faster and with confidence.
-                        </p>
+                        <p>I set up the pipelines that let you ship without fear. CI/CD, infrastructure as code, observability — so every release is predictable and every incident is visible.</p>
                     </div>
                 </div>
 
