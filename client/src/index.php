@@ -18,9 +18,9 @@ if (!isset($_SESSION['csrf_token'])) {
 
 // Configuration
 $config = [
-    'site_title' => 'Velletti Consulting | AI, Automatisierung, Websites & Hosting',
-    'meta_description' => 'Velletti Consulting in München – AI (Künstliche Intelligenz), Automatisierung, Aufbau und Hosting moderner Websites. Beratung, Entwicklung und Betrieb.',
-    'meta_keywords' => 'Velletti Consulting, AI, Künstliche Intelligenz, Automatisierung, Webentwicklung, Webseiten, Website Hosting, DevOps, München, Beratung',
+    'site_title' => 'Amerigo Velletti | Systems Builder for Startups — Munich',
+    'meta_description' => 'I build complete systems — from backend to UI — for startups and small teams that need one person to own the technical side. Based in Munich, studying Business Informatics at TUM.',
+    'meta_keywords' => 'Amerigo Velletti, systems developer, full-stack developer, startup developer, Munich, TUM, Business Informatics, automation, web development, DevOps',
     'company_name' => 'Velletti Consulting',
     'company_email' => 'vel-consulting@ame.velletti.de',
     'company_phone' => '+49 176 45531533',
@@ -140,7 +140,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -156,15 +156,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
     <meta property="og:description" content="<?php echo htmlspecialchars($config['meta_description']); ?>">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="<?php echo htmlspecialchars($config['company_name']); ?>">
-    <meta property="og:locale" content="de_DE">
+    <meta property="og:locale" content="en_US">
     <meta property="og:url" content="<?php echo htmlspecialchars($canonical); ?>">
-    <meta property="og:locale:alternate" content="en_US">
     <meta property="og:image"
         content="<?php echo htmlspecialchars($scheme . '://' . $host . '/assets/portrait.jpg'); ?>">
-    <meta property="og:image:alt" content="Porträt – Velletti Consulting">
+    <meta property="og:image:alt" content="Portrait — Amerigo Velletti">
     <meta name="twitter:image"
         content="<?php echo htmlspecialchars($scheme . '://' . $host . '/assets/portrait.jpg'); ?>">
-    <meta name="twitter:image:alt" content="Porträt – Velletti Consulting">
+    <meta name="twitter:image:alt" content="Portrait — Amerigo Velletti">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
@@ -204,31 +203,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         ],
         "knowsAbout": [
             "Artificial Intelligence",
-            "AI",
-            "Künstliche Intelligenz",
             "Automation",
-            "Automatisierung",
             "Web Development",
-            "Webseiten",
             "Web Hosting",
-            "DevOps"
+            "DevOps",
+            "Full-Stack Development",
+            "Systems Architecture"
         ],
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
-            "name": "Services",
+            "name": "What I Build",
             "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "name": "AI & Automatisierung"
-                },
-                {
-                    "@type": "Offer",
-                    "name": "Websites & Hosting"
-                },
-                {
-                    "@type": "Offer",
-                    "name": "DevOps Enablement"
-                }
+                { "@type": "Offer", "name": "AI & Automation" },
+                { "@type": "Offer", "name": "Web Applications & Hosting" },
+                { "@type": "Offer", "name": "DevOps & Deployment" }
             ]
         }
     }
@@ -372,8 +360,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         <!-- Experience / Events Section -->
         <section id="experience" class="section experience">
             <div class="container">
-                <h2>Auszeichnungen & Expertise</h2>
-                <p>Unsere Erfahrung aus branchenübergreifenden Projekten, Hackathons und Auszeichnungen.</p>
+                <h2>Background & Proof</h2>
+                <p>I grew up helping run my family's IT services company, Jörg Velletti EDV Service — which meant debugging production systems long before I enrolled at university. At TUM studying Business Informatics, I developed the systems-thinking framing that connects technical decisions to business outcomes. Today I work as a student at EY in Transfer Pricing and compete in hackathons to keep shipping under pressure. I've won at the Enactus Germany Worldcup (Bangkok 2025) and placed top 3 at the MSG Hackathon.</p>
 
                 <!-- Contact & Location Card -->
                 <div class="cards-grid" style="margin-bottom: var(--spacing-md);">
@@ -509,13 +497,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                     </div>
                 </div>
 
-                <h3 style="margin-top: var(--spacing-lg); margin-bottom: var(--spacing-md);">Akademischer Hintergrund
-                </h3>
+                <h3 style="margin-top: var(--spacing-lg); margin-bottom: var(--spacing-md);">Education</h3>
                 <div class="cards-grid">
                     <div class="event-card">
                         <div class="title">Technische Universität Munich (TUM)</div>
                         <div class="meta">
-                            <span class="chip">B.Sc. Information Systems</span>
+                            <span class="chip">Business Informatics</span>
                         </div>
                         <p class="small">Semester 7 • Until March 2026</p>
                     </div>
@@ -528,9 +515,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                     </div>
                 </div>
 
-                <h3 style="margin-top: var(--spacing-lg); margin-bottom: var(--spacing-md);">Agentur- &
-                    Industrieerfahrung
-                </h3>
+                <h3 style="margin-top: var(--spacing-lg); margin-bottom: var(--spacing-md);">Industry Experience</h3>
                 <div class="cards-grid">
                     <div class="event-card">
                         <div class="title">EY</div>
