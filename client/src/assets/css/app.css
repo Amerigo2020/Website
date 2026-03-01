@@ -83,6 +83,35 @@ body {
   color: var(--text-secondary);
 }
 
+/* Grid background — replaces WebGL canvas, zero JS, zero GPU */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure all page content sits above the grid */
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* JetBrains Mono — technical labels only */
+.eyebrow,
+.capability-label,
+.chip--date,
+.logo,
+pre,
+code {
+  font-family: var(--font-mono);
+}
+
 /* Reset and Base Styles */
 * {
   margin: 0;
