@@ -5,32 +5,33 @@
 See: .planning/PROJECT.md (updated 2026-03-01)
 
 **Core value:** A cold visitor finishes reading and thinks "I trust this person" — then reaches out.
-**Current focus:** Phase 1 complete — ready for Phase 2 (Copy Rewrite)
+**Current focus:** Phase 2 (Copy Rewrite) — plans 02-01 and 02-02 complete
 
 ## Current Position
 
-Phase: 1 of 6 (CSS Foundation Reset) — COMPLETE
-Plan: 3 of 3 in phase complete (01-01, 01-02, 01-03 all executed)
-Status: Phase 1 complete — Phase 2 blocked on language decision
-Last activity: 2026-03-01 — Completed 01-03 (typography wiring, CSS grid background, stub JS deleted)
+Phase: 2 of 6 (Copy and Voice Rewrite) — In Progress
+Plan: 2 of N in phase complete (02-01, 02-02 executed)
+Status: In progress — 02-01 (metadata/config/lang) and 02-02 (experience + contact copy) done
+Last activity: 2026-03-01 — Completed 02-02 (origin story, English headers, contact CTA, degree sync)
 
-Progress: [███░░░░░░░] 17% (3/18 plans complete)
+Progress: [████░░░░░░] 22% (5/18 plans complete — estimated, depends on total plan count for phase 2+)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 3
-- Average duration: 3 min
-- Total execution time: ~8 min
+- Total plans completed: 5
+- Average duration: ~2 min
+- Total execution time: ~12 min
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-css-foundation-reset | 3 complete | ~8 min | ~3 min |
+| 02-copy-and-voice-rewrite | 2 complete | ~4 min | ~2 min |
 
 **Recent Trend:**
-- Last 5 plans: ~3 min
+- Last 5 plans: ~2–3 min
 - Trend: Consistent, fast execution
 
 *Updated after each plan completion*
@@ -58,26 +59,33 @@ Recent decisions affecting current work:
 - [01-03]: body::before uses position:fixed so grid stays static on scroll (no parallax drift)
 - [01-03]: body > * at z-index:1 establishes layering baseline — no per-component z-index overrides needed
 - [01-03]: JetBrains Mono scoped to allowlist: .eyebrow, .capability-label, .chip--date, .logo, pre, code — body/h-tags/button/nav remain Inter
+- [02-01]: Language is English throughout — German Impressum/Datenschutz sections remain German (legal requirement)
+- [02-01]: PHP config uses English company_name/title; meta_description is positioning-anchored English copy
+- [02-02]: Origin story is a single 4-sentence `<p>` immediately after experience h2, before first cards-grid
+- [02-02]: Response-time commitment embedded inline in contact intro paragraph — no separate element needed
+- [02-02]: Semester number removed from LinkedIn fallback — stale data worse than no data
+- [02-02]: "Business Informatics" (not "B.Sc. Information Systems") — TUM's official English program name, synced across experience chip and LinkedIn fallback
 
 ### Open Questions (from research — must be resolved before execution)
 
-- **Language decision: English or German for all copy? (blocks Phase 2)**
+- ~~Language decision: English or German for all copy? (blocks Phase 2)~~ RESOLVED: English (German legal sections kept)
 - Portrait photo: Does assets/portrait.jpg exist at suitable quality? (blocks Phase 3)
 - Calendly account: Configured with an intro-call event type? (blocks Phase 5)
 - ~~Accent color: Muted mint green #6EE7B7 or refined coral #F87060?~~ RESOLVED: mint #6EE7B7
 
 ### Pending Todos
 
-- Resolve language decision (English vs German) to unblock Phase 2
+- Continue Phase 2 remaining plans (hero, services/capabilities copy)
+- Portrait photo question must be resolved before Phase 3
 
 ### Blockers/Concerns
 
-- Phase 2 blocked: language decision (English or German) must be answered before copy rewrite
 - Portrait photo question does not block Phase 2 but blocks Phase 3
 - Calendly account question does not block Phase 2 or 3
+- Impressum and Datenschutz sections intentionally remain in German (legal obligation — do not translate)
 
 ## Session Continuity
 
-Last session: 2026-03-01T18:37:18Z
-Stopped at: Completed 01-03-PLAN.md (typography wiring, CSS grid, stub JS deletion) — Phase 1 complete
+Last session: 2026-03-01T20:58:45Z
+Stopped at: Completed 02-02-PLAN.md (experience section headers, origin story, contact CTA, degree sync)
 Resume file: None
