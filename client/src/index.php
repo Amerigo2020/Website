@@ -250,17 +250,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
     }
     </script>
 
-    <!-- Prefers color scheme initialization (prevents FOUC) -->
-    <script>
-        (function () {
-            try {
-                const stored = localStorage.getItem('theme');
-                const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-                const theme = stored || (prefersDark ? 'dark' : 'light');
-                document.documentElement.setAttribute('data-theme', theme);
-            } catch (e) { }
-        })();
-    </script>
     <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 </head>
 
@@ -297,12 +286,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                         </svg>
                     </a>
                 </div>
-                <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
-                    <svg id="iconSun" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill="currentColor"
-                            d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.8 1.42-1.42zM1 13h3v-2H1v2zm10 10h2v-3h-2v3zm7.04-19.95l1.79-1.79 1.41 1.41-1.79 1.79-1.41-1.41zM20 11v2h3v-2h-3zM4.96 19.95l-1.79 1.79 1.41 1.41 1.79-1.79-1.41-1.41zM17 20.24l1.8 1.79 1.41-1.41-1.79-1.8-1.42 1.42zM12 6a6 6 0 100 12 6 6 0 000-12z" />
-                    </svg>
-                </button>
             </div>
 
             <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu"
@@ -323,8 +306,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
     <main>
         <!-- Hero Section -->
         <section id="home" class="section section--hero">
-            <canvas id="hero-canvas"></canvas>
-            <div class="container hero-container-inner">
+            <div class="container">
                 <div class="hero__content">
                     <h1 class="hero__title">Software. KI. Automatisierung.</h1>
                     <p class="hero__subtitle">
@@ -825,18 +807,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
 
         // Enhancements
         document.addEventListener('DOMContentLoaded', function () {
-            // Theme toggle
-            const themeToggle = document.getElementById('themeToggle');
-            const setTheme = (t) => {
-                document.documentElement.setAttribute('data-theme', t);
-                localStorage.setItem('theme', t);
-                themeToggle?.setAttribute('aria-pressed', String(t === 'dark'));
-            };
-            themeToggle?.addEventListener('click', () => {
-                const current = document.documentElement.getAttribute('data-theme') || 'light';
-                setTheme(current === 'light' ? 'dark' : 'light');
-            });
-
             // Social buttons open modal on primary click, otherwise follow link
             function wireModalButton(btnId, modalSelector) {
                 const btn = document.getElementById(btnId);
@@ -889,7 +859,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
             function initLinkedIn() {
                 const container = document.getElementById('linkedinBadgeContainer');
                 const fallback = document.getElementById('linkedinFallback');
-                const theme = (document.documentElement.getAttribute('data-theme') || 'light');
+                const theme = 'dark';
                 // Ensure theme on badge
                 const badge = container.querySelector('.LI-profile-badge');
                 if (badge) badge.setAttribute('data-theme', theme === 'dark' ? 'dark' : 'light');
@@ -977,151 +947,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                     // Fallback to normal submit if fetch fails
                     form.submit();
                 }
-            });
-        });
-        <!-- Neural Constellation Hero Animation -->
-        <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const canvas = document.getElementById('hero-canvas');
-            if (!canvas) return;
-            const ctx = canvas.getContext('2d');
-
-            let width, height;
-            let particles = [];
-            const connectionDistance = 150;
-            const mouseInteractionDistance = 200;
-
-            let mouse = {
-                x: null,
-            y: null
-            };
-
-            function resize() {
-                width = canvas.width = window.innerWidth;
-            const heroSection = document.querySelector('.section--hero');
-            height = canvas.height = heroSection ? heroSection.offsetHeight : window.innerHeight;
-            }
-
-            window.addEventListener('resize', resize);
-            resize();
-
-            const heroSection = document.querySelector('.section--hero');
-            if (heroSection) {
-                heroSection.addEventListener('mousemove', (e) => {
-                    const rect = canvas.getBoundingClientRect();
-                    mouse.x = e.clientX - rect.left;
-                    mouse.y = e.clientY - rect.top;
-                });
-
-                heroSection.addEventListener('mouseleave', () => {
-                mouse.x = null;
-            mouse.y = null;
-                });
-            }
-
-            class Particle {
-                constructor() {
-                this.x = Math.random() * width;
-            this.y = Math.random() * height;
-            this.vx = (Math.random() - 0.5) * 1.5;
-            this.vy = (Math.random() - 0.5) * 1.5;
-            this.radius = Math.random() * 2 + 1;
-                    // Randomly assign primary or secondary color accent for the particle
-                    this.isPrimary = Math.random() > 0.5;
-                }
-
-            update() {
-                this.x += this.vx;
-            this.y += this.vy;
-
-            if (this.x < 0 || this.x > width) this.vx *= -1;
-            if (this.y < 0 || this.y > height) this.vy *= -1;
-
-            // Mouse interaction
-            if (mouse.x !== null) {
-                        const dx = mouse.x - this.x;
-            const dy = mouse.y - this.y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-
-            if (distance < mouseInteractionDistance) {
-                            const forceDirectionX = dx / distance;
-            const forceDirectionY = dy / distance;
-            const force = (mouseInteractionDistance - distance) / mouseInteractionDistance;
-
-            // Slight attraction to mouse
-            this.vx += forceDirectionX * force * 0.05;
-            this.vy += forceDirectionY * force * 0.05;
-
-            // Limit speed
-            const speed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
-                            if (speed > 3) {
-                this.vx = (this.vx / speed) * 3;
-            this.vy = (this.vy / speed) * 3;
-                            }
-                        }
-                    }
-                }
-
-            draw() {
-                ctx.beginPath();
-            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-            // Standard color is primary (cyan) or secondary (amber) with low opacity
-            ctx.fillStyle = this.isPrimary ? 'rgba(0, 229, 255, 0.4)' : 'rgba(255, 171, 0, 0.4)';
-            ctx.fill();
-                }
-            }
-
-            function init() {
-                particles = [];
-            // Number of particles depends on screen size (density)
-            const numberOfParticles = Math.floor((width * height) / 12000); // slightly denser
-            for (let i = 0; i < numberOfParticles; i++) {
-                particles.push(new Particle());
-                }
-            }
-
-            function animate() {
-                ctx.clearRect(0, 0, width, height);
-
-            for (let i = 0; i < particles.length; i++) {
-                particles[i].update();
-            particles[i].draw();
-
-            for (let j = i + 1; j < particles.length; j++) {
-                        const dx = particles[i].x - particles[j].x;
-            const dy = particles[i].y - particles[j].y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-
-            if (distance < connectionDistance) {
-                ctx.beginPath();
-            const opacity = 1 - (distance / connectionDistance);
-
-            // Check if dark mode is active to adjust line color
-            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-            const baseColor = isDark ? '255, 255, 255' : '16, 37, 66';
-
-            ctx.strokeStyle = `rgba(${baseColor}, ${opacity * 0.15})`;
-            ctx.lineWidth = 1;
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.stroke();
-                        }
-                    }
-                }
-
-            requestAnimationFrame(animate);
-            }
-
-            init();
-            animate();
-
-            // Re-init on resize to adjust particle count
-            let resizeTimeout;
-            window.addEventListener('resize', () => {
-                clearTimeout(resizeTimeout);
-                resizeTimeout = setTimeout(() => {
-                init();
-                }, 200);
             });
         });
     </script>
