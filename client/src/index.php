@@ -95,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         $form_errors['rate_limit'] = 'Too many submissions. Please wait before trying again.';
     } else {
         // CSRF protection
-        if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+        if (!isset($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
             $form_errors['csrf'] = 'Security validation failed. Please try again.';
         } else {
             // Honeypot check
