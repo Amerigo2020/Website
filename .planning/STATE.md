@@ -61,6 +61,9 @@ Recent decisions affecting current work:
 - [01-03]: JetBrains Mono scoped to allowlist: .eyebrow, .capability-label, .chip--date, .logo, pre, code — body/h-tags/button/nav remain Inter
 - [02-01]: Language is English throughout — German Impressum/Datenschutz sections remain German (legal requirement)
 - [02-01]: PHP config uses English company_name/title; meta_description is positioning-anchored English copy
+- [02-01]: Services section headings synced with Schema.org hasOfferCatalog names: AI & Automation, Web Applications & Hosting, DevOps & Deployment
+- [02-01]: Stripe buy-button.js script tag and stripe-buy-button element removed from landing page; backend payment infrastructure untouched
+- [02-01]: Impressum German content starts at line 636 (not 648 as originally noted) — do not touch lines 636+
 - [02-02]: Origin story is a single 4-sentence `<p>` immediately after experience h2, before first cards-grid
 - [02-02]: Response-time commitment embedded inline in contact intro paragraph — no separate element needed
 - [02-02]: Semester number removed from LinkedIn fallback — stale data worse than no data
@@ -86,6 +89,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-03-01T20:58:45Z
-Stopped at: Completed 02-02-PLAN.md (experience section headers, origin story, contact CTA, degree sync)
+Last session: 2026-03-01T20:59:22Z
+Stopped at: Completed 02-01-PLAN.md (PHP config/lang/meta rewrite, hero and services English copy, Stripe removal) — SUMMARY.md created
 Resume file: None
