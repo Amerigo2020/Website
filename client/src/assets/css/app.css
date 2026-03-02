@@ -488,7 +488,7 @@ a:focus {
 
 /* Footer */
 .footer {
-  background: var(--bg-surface);
+  background: var(--bg-base);
   color: var(--text-secondary);
   padding: var(--space-12) 0;
   text-align: center;
