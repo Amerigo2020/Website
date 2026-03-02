@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-01)
 
 **Core value:** A cold visitor finishes reading and thinks "I trust this person" — then reaches out.
-**Current focus:** Phase 2 (Copy Rewrite) — COMPLETE (all 3 plans executed)
+**Current focus:** Phase 3 (Navigation and Layout Primitives) — In progress (1 of 3 plans executed)
 
 ## Current Position
 
-Phase: 2 of 6 (Copy and Voice Rewrite) — Phase Complete
-Plan: 3 of 3 in phase complete (02-01, 02-02, 02-03 executed)
-Status: Phase 2 complete — all German marketing copy eliminated; full English voice established
-Last activity: 2026-03-01 — Completed 02-03 (services section output-oriented copy, Phase 2 final verification)
+Phase: 3 of 6 (Navigation and Layout Primitives) — In progress
+Plan: 1 of 3 in phase complete (03-01 executed)
+Status: In progress — nav labels corrected, footer background token fixed
+Last activity: 2026-03-02 — Completed 03-01 (nav label update, footer background token fix)
 
-Progress: [████░░░░░░] 33% (6/18 plans complete — estimated)
+Progress: [████▒░░░░░] 39% (7/18 plans complete — estimated)
 
 ## Performance Metrics
 
@@ -29,6 +29,7 @@ Progress: [████░░░░░░] 33% (6/18 plans complete — estimate
 |-------|-------|-------|----------|
 | 01-css-foundation-reset | 3 complete | ~8 min | ~3 min |
 | 02-copy-and-voice-rewrite | 3 complete | ~6 min | ~2 min |
+| 03-navigation-and-layout-primitives | 1 complete | ~1 min | ~1 min |
 
 **Recent Trend:**
 - Last 5 plans: ~2 min
@@ -71,6 +72,9 @@ Recent decisions affecting current work:
 - [02-03]: Services intro rewritten as problem-to-delivery arc ("You describe a problem. Some weeks later...") — client experience framing, not technology listing
 - [02-03]: Service card bodies all start with "I" and name client outcomes, not technology categories (CP-04 satisfied)
 - [02-03]: h2 casing "What I build" (lowercase b) — matches sentence case convention throughout
+- [03-01]: Nav label order is About (#experience), What I build (#services), Contact (#contact) — left-to-right, desktop and mobile identical
+- [03-01]: Footer background token is --bg-base (not --bg-surface) — contact section and footer must be visually seamless
+- [03-01]: Impressum/Datenschutz are footer-only — zero legal links inside header (verified pre-change)
 
 ### Open Questions (from research — must be resolved before execution)
 
@@ -81,18 +85,18 @@ Recent decisions affecting current work:
 
 ### Pending Todos
 
-- Phase 3 (Layout & Structure) is next — requires portrait photo question resolved first
-- Portrait photo question must be resolved before Phase 3
+- Phase 3 plan 02 is next — portrait photo question must be resolved before any plan that adds a portrait image element
+- Phase 3 plan 03 (if exists) follows 02
 
 ### Blockers/Concerns
 
-- Portrait photo question does not block Phase 2 (complete) but blocks Phase 3
+- Portrait photo question: Does assets/portrait.jpg exist at suitable quality? May block specific Phase 3 plans
 - Calendly account question does not block Phase 3
 - Impressum and Datenschutz sections intentionally remain in German (legal obligation — do not translate)
 - Impressum section begins at line 614 in index.php — do not edit lines 614 onward
 
 ## Session Continuity
 
-Last session: 2026-03-01T21:04:13Z
-Stopped at: Completed 02-03-PLAN.md (services section output-oriented copy, Phase 2 final verification) — SUMMARY.md created
+Last session: 2026-03-02T12:18:44Z
+Stopped at: Completed 03-01-PLAN.md (nav labels corrected, footer background token fixed) — SUMMARY.md created
 Resume file: None
