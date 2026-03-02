@@ -252,8 +252,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
             </a>
 
             <nav class="nav" role="navigation" aria-label="Main navigation">
-                <a href="#services" class="nav__link">Services</a>
-                <a href="#experience" class="nav__link">Events</a>
+                <a href="#experience" class="nav__link">About</a>
+                <a href="#services" class="nav__link">What I build</a>
                 <a href="#contact" class="nav__link">Contact</a>
             </nav>
 
@@ -285,8 +285,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
 
             <div class="mobile-menu" id="mobileMenu">
                 <nav class="nav" role="navigation" aria-label="Mobile navigation">
-                    <a href="#services" class="nav__link" onclick="closeMobileMenu()">Services</a>
-                    <a href="#experience" class="nav__link" onclick="closeMobileMenu()">Events</a>
+                    <a href="#experience" class="nav__link" onclick="closeMobileMenu()">About</a>
+                    <a href="#services" class="nav__link" onclick="closeMobileMenu()">What I build</a>
                     <a href="#contact" class="nav__link" onclick="closeMobileMenu()">Contact</a>
                 </nav>
             </div>
