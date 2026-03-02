@@ -96,10 +96,10 @@
 | CP-03 | Phase 2 — Copy & Voice Rewrite | Complete |
 | CP-04 | Phase 2 — Copy & Voice Rewrite | Complete |
 | CP-05 | Phase 2 — Copy & Voice Rewrite | Complete |
-| NAV-01 | Phase 3 — Navigation & Layout Primitives | Pending |
-| NAV-02 | Phase 3 — Navigation & Layout Primitives | Pending |
-| NAV-03 | Phase 3 — Navigation & Layout Primitives | Pending |
-| SEC-01 | Phase 3 — Navigation & Layout Primitives | Pending |
+| NAV-01 | Phase 3 — Navigation & Layout Primitives | Complete |
+| NAV-02 | Phase 3 — Navigation & Layout Primitives | Complete |
+| NAV-03 | Phase 3 — Navigation & Layout Primitives | Complete |
+| SEC-01 | Phase 3 — Navigation & Layout Primitives | Complete |
 | SEC-02 | Phase 4 — Content Sections | Pending |
 | SEC-03 | Phase 4 — Content Sections | Pending |
 | SEC-04 | Phase 4 — Content Sections | Pending |

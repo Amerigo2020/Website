@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-03-01)
 
 **Core value:** A cold visitor finishes reading and thinks "I trust this person" — then reaches out.
-**Current focus:** Phase 3 (Navigation and Layout Primitives) — In progress (2 of 3 plans executed)
+**Current focus:** Phase 4 (Content Sections) — Not started
 
 ## Current Position
 
-Phase: 3 of 6 (Navigation and Layout Primitives) — In progress
-Plan: 2 of 3 in phase complete (03-01 and 03-02 executed)
-Status: In progress — hero rebuilt with two-column grid, portrait slot, and button system
-Last activity: 2026-03-02 — Completed 03-02 (hero grid layout, btn--primary/btn--ghost, portrait img)
+Phase: 4 of 6 (Content Sections) — Ready to plan
+Plan: 0 of 3 in phase (not started)
+Status: Phase 3 complete — nav labels corrected, footer fixed, hero rebuilt with two-column grid and button system; all 4 must-haves verified
+Last activity: 2026-03-02 — Phase 3 complete (03-01 nav labels + footer, 03-02 hero grid rebuild; VERIFICATION passed 4/4)
 
 Progress: [████░░░░░░] 44% (8/18 plans complete — estimated)
 
@@ -89,16 +89,16 @@ Recent decisions affecting current work:
 
 ### Pending Todos
 
-- Phase 3 plan 03 (if exists) is next — check 03-03-PLAN.md
+- Phase 4 (Content Sections) is next — story/about section, capabilities section, proof section
 
 ### Blockers/Concerns
 
-- Calendly account question does not block Phase 3 (only Phase 5)
+- Calendly account question does not block Phase 4 (only Phase 5)
 - Impressum and Datenschutz sections intentionally remain in German (legal obligation — do not translate)
 - Impressum section begins at line 614 in index.php — do not edit lines 614 onward
 
 ## Session Continuity
 
-Last session: 2026-03-02T12:21:54Z
-Stopped at: Completed 03-02-PLAN.md (hero grid layout, btn--primary/btn--ghost, portrait slot) — SUMMARY.md created
+Last session: 2026-03-02T~current
+Stopped at: Phase 3 complete — VERIFICATION passed 4/4, ROADMAP/STATE/REQUIREMENTS updated — proceeding to Phase 4 planning
 Resume file: None
