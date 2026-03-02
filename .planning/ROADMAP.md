@@ -62,11 +62,11 @@ Plans:
   2. The hero section is visible without scrolling: photo, name, positioning statement, and a primary CTA button are all above the fold on a 1280px viewport.
   3. On a 375px mobile viewport, the hero stacks cleanly — no horizontal overflow, no overlapping text, touch targets at least 44px.
   4. Impressum and Datenschutz links appear in the footer and nowhere else in the navigation.
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 03-01: Rebuild fixed nav with correct anchor labels, glass blur effect, no theme toggle, Impressum/Datenschutz removed to footer
-- [ ] 03-02: Build hero section (photo, name, positioning statement, dual CTA) with CSS-only radial gradient; verify mobile layout
+- [ ] 03-01-PLAN.md — Update nav labels to "About"/"What I build"/"Contact" in desktop and mobile nav (NAV-01); verify Impressum/Datenschutz footer-only (NAV-02); fix footer background token to --bg-base
+- [ ] 03-02-PLAN.md — Rebuild hero with two-column grid (portrait right, text left), name eyebrow, fix broken --spacing-sm token reference, add .btn--primary/.btn--ghost CSS classes (SEC-01, NAV-03)
 
 ### Phase 4: Content Sections
 **Goal**: A visitor scrolling past the hero encounters — in order — a personal origin story, a description of what gets built, and a curated list of 3–4 proof items with context.
