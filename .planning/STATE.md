@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-03-01)
 
 **Core value:** A cold visitor finishes reading and thinks "I trust this person" — then reaches out.
-**Current focus:** Phase 3 (Navigation and Layout Primitives) — In progress (1 of 3 plans executed)
+**Current focus:** Phase 3 (Navigation and Layout Primitives) — In progress (2 of 3 plans executed)
 
 ## Current Position
 
 Phase: 3 of 6 (Navigation and Layout Primitives) — In progress
-Plan: 1 of 3 in phase complete (03-01 executed)
-Status: In progress — nav labels corrected, footer background token fixed
-Last activity: 2026-03-02 — Completed 03-01 (nav label update, footer background token fix)
+Plan: 2 of 3 in phase complete (03-01 and 03-02 executed)
+Status: In progress — hero rebuilt with two-column grid, portrait slot, and button system
+Last activity: 2026-03-02 — Completed 03-02 (hero grid layout, btn--primary/btn--ghost, portrait img)
 
-Progress: [████▒░░░░░] 39% (7/18 plans complete — estimated)
+Progress: [████░░░░░░] 44% (8/18 plans complete — estimated)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 6
+- Total plans completed: 8
 - Average duration: ~2 min
-- Total execution time: ~14 min
+- Total execution time: ~16 min
 
 **By Phase:**
 
@@ -29,7 +29,7 @@ Progress: [████▒░░░░░] 39% (7/18 plans complete — estimate
 |-------|-------|-------|----------|
 | 01-css-foundation-reset | 3 complete | ~8 min | ~3 min |
 | 02-copy-and-voice-rewrite | 3 complete | ~6 min | ~2 min |
-| 03-navigation-and-layout-primitives | 1 complete | ~1 min | ~1 min |
+| 03-navigation-and-layout-primitives | 2 complete | ~3 min | ~1.5 min |
 
 **Recent Trend:**
 - Last 5 plans: ~2 min
@@ -75,28 +75,30 @@ Recent decisions affecting current work:
 - [03-01]: Nav label order is About (#experience), What I build (#services), Contact (#contact) — left-to-right, desktop and mobile identical
 - [03-01]: Footer background token is --bg-base (not --bg-surface) — contact section and footer must be visually seamless
 - [03-01]: Impressum/Datenschutz are footer-only — zero legal links inside header (verified pre-change)
+- [03-02]: btn--primary and btn--ghost are hero-only CTA classes — .cta-button preserved for LinkedIn modal (line 741) and GitHub JS fallback (line 895)
+- [03-02]: Portrait uses loading=eager — above fold at 1280px; lazy loading would defer a visible LCP asset
+- [03-02]: hero__content CSS rule left untouched despite hero__grid replacing it in HTML — safe to leave for future reference
+- [03-02]: Portrait confirmed present at assets/portrait.jpg (portrait.jpg and portrait.png both exist in assets/)
 
 ### Open Questions (from research — must be resolved before execution)
 
 - ~~Language decision: English or German for all copy? (blocks Phase 2)~~ RESOLVED: English (German legal sections kept)
-- Portrait photo: Does assets/portrait.jpg exist at suitable quality? (blocks Phase 3)
+- ~~Portrait photo: Does assets/portrait.jpg exist at suitable quality? (blocks Phase 3)~~ RESOLVED: portrait.jpg confirmed present in assets/
 - Calendly account: Configured with an intro-call event type? (blocks Phase 5)
 - ~~Accent color: Muted mint green #6EE7B7 or refined coral #F87060?~~ RESOLVED: mint #6EE7B7
 
 ### Pending Todos
 
-- Phase 3 plan 02 is next — portrait photo question must be resolved before any plan that adds a portrait image element
-- Phase 3 plan 03 (if exists) follows 02
+- Phase 3 plan 03 (if exists) is next — check 03-03-PLAN.md
 
 ### Blockers/Concerns
 
-- Portrait photo question: Does assets/portrait.jpg exist at suitable quality? May block specific Phase 3 plans
-- Calendly account question does not block Phase 3
+- Calendly account question does not block Phase 3 (only Phase 5)
 - Impressum and Datenschutz sections intentionally remain in German (legal obligation — do not translate)
 - Impressum section begins at line 614 in index.php — do not edit lines 614 onward
 
 ## Session Continuity
 
-Last session: 2026-03-02T12:18:44Z
-Stopped at: Completed 03-01-PLAN.md (nav labels corrected, footer background token fixed) — SUMMARY.md created
+Last session: 2026-03-02T12:21:54Z
+Stopped at: Completed 03-02-PLAN.md (hero grid layout, btn--primary/btn--ghost, portrait slot) — SUMMARY.md created
 Resume file: None
