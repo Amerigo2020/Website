@@ -297,14 +297,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         <!-- Hero Section -->
         <section id="home" class="section section--hero">
             <div class="container">
-                <div class="hero__content">
-                    <h1 class="hero__title">I build complete systems — from backend to UI — for startups that need one person to own the technical side.</h1>
-                    <p class="hero__subtitle">
-                        From the first conversation to production. I own the architecture, the code, and the deployment — so you don't have to manage a developer.
-                    </p>
-                    <div style="display: flex; gap: var(--spacing-sm); justify-content: center; flex-wrap: wrap;">
-                        <a href="#contact" class="cta-button" role="button">Start a project</a>
-                        <a href="#services" class="cta-button cta-button--outline" role="button">What I build</a>
+                <div class="hero__grid">
+                    <div class="hero__text">
+                        <p class="hero__eyebrow">Amerigo Velletti · Munich</p>
+                        <h1 class="hero__title">I build complete systems — from backend to UI — for startups that need one person to own the technical side.</h1>
+                        <p class="hero__subtitle">
+                            From the first conversation to production. I own the architecture, the code,
+                            and the deployment — so you don't have to manage a developer.
+                        </p>
+                        <div class="hero__actions">
+                            <a href="#contact" class="btn btn--primary">Start a project</a>
+                            <a href="#services" class="btn btn--ghost">What I build</a>
+                        </div>
+                    </div>
+                    <div class="hero__portrait-wrap">
+                        <img
+                            src="assets/portrait.jpg"
+                            alt="Portrait of Amerigo Velletti"
+                            class="hero__portrait"
+                            width="400"
+                            height="500"
+                            loading="eager"
+                            decoding="async"
+                        >
                     </div>
                 </div>
             </div>
