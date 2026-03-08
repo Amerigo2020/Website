@@ -76,12 +76,12 @@ Plans:
   1. The story/about section reads as a continuous first-person narrative — it names the family business, TUM, and the connection between them in concrete terms.
   2. The capabilities section uses monospace labels and describes output, not technology — no skill bars, no percentages, no generic category headings.
   3. The proof section shows exactly 3–4 items (Enactus Bangkok, MSG Hackathon, EY, family business origin) each with one sentence of context — the 14-chip grid is gone.
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 04-01: Build story/about section with origin story prose (SEC-02)
-- [ ] 04-02: Build capabilities section with monospace-label + output-oriented copy (SEC-03)
-- [ ] 04-03: Build proof section with curated 4-item list on --bg-surface; remove achievement chip grid (SEC-04)
+- [ ] 04-01-PLAN.md — Gut #experience section; preserve origin story paragraph; add .about class and prose CSS; remove all chip grids, profile cards, education/industry/networks cards (SEC-02)
+- [ ] 04-02-PLAN.md — Replace #services centered icon cards with .capabilities list; remove old service card CSS from app.css (SEC-03)
+- [ ] 04-03-PLAN.md — Insert new #proof section between #experience and #contact; 4 curated items with monospace labels and one-sentence context; extend monospace allowlist (SEC-04)
 
 ### Phase 5: Contact & CTA
 **Goal**: A visitor who is ready to reach out finds two low-friction options side by side — the existing contact form and a Calendly booking link — with no Stripe button anywhere on the main page.
