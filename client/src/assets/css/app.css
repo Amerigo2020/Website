@@ -422,6 +422,23 @@ a:focus {
   outline-offset: 2px;
 }
 
+/* Story / About Section */
+.about {
+  background: var(--bg-base);
+}
+
+.about__prose {
+  max-width: var(--max-width-prose);
+  margin-top: var(--space-8);
+}
+
+.about__prose p {
+  color: var(--text-secondary);
+  font-size: var(--text-lg);
+  line-height: 1.8;
+  margin-bottom: var(--space-6);
+}
+
 /* Services Section */
 .services {
   background: var(--bg-surface);
