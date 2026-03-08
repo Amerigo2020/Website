@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-03-01)
 
 **Core value:** A cold visitor finishes reading and thinks "I trust this person" — then reaches out.
-**Current focus:** Phase 4 (Content Sections) — Not started
+**Current focus:** Phase 4 (Content Sections) — In progress
 
 ## Current Position
 
-Phase: 4 of 6 (Content Sections) — Ready to plan
-Plan: 0 of 3 in phase (not started)
-Status: Phase 3 complete — nav labels corrected, footer fixed, hero rebuilt with two-column grid and button system; all 4 must-haves verified
-Last activity: 2026-03-02 — Phase 3 complete (03-01 nav labels + footer, 03-02 hero grid rebuild; VERIFICATION passed 4/4)
+Phase: 4 of 6 (Content Sections) — In progress
+Plan: 1 of 3 in phase (04-01 complete)
+Status: 04-01 complete — #experience rebuilt as story-only prose, .about__prose CSS added
+Last activity: 2026-03-08 — Completed 04-01-PLAN.md (#experience section rebuild)
 
-Progress: [████░░░░░░] 44% (8/18 plans complete — estimated)
+Progress: [████░░░░░░] 50% (9/18 plans complete — estimated)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 8
+- Total plans completed: 9
 - Average duration: ~2 min
-- Total execution time: ~16 min
+- Total execution time: ~18 min
 
 **By Phase:**
 
@@ -30,6 +30,7 @@ Progress: [████░░░░░░] 44% (8/18 plans complete — estimate
 | 01-css-foundation-reset | 3 complete | ~8 min | ~3 min |
 | 02-copy-and-voice-rewrite | 3 complete | ~6 min | ~2 min |
 | 03-navigation-and-layout-primitives | 2 complete | ~3 min | ~1.5 min |
+| 04-content-sections | 1 complete | ~2 min | ~2 min |
 
 **Recent Trend:**
 - Last 5 plans: ~2 min
@@ -79,6 +80,10 @@ Recent decisions affecting current work:
 - [03-02]: Portrait uses loading=eager — above fold at 1280px; lazy loading would defer a visible LCP asset
 - [03-02]: hero__content CSS rule left untouched despite hero__grid replacing it in HTML — safe to leave for future reference
 - [03-02]: Portrait confirmed present at assets/portrait.jpg (portrait.jpg and portrait.png both exist in assets/)
+- [04-01]: h2 changed from "Background & Proof" to "About" — nav label says "About"; old heading implied credential-listing content that was removed
+- [04-01]: LinkedIn/GitHub profile cards deferred to footer (Phase 5) — not lost, relocated; plan specified this explicitly
+- [04-01]: Education, Industry Experience, Networks & Memberships cards removed permanently — section purpose is narrative, not CV listing
+- [04-01]: .section.about uses --bg-base background — alternates with .section.services (--bg-surface) for visual rhythm
 
 ### Open Questions (from research — must be resolved before execution)
 
@@ -89,16 +94,17 @@ Recent decisions affecting current work:
 
 ### Pending Todos
 
-- Phase 4 (Content Sections) is next — story/about section, capabilities section, proof section
+- Phase 4 Plan 2 (04-02) — capabilities section
+- Phase 4 Plan 3 (04-03) — proof section
 
 ### Blockers/Concerns
 
 - Calendly account question does not block Phase 4 (only Phase 5)
 - Impressum and Datenschutz sections intentionally remain in German (legal obligation — do not translate)
-- Impressum section begins at line 614 in index.php — do not edit lines 614 onward
+- Impressum section begins around line 396 in index.php (shifted after 04-01 removed 214 lines) — do not edit that section
 
 ## Session Continuity
 
-Last session: 2026-03-02T~current
-Stopped at: Phase 3 complete — VERIFICATION passed 4/4, ROADMAP/STATE/REQUIREMENTS updated — proceeding to Phase 4 planning
+Last session: 2026-03-08T23:55:42Z
+Stopped at: Completed 04-01-PLAN.md — #experience rebuilt as story-only prose, SUMMARY.md and STATE.md updated
 Resume file: None
