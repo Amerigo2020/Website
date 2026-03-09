@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-03-01)
 
 **Core value:** A cold visitor finishes reading and thinks "I trust this person" — then reaches out.
-**Current focus:** Phase 4 (Content Sections) — In progress
+**Current focus:** Phase 5 (Contact & CTA) — Not started
 
 ## Current Position
 
-Phase: 4 of 6 (Content Sections) — Complete
-Plan: 3 of 3 in phase (04-01 complete, 04-02 complete, 04-03 complete)
-Status: Phase 4 complete — #proof section added with 4 items, border-bottom list pattern, JetBrains Mono labels
-Last activity: 2026-03-09 — Completed 04-03-PLAN.md (#proof section)
+Phase: 5 of 6 (Contact & CTA) — Ready to plan
+Plan: 0 of 2 in phase (not started)
+Status: Phase 4 complete — About/story section, capabilities list, proof section with 4 items all verified (11/11); section order fixed and capability-label accent color added
+Last activity: 2026-03-09 — Phase 4 complete (VERIFICATION passed 11/11)
 
 Progress: [█████░░░░░] 61% (11/18 plans complete — estimated)
 
@@ -89,6 +89,8 @@ Recent decisions affecting current work:
 - [04-02]: No tabindex on .capability divs — they are not interactive elements
 - [04-03]: #proof background is --bg-surface — alternates with .about (--bg-base); pattern: services=surface, about=base, proof=surface, contact=base
 - [04-03]: .proof-item__label uses --text-primary (not --accent) — factual credential labels, not decorative; accent reserved for .capability-label style interactive labels
+- [04-fix]: Section order corrected to #experience → #services → #proof → #contact — planner had inverted #experience and #services; fixed in orchestrator gap pass
+- [04-fix]: .capability-label gets color: var(--accent) via explicit rule — font-family was handled by allowlist but color rule was missing; both now confirmed
 - [04-03]: Border-bottom list pattern for .proof-item — padding + border-bottom, :first-child gets border-top; no gap on container
 - [04-03]: No nav anchor added for #proof — section visible on scroll, not a primary nav destination
 
@@ -101,7 +103,7 @@ Recent decisions affecting current work:
 
 ### Pending Todos
 
-- Phase 5 (Footer and Social Links) — next phase to begin
+- Phase 5 (Contact & CTA) — Calendly question must be resolved; Stripe removal and social links demotion can proceed regardless
 
 ### Blockers/Concerns
 
