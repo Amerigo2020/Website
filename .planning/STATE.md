@@ -9,17 +9,17 @@ See: .planning/PROJECT.md (updated 2026-03-01)
 
 ## Current Position
 
-Phase: 4 of 6 (Content Sections) — In progress
-Plan: 2 of 3 in phase (04-01 complete, 04-02 complete)
-Status: 04-02 complete — #services rebuilt as .capabilities list, all old service card CSS removed
-Last activity: 2026-03-08 — Completed 04-02-PLAN.md (#services capabilities list upgrade)
+Phase: 4 of 6 (Content Sections) — Complete
+Plan: 3 of 3 in phase (04-01 complete, 04-02 complete, 04-03 complete)
+Status: Phase 4 complete — #proof section added with 4 items, border-bottom list pattern, JetBrains Mono labels
+Last activity: 2026-03-09 — Completed 04-03-PLAN.md (#proof section)
 
-Progress: [█████░░░░░] 55% (10/18 plans complete — estimated)
+Progress: [█████░░░░░] 61% (11/18 plans complete — estimated)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 9
+- Total plans completed: 10
 - Average duration: ~2 min
 - Total execution time: ~18 min
 
@@ -30,7 +30,7 @@ Progress: [█████░░░░░] 55% (10/18 plans complete — estimat
 | 01-css-foundation-reset | 3 complete | ~8 min | ~3 min |
 | 02-copy-and-voice-rewrite | 3 complete | ~6 min | ~2 min |
 | 03-navigation-and-layout-primitives | 2 complete | ~3 min | ~1.5 min |
-| 04-content-sections | 2 complete | ~3 min | ~1.5 min |
+| 04-content-sections | 3 complete | ~5 min | ~1.7 min |
 
 **Recent Trend:**
 - Last 5 plans: ~2 min
@@ -87,6 +87,10 @@ Recent decisions affecting current work:
 - [04-02]: gap: 2.5rem used directly for .capabilities — no --space-10 token in :root; raw value preferred over introducing a new token
 - [04-02]: .capability-label font-family handled by existing JetBrains Mono allowlist (line 107) — no duplicate font-family declaration needed
 - [04-02]: No tabindex on .capability divs — they are not interactive elements
+- [04-03]: #proof background is --bg-surface — alternates with .about (--bg-base); pattern: services=surface, about=base, proof=surface, contact=base
+- [04-03]: .proof-item__label uses --text-primary (not --accent) — factual credential labels, not decorative; accent reserved for .capability-label style interactive labels
+- [04-03]: Border-bottom list pattern for .proof-item — padding + border-bottom, :first-child gets border-top; no gap on container
+- [04-03]: No nav anchor added for #proof — section visible on scroll, not a primary nav destination
 
 ### Open Questions (from research — must be resolved before execution)
 
@@ -97,7 +101,7 @@ Recent decisions affecting current work:
 
 ### Pending Todos
 
-- Phase 4 Plan 3 (04-03) — proof section
+- Phase 5 (Footer and Social Links) — next phase to begin
 
 ### Blockers/Concerns
 
@@ -107,6 +111,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-03-08T23:59:01Z
-Stopped at: Completed 04-02-PLAN.md — #services rebuilt as .capabilities list, all old service card CSS removed
+Last session: 2026-03-09T00:02:10Z
+Stopped at: Completed 04-03-PLAN.md — #proof section added, Phase 4 complete
 Resume file: None
