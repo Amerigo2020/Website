@@ -105,6 +105,7 @@ body > * {
 /* JetBrains Mono — technical labels only */
 .eyebrow,
 .capability-label,
+.proof-item__label,
 .chip--date,
 .logo,
 pre,
@@ -468,6 +469,43 @@ a:focus {
   color: var(--text-secondary);
   line-height: 1.7;
   margin-bottom: 0;
+}
+
+/* Proof Section */
+.proof {
+  background: var(--bg-surface);
+}
+
+.proof__list {
+  margin-top: var(--space-12);
+  display: flex;
+  flex-direction: column;
+  max-width: var(--max-width-prose);
+}
+
+.proof-item {
+  padding: var(--space-6) 0;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.proof-item:first-child {
+  border-top: 1px solid var(--border-subtle);
+}
+
+.proof-item__label {
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+  letter-spacing: 0.03em;
+}
+
+.proof-item__context {
+  color: var(--text-secondary);
+  margin-bottom: 0;
+  font-size: var(--text-base);
+  line-height: 1.6;
 }
 
 /* Contact Section */
