@@ -325,6 +325,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
             </div>
         </section>
 
+        <!-- About / Story Section -->
+        <section id="experience" class="section about">
+            <div class="container">
+                <h2>About</h2>
+                <div class="about__prose">
+                    <p>I grew up helping run my family's IT services company, Jörg Velletti EDV Service — which meant debugging production systems long before I enrolled at university. At TUM studying Business Informatics, I developed the systems-thinking framing that connects technical decisions to business outcomes. Today I work as a student at EY in Transfer Pricing and compete in hackathons to keep shipping under pressure. I've won at the Enactus Germany Worldcup (Bangkok 2025) and placed top 3 at the MSG Hackathon.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Services Section -->
         <section id="services" class="section services">
             <div class="container">
@@ -348,16 +358,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                     </div>
                 </div>
 
-            </div>
-        </section>
-
-        <!-- About / Story Section -->
-        <section id="experience" class="section about">
-            <div class="container">
-                <h2>About</h2>
-                <div class="about__prose">
-                    <p>I grew up helping run my family's IT services company, Jörg Velletti EDV Service — which meant debugging production systems long before I enrolled at university. At TUM studying Business Informatics, I developed the systems-thinking framing that connects technical decisions to business outcomes. Today I work as a student at EY in Transfer Pricing and compete in hackathons to keep shipping under pressure. I've won at the Enactus Germany Worldcup (Bangkok 2025) and placed top 3 at the MSG Hackathon.</p>
-                </div>
             </div>
         </section>
 

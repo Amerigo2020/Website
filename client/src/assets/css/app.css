@@ -465,6 +465,10 @@ a:focus {
   gap: var(--space-3);
 }
 
+.capability-label {
+  color: var(--accent);
+}
+
 .capability p {
   color: var(--text-secondary);
   line-height: 1.7;
