@@ -361,6 +361,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
             </div>
         </section>
 
+        <!-- Proof Section -->
+        <section id="proof" class="section proof">
+            <div class="container">
+                <h2>Selected proof</h2>
+
+                <div class="proof__list">
+                    <div class="proof-item">
+                        <span class="proof-item__label">Enactus Germany Worldcup — Bangkok 2025</span>
+                        <p class="proof-item__context">Represented Germany at the international Enactus competition and won — the team built a working product under competition conditions in Bangkok.</p>
+                    </div>
+                    <div class="proof-item">
+                        <span class="proof-item__label">MSG Hackathon — Code & Create</span>
+                        <p class="proof-item__context">Placed top 3 at the MSG Code & Create hackathon, shipping a functional prototype within 24 hours against a field of professional developers.</p>
+                    </div>
+                    <div class="proof-item">
+                        <span class="proof-item__label">EY — Working Student, Transfer Pricing</span>
+                        <p class="proof-item__context">Currently working at EY Munich in Transfer Pricing, applying analytical systems thinking in a Big Four advisory environment.</p>
+                    </div>
+                    <div class="proof-item">
+                        <span class="proof-item__label">Jörg Velletti EDV Service</span>
+                        <p class="proof-item__context">Grew up maintaining production systems at the family IT business — which meant real accountability for real clients before starting university.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Contact Section -->
         <section id="contact" class="section contact">
             <div class="container">
