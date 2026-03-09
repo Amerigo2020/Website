@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-03-01)
 ## Current Position
 
 Phase: 4 of 6 (Content Sections) — In progress
-Plan: 1 of 3 in phase (04-01 complete)
-Status: 04-01 complete — #experience rebuilt as story-only prose, .about__prose CSS added
-Last activity: 2026-03-08 — Completed 04-01-PLAN.md (#experience section rebuild)
+Plan: 2 of 3 in phase (04-01 complete, 04-02 complete)
+Status: 04-02 complete — #services rebuilt as .capabilities list, all old service card CSS removed
+Last activity: 2026-03-08 — Completed 04-02-PLAN.md (#services capabilities list upgrade)
 
-Progress: [████░░░░░░] 50% (9/18 plans complete — estimated)
+Progress: [█████░░░░░] 55% (10/18 plans complete — estimated)
 
 ## Performance Metrics
 
@@ -30,7 +30,7 @@ Progress: [████░░░░░░] 50% (9/18 plans complete — estimate
 | 01-css-foundation-reset | 3 complete | ~8 min | ~3 min |
 | 02-copy-and-voice-rewrite | 3 complete | ~6 min | ~2 min |
 | 03-navigation-and-layout-primitives | 2 complete | ~3 min | ~1.5 min |
-| 04-content-sections | 1 complete | ~2 min | ~2 min |
+| 04-content-sections | 2 complete | ~3 min | ~1.5 min |
 
 **Recent Trend:**
 - Last 5 plans: ~2 min
@@ -84,6 +84,9 @@ Recent decisions affecting current work:
 - [04-01]: LinkedIn/GitHub profile cards deferred to footer (Phase 5) — not lost, relocated; plan specified this explicitly
 - [04-01]: Education, Industry Experience, Networks & Memberships cards removed permanently — section purpose is narrative, not CV listing
 - [04-01]: .section.about uses --bg-base background — alternates with .section.services (--bg-surface) for visual rhythm
+- [04-02]: gap: 2.5rem used directly for .capabilities — no --space-10 token in :root; raw value preferred over introducing a new token
+- [04-02]: .capability-label font-family handled by existing JetBrains Mono allowlist (line 107) — no duplicate font-family declaration needed
+- [04-02]: No tabindex on .capability divs — they are not interactive elements
 
 ### Open Questions (from research — must be resolved before execution)
 
@@ -94,7 +97,6 @@ Recent decisions affecting current work:
 
 ### Pending Todos
 
-- Phase 4 Plan 2 (04-02) — capabilities section
 - Phase 4 Plan 3 (04-03) — proof section
 
 ### Blockers/Concerns
@@ -105,6 +107,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-03-08T23:55:42Z
-Stopped at: Completed 04-01-PLAN.md — #experience rebuilt as story-only prose, SUMMARY.md and STATE.md updated
+Last session: 2026-03-08T23:59:01Z
+Stopped at: Completed 04-02-PLAN.md — #services rebuilt as .capabilities list, all old service card CSS removed
 Resume file: None
