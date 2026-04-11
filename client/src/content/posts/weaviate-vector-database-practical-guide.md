@@ -201,3 +201,7 @@ Weaviate is overkill if:
 - You want a fully managed service with zero ops. Use Pinecone.
 
 But if you need self-hosted vector search with hybrid capabilities, filtering, and multi-tenancy, Weaviate is the strongest option in the open-source ecosystem. The documentation is thorough, the Python client is well-designed, and the Docker setup means you can run it locally in under a minute.
+
+---
+
+**Weitere Artikel:** [RAG: From Prototype to Production in Practice](/blog/post.php?slug=rag-from-prototype-to-production) | [How AI Automation Saves Startups 20+ Hours Per Week](/blog/post.php?slug=ai-automation-for-startups)

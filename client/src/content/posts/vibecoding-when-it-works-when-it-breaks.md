@@ -88,3 +88,7 @@ The best developers I know use AI constantly. They're not purists who refuse to 
 Vibecoding doesn't replace engineering judgment. It amplifies it. A developer with good instincts and an AI coding assistant ships 3x faster. A developer with bad instincts and an AI coding assistant ships 3x as many bugs.
 
 The vibe matters. But so does the craft.
+
+---
+
+**Weitere Artikel:** [Context Windows: What Developers Get Wrong About AI Coding Assistants](/blog/post.php?slug=context-windows-what-developers-get-wrong) | [RAG: From Prototype to Production in Practice](/blog/post.php?slug=rag-from-prototype-to-production)

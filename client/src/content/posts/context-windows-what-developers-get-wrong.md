@@ -80,3 +80,7 @@ Context window limitations have a direct impact on how you should structure code
 We used to optimize for CPU time, then memory, then network latency. Now we're optimizing for context window utilization. The developers who understand this constraint write code that AI assistants can work with effectively. The ones who don't end up fighting the AI instead of collaborating with it.
 
 The context window isn't a limitation you work around. It's a design constraint you build for.
+
+---
+
+**Weitere Artikel:** [RAG: From Prototype to Production in Practice](/blog/post.php?slug=rag-from-prototype-to-production) | [Vibecoding: When It Works, When It Breaks, and How to Do It Right](/blog/post.php?slug=vibecoding-when-it-works-when-it-breaks)

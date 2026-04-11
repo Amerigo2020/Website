@@ -26,8 +26,8 @@ if (!$ab_variant || !in_array($ab_variant, ['a', 'b'], true)) {
     setcookie('ab_hero', $ab_variant, time() + 86400 * 30, '/', '', true, true);
 }
 
-$hero_cta_primary = $ab_variant === 'a' ? 'Start a project' : 'Let\'s talk';
-$hero_cta_secondary = $ab_variant === 'a' ? 'What I build' : 'See my work';
+$hero_cta_primary = $ab_variant === 'a' ? 'Projekt starten' : 'Kontakt aufnehmen';
+$hero_cta_secondary = $ab_variant === 'a' ? 'Leistungen ansehen' : 'Referenzen ansehen';
 
 // Configuration
 $config = [
@@ -153,7 +153,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
@@ -173,8 +173,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
     <meta property="og:description" content="<?php echo htmlspecialchars($config['meta_description']); ?>">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="<?php echo htmlspecialchars($config['company_name']); ?>">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:locale:alternate" content="de_DE">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:locale:alternate" content="en_US">
     <meta property="og:url" content="<?php echo htmlspecialchars($canonical); ?>">
     <meta property="og:image"
         content="<?php echo htmlspecialchars($scheme . '://' . $host . '/assets/portrait.jpg'); ?>">
@@ -289,26 +289,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "What services does Velletti Consulting offer?",
+                "name": "Welche Leistungen bietet Velletti Consulting an?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "We build complete systems for startups: AI & Automation, Web Applications & Hosting, and DevOps & Deployment pipelines."
+                    "text": "Ich baue komplette Systeme für Startups: AI & Automatisierung um repetitive Arbeit zu eliminieren, Webanwendungen & Hosting mit kompletten Deployment-Pipelines, und DevOps & Deployment-Infrastruktur damit dein Team ohne Angst shippen kann."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Where is Velletti Consulting based?",
+                "name": "Wo ist Velletti Consulting ansässig?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Velletti Consulting is based in Munich, Bavaria, Germany. We serve clients locally and remotely."
+                    "text": "In München, Bayern. Ich arbeite sowohl mit lokalen als auch mit Remote-Kunden. Die meiste Arbeit läuft asynchron, daher sind Zeitzonenunterschiede selten ein Problem."
                 }
             },
             {
                 "@type": "Question",
-                "name": "How can I start a project with Velletti Consulting?",
+                "name": "Wie kann ich ein Projekt starten?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Use the contact form on our website or send an email to vel-consulting@ame.velletti.de. We reply to every inquiry within 24 hours."
+                    "text": "Nutze das Kontaktformular oben oder schreibe eine E-Mail an vel-consulting@ame.velletti.de. Ich antworte auf jede Anfrage innerhalb von 24 Stunden. Danach haben wir einen kurzen Discovery-Call und ich sende dir ein Angebot."
                 }
             },
             {
@@ -357,10 +357,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
             </a>
 
             <nav class="nav" role="navigation" aria-label="Main navigation">
-                <a href="#experience" class="nav__link">About</a>
-                <a href="#services" class="nav__link">What I build</a>
+                <a href="#experience" class="nav__link">Über mich</a>
+                <a href="#services" class="nav__link">Leistungen</a>
                 <a href="/blog/" class="nav__link">Blog</a>
-                <a href="#contact" class="nav__link">Contact</a>
+                <a href="#contact" class="nav__link">Kontakt</a>
             </nav>
 
             <div class="header__actions">
@@ -391,10 +391,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
 
             <div class="mobile-menu" id="mobileMenu">
                 <nav class="nav" role="navigation" aria-label="Mobile navigation">
-                    <a href="#experience" class="nav__link" onclick="closeMobileMenu()">About</a>
-                    <a href="#services" class="nav__link" onclick="closeMobileMenu()">What I build</a>
+                    <a href="#experience" class="nav__link" onclick="closeMobileMenu()">Über mich</a>
+                    <a href="#services" class="nav__link" onclick="closeMobileMenu()">Leistungen</a>
                     <a href="/blog/" class="nav__link" onclick="closeMobileMenu()">Blog</a>
-                    <a href="#contact" class="nav__link" onclick="closeMobileMenu()">Contact</a>
+                    <a href="#contact" class="nav__link" onclick="closeMobileMenu()">Kontakt</a>
                 </nav>
             </div>
         </div>
@@ -406,11 +406,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
             <div class="container">
                 <div class="hero__grid">
                     <div class="hero__text">
-                        <p class="hero__eyebrow">Amerigo Velletti · Munich</p>
-                        <h1 class="hero__title">I build complete systems, from backend to UI, for startups that need one person to own the technical side.</h1>
+                        <p class="hero__eyebrow">Amerigo Velletti · München</p>
+                        <h1 class="hero__title">Ich baue komplette Systeme, vom Backend bis zum UI, für Startups die eine Person brauchen, die die Technik verantwortet.</h1>
                         <p class="hero__subtitle">
-                            From the first conversation to production. I own the architecture, the code,
-                            and the deployment, so you don't have to manage a developer.
+                            Vom ersten Gespräch bis zur Produktion. Ich verantworte Architektur, Code und Deployment, damit du keinen Entwickler managen musst.
                         </p>
                         <div class="hero__actions">
                             <a href="#contact" class="btn btn--primary" onclick="if(typeof plausible!=='undefined'){var p=new URLSearchParams(location.search);plausible('cta_click',{props:{label:'hero_primary',variant:'<?php echo $ab_variant; ?>',source:p.get('utm_source')||'direct'}})}"><?php echo htmlspecialchars($hero_cta_primary); ?></a>
@@ -435,9 +434,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         <!-- About / Story Section -->
         <section id="experience" class="section about" data-reveal>
             <div class="container">
-                <h2>About</h2>
+                <h2>Über mich</h2>
                 <div class="about__prose">
-                    <p>I grew up helping run my family's IT services company, Jörg Velletti EDV Service, which meant debugging production systems long before I enrolled at university. At TUM studying Business Informatics, I developed the systems-thinking framing that connects technical decisions to business outcomes. Today I'm a Founding Engineer at a stealth-mode YC-backed SaaS studio and compete in hackathons to keep shipping under pressure. Our team won the Enactus World Cup (Bangkok 2025) and I placed top 3 at the MSG Hackathon.</p>
+                    <p>Ich bin mit dem IT-Dienstleistungsunternehmen meiner Familie, Jörg Velletti EDV Service, aufgewachsen und habe Produktivsysteme gewartet, lange bevor ich an der TUM Wirtschaftsinformatik studiert habe. Heute bin ich Founding Engineer bei einem YC-backed SaaS Studio im Stealth-Modus und nehme regelmäßig an Hackathons teil. Unser Team hat den Enactus World Cup (Bangkok 2025) gewonnen und ich habe beim MSG Hackathon Top 3 erreicht.</p>
                 </div>
             </div>
         </section>
@@ -445,23 +444,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         <!-- Services Section -->
         <section id="services" class="section services" data-reveal>
             <div class="container">
-                <h2>What I build</h2>
-                <p class="services__intro">You describe a problem. Some weeks later, you have a system that runs: a backend that handles your business logic, a front end your team can actually use, and deployments that don't require you to call me at 2am.</p>
+                <h2>Leistungen</h2>
+                <p class="services__intro">Du beschreibst ein Problem. Einige Wochen später hast du ein System, das läuft: ein Backend für deine Geschäftslogik, ein Frontend das dein Team tatsächlich nutzen kann, und Deployments die keinen Anruf um 2 Uhr nachts erfordern.</p>
 
                 <div class="capabilities" data-reveal-children>
                     <div class="capability">
                         <span class="capability-label">AI & Automation</span>
-                        <p>I automate the workflows your team wastes hours on. AI-assisted processes that run without manual intervention, integrated into the systems you already use.</p>
+                        <p>Ich automatisiere die Workflows, für die dein Team Stunden verschwendet. KI-gestützte Prozesse, die ohne manuelles Eingreifen laufen und in die Systeme integriert sind, die du bereits nutzt.</p>
                     </div>
 
                     <div class="capability">
-                        <span class="capability-label">Web Applications & Hosting</span>
-                        <p>A complete web presence: fast, accessible, and maintained. I handle the domain, the hosting, the deployment pipeline, and the monitoring, so the site stays up and you stay focused on your business.</p>
+                        <span class="capability-label">Webanwendungen & Hosting</span>
+                        <p>Eine komplette Webpräsenz: schnell, barrierefrei und gewartet. Ich kümmere mich um Domain, Hosting, Deployment-Pipeline und Monitoring, damit die Seite läuft und du dich auf dein Geschäft konzentrieren kannst.</p>
                     </div>
 
                     <div class="capability">
                         <span class="capability-label">DevOps & Deployment</span>
-                        <p>I set up the pipelines that let you ship without fear. CI/CD, infrastructure as code, observability, so every release is predictable and every incident is visible.</p>
+                        <p>Ich baue die Pipelines, mit denen du ohne Angst deployen kannst. CI/CD, Infrastructure as Code, Observability, damit jedes Release vorhersehbar und jeder Incident sichtbar ist.</p>
                     </div>
                 </div>
 
@@ -471,24 +470,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         <!-- Proof Section -->
         <section id="proof" class="section proof" data-reveal>
             <div class="container">
-                <h2>Selected proof</h2>
+                <h2>Referenzen</h2>
 
                 <div class="proof__list" data-reveal-children>
                     <div class="proof-item">
                         <span class="proof-item__label">Enactus World Cup, Bangkok 2025</span>
-                        <p class="proof-item__context">Represented Germany at the international Enactus competition and won. We built a working product under competition conditions in Bangkok.</p>
+                        <p class="proof-item__context">Deutschland beim internationalen Enactus-Wettbewerb vertreten und gewonnen. Wir haben unter Wettbewerbsbedingungen in Bangkok ein funktionierendes Produkt gebaut.</p>
                     </div>
                     <div class="proof-item">
                         <span class="proof-item__label">MSG Hackathon, Code &amp; Create</span>
-                        <p class="proof-item__context">Placed top 3 at the MSG Code & Create hackathon, shipping a functional prototype within 24 hours against a field of professional developers.</p>
+                        <p class="proof-item__context">Top 3 beim MSG Code & Create Hackathon. Funktionierenden Prototyp innerhalb von 24 Stunden gegen professionelle Entwickler geliefert.</p>
                     </div>
                     <div class="proof-item">
                         <span class="proof-item__label">Founding Engineer, YC-backed SaaS Studio (Stealth)</span>
-                        <p class="proof-item__context">Building B2B SaaS products at a Y Combinator-founded studio. Previously working student at EY Munich in Transfer Pricing.</p>
+                        <p class="proof-item__context">B2B SaaS-Produkte bei einem von Y Combinator gegründeten Studio. Zuvor Werkstudent bei EY München im Bereich Verrechnungspreise.</p>
                     </div>
                     <div class="proof-item">
                         <span class="proof-item__label">Jörg Velletti EDV Service</span>
-                        <p class="proof-item__context">Grew up maintaining production systems at the family IT business, which meant real accountability for real clients before starting university.</p>
+                        <p class="proof-item__context">Aufgewachsen mit der Wartung von Produktivsystemen im familiären IT-Unternehmen. Echte Verantwortung für echte Kunden, schon vor dem Studium.</p>
                     </div>
                 </div>
             </div>
@@ -496,7 +495,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
 
         <section class="section" style="padding: var(--space-8) 0;">
             <div class="container" style="text-align: center;">
-                <p style="color: var(--text-secondary); margin-bottom: var(--space-3);">Looking for ongoing support?</p>
+                <p style="color: var(--text-secondary); margin-bottom: var(--space-3);">Laufende Unterstützung gesucht?</p>
                 <a href="checkout.php" class="btn btn--ghost">Erstberatung buchen, €99</a>
             </div>
         </section>
@@ -504,8 +503,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         <!-- Contact Section -->
         <section id="contact" class="section contact" data-reveal>
             <div class="container">
-                <h2>Start a conversation</h2>
-                <p>Tell me about your project. I reply to every inquiry within 24 hours.</p>
+                <h2>Kontakt aufnehmen</h2>
+                <p>Erzähl mir von deinem Projekt. Ich antworte auf jede Anfrage innerhalb von 24 Stunden.</p>
 
                 <div id="contactResponse" class="form-success" style="display:none"></div>
 
@@ -523,15 +522,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                     </div>
 
                     <div class="form-group">
-                        <label for="phone" class="form-label">Phone</label>
+                        <label for="phone" class="form-label">Telefon</label>
                         <input type="tel" id="phone" name="phone" class="form-input" autocomplete="tel">
                         <div class="form-error visually-hidden" id="phone-error"></div>
                     </div>
 
                     <div class="form-group">
-                        <label for="message" class="form-label">Message *</label>
+                        <label for="message" class="form-label">Nachricht *</label>
                         <textarea id="message" name="message" class="form-textarea" required
-                            placeholder="How can I help?"></textarea>
+                            placeholder="Wie kann ich helfen?"></textarea>
                         <div class="form-error visually-hidden" id="message-error"></div>
                     </div>
 
@@ -543,7 +542,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
 
                     <input type="hidden" name="csrf_token"
                         value="<?php echo htmlspecialchars($_SESSION['csrf_token']); ?>">
-                    <button type="submit" class="form-submit">Send Message</button>
+                    <button type="submit" class="form-submit">Nachricht senden</button>
                 </form>
             </div>
         </section>
@@ -551,19 +550,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         <!-- FAQ Section -->
         <section id="faq" class="section" data-reveal>
             <div class="container">
-                <h2>Frequently asked questions</h2>
+                <h2>Häufige Fragen</h2>
                 <div class="faq-list">
                     <details class="faq-item" open>
-                        <summary class="faq-question">What services does Velletti Consulting offer?</summary>
-                        <p class="faq-answer">I build complete systems for startups: AI & Automation to eliminate repetitive work, Web Applications & Hosting with full deployment pipelines, and DevOps & Deployment infrastructure so your team can ship without fear.</p>
+                        <summary class="faq-question">Welche Leistungen bietet Velletti Consulting an?</summary>
+                        <p class="faq-answer">Ich baue komplette Systeme für Startups: AI & Automatisierung um repetitive Arbeit zu eliminieren, Webanwendungen & Hosting mit kompletten Deployment-Pipelines, und DevOps & Deployment-Infrastruktur damit dein Team ohne Angst shippen kann.</p>
                     </details>
                     <details class="faq-item">
-                        <summary class="faq-question">Where is Velletti Consulting based?</summary>
-                        <p class="faq-answer">I'm based in Munich, Bavaria, Germany and serve clients both locally and remotely. Most of my work is done asynchronously, so timezone differences are rarely a problem.</p>
+                        <summary class="faq-question">Wo ist Velletti Consulting ansässig?</summary>
+                        <p class="faq-answer">In München, Bayern. Ich arbeite sowohl mit lokalen als auch mit Remote-Kunden. Die meiste Arbeit läuft asynchron, daher sind Zeitzonenunterschiede selten ein Problem.</p>
                     </details>
                     <details class="faq-item">
-                        <summary class="faq-question">How can I start a project?</summary>
-                        <p class="faq-answer">Use the <a href="#contact">contact form</a> above or send an email to <a href="mailto:<?php echo htmlspecialchars($config['company_email']); ?>"><?php echo htmlspecialchars($config['company_email']); ?></a>. I reply to every inquiry within 24 hours. We'll have a short discovery call, then I'll send you a proposal.</p>
+                        <summary class="faq-question">Wie kann ich ein Projekt starten?</summary>
+                        <p class="faq-answer">Nutze das <a href="#contact">Kontaktformular</a> oben oder schreibe eine E-Mail an <a href="mailto:<?php echo htmlspecialchars($config['company_email']); ?>"><?php echo htmlspecialchars($config['company_email']); ?></a>. Ich antworte auf jede Anfrage innerhalb von 24 Stunden. Danach haben wir einen kurzen Discovery-Call und ich sende dir ein Angebot.</p>
                     </details>
                     <details class="faq-item">
                         <summary class="faq-question">Welche Technologien nutzt Velletti Consulting?</summary>
@@ -585,24 +584,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
             <div class="footer__content">
                 <div class="footer__brand">
                     <span class="footer__brand-name"><?php echo htmlspecialchars($config['company_name']); ?></span>
-                    <p class="footer__tagline">Systems, automation, and deployment for startups.</p>
+                    <p class="footer__tagline">Systeme, Automatisierung und Deployment für Startups.</p>
                     <p style="margin-bottom:0;">
                         <a href="mailto:<?php echo htmlspecialchars($config['company_email']); ?>"><?php echo htmlspecialchars($config['company_email']); ?></a><br>
                         <a href="tel:<?php echo htmlspecialchars($config['company_phone']); ?>"><?php echo htmlspecialchars($config['company_phone']); ?></a>
                     </p>
                 </div>
                 <div>
-                    <p class="footer__col-title">Navigate</p>
+                    <p class="footer__col-title">Navigation</p>
                     <ul class="footer__links">
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
+                        <li><a href="#services">Leistungen</a></li>
                         <li><a href="/blog/">Blog</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="checkout.php">Premium</a></li>
+                        <li><a href="#contact">Kontakt</a></li>
+                        <li><a href="checkout.php">Erstberatung</a></li>
                     </ul>
                 </div>
                 <div>
-                    <p class="footer__col-title">Legal</p>
+                    <p class="footer__col-title">Rechtliches</p>
                     <ul class="footer__links">
                         <li><a href="/impressum.php">Impressum</a></li>
                         <li><a href="/datenschutz.php">Datenschutz</a></li>

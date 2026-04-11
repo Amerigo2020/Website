@@ -77,3 +77,7 @@ You don't need a six-month AI strategy. Pick one workflow that wastes the most t
 The compound effect is what matters. Five automated workflows, each saving 4 hours per week, add up to a full workday recovered, every single week.
 
 If you're running a startup and spending more time on operations than on your product, something needs to change. The tools exist. The cost is low. The only question is which workflow you'll automate first.
+
+---
+
+**Weitere Artikel:** [Vibecoding: When It Works, When It Breaks, and How to Do It Right](/blog/post.php?slug=vibecoding-when-it-works-when-it-breaks) | [RAG: From Prototype to Production in Practice](/blog/post.php?slug=rag-from-prototype-to-production)

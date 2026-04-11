@@ -94,3 +94,7 @@ Every form and state-changing endpoint in your application should have:
 4. Custom header validation for AJAX endpoints
 
 This takes 20 minutes to implement correctly. Skipping it means any website on the internet can perform actions as your users. That's not a theoretical risk. It's one of the OWASP Top 10 for a reason.
+
+---
+
+**Weitere Artikel:** [CI/CD for Small Teams: Ship Without Fear in Under a Day](/blog/post.php?slug=cicd-for-small-teams) | [Tech Stack Decisions as a Solo Founder: What Actually Matters](/blog/post.php?slug=tech-stack-decisions-solo-founder)

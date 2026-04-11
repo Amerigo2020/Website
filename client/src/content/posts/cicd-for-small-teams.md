@@ -119,3 +119,7 @@ After setup, your workflow becomes:
 The entire process takes minutes. No manual SSH. No FTP uploads. No hoping you remembered to pull the latest changes.
 
 For a two-person team, this is the difference between shipping three times a day and shipping once a week. The confidence to deploy often is what lets small teams move fast without breaking things.
+
+---
+
+**Weitere Artikel:** [Tech Stack Decisions as a Solo Founder: What Actually Matters](/blog/post.php?slug=tech-stack-decisions-solo-founder) | [CSRF Protection: The Attack Every Web Developer Should Understand](/blog/post.php?slug=csrf-protection-explained)

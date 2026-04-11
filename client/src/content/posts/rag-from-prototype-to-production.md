@@ -102,3 +102,7 @@ If you're building RAG for production today:
 6. **Evaluation**: A test set of 50+ questions with expected answers, run weekly
 
 The prototype-to-production gap in RAG isn't a technology problem. It's an evaluation problem. If you can't measure retrieval quality, you can't improve it. Build the measurement first, then iterate on everything else.
+
+---
+
+**Weitere Artikel:** [Weaviate: A Practical Guide to Self-Hosted Vector Search](/blog/post.php?slug=weaviate-vector-database-practical-guide) | [Context Windows: What Developers Get Wrong About AI Coding Assistants](/blog/post.php?slug=context-windows-what-developers-get-wrong)

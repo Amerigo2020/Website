@@ -103,7 +103,7 @@ if (!empty($errors)) {
 
 // Send email via PHP mail(); simulate success on localhost/dev to avoid warnings
 $from = 'server@ame.velletti.de';
-$to   = 'info@ame.velletti.de';
+$to   = 'vel-consulting@ame.velletti.de';
 $nameSafe = str_replace(["\r", "\n"], '', $name);
 $subject = 'Website Contact - ' . $nameSafe;
 $body  = "This is a contact request from the website.\n\n";
