@@ -2,6 +2,8 @@
 /**
  * Velletti Consulting - Checkout Cancelled
  */
+require_once __DIR__ . '/includes/headers.php';
+
 $config = [
     'site_title' => 'Velletti Consulting | Zahlung abgebrochen',
     'company_name' => 'Velletti Consulting',
@@ -18,6 +20,9 @@ $cssVersion = @filemtime(__DIR__ . '/assets/css/app.css') ?: time();
         <?php echo htmlspecialchars($config['site_title']); ?>
     </title>
     <link rel="stylesheet" href="assets/css/app.css?v=<?php echo $cssVersion; ?>">
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://plausible.io/js/pa-JqqQJVxsU6l36GPzFI8OK.js"></script>
+    <script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
     <style>
         .msg-box {
             max-width: 500px;

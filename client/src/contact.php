@@ -4,9 +4,8 @@
 // - CSRF + honeypot + rate limit
 // - Returns JSON for AJAX; HTML fallback otherwise
 
+require_once __DIR__ . '/includes/headers.php';
 session_start();
-
-header_remove('X-Powered-By');
 
 function is_ajax_request(): bool {
     $rh = getallheaders();

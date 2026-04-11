@@ -2,6 +2,7 @@
 /**
  * Velletti Consulting - Stripe Checkout
  */
+require_once __DIR__ . '/includes/headers.php';
 session_start();
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -27,6 +28,9 @@ $cssVersion = @filemtime(__DIR__ . '/assets/css/app.css') ?: time();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($config['site_title']); ?></title>
     <link rel="stylesheet" href="assets/css/app.css?v=<?php echo $cssVersion; ?>">
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://plausible.io/js/pa-JqqQJVxsU6l36GPzFI8OK.js"></script>
+    <script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
     <!-- Stripe.js -->
     <script src="https://js.stripe.com/v3/"></script>
     <style>
@@ -104,9 +108,7 @@ $cssVersion = @filemtime(__DIR__ . '/assets/css/app.css') ?: time();
                 <li>KI-Automatisierungs-Konzepte</li>
             </ul>
 
-            <form action="create-checkout-session.php" method="POST">
-                <!-- Add a hidden input if you want to pass dynamic price IDs, 
-                     but for security it's better to hardcode the price ID in the backend -->
+            <form action="create-checkout-session.php" method="POST" onsubmit="if(typeof plausible!=='undefined')plausible('checkout_click')">
                 <button type="submit" class="cta-button" style="width: 100%;">
                     Jetzt abonnieren
                 </button>

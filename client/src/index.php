@@ -8,6 +8,9 @@
  * @date 2025-07-07
  */
 
+// Shared security & cache headers
+require_once __DIR__ . '/includes/headers.php';
+
 // Start session for CSRF protection
 session_start();
 
@@ -15,6 +18,16 @@ session_start();
 if (!isset($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
+
+// A/B test variant (persisted via cookie for 30 days)
+$ab_variant = $_COOKIE['ab_hero'] ?? null;
+if (!$ab_variant || !in_array($ab_variant, ['a', 'b'], true)) {
+    $ab_variant = random_int(0, 1) ? 'a' : 'b';
+    setcookie('ab_hero', $ab_variant, time() + 86400 * 30, '/', '', true, true);
+}
+
+$hero_cta_primary = $ab_variant === 'a' ? 'Start a project' : 'Let\'s talk';
+$hero_cta_secondary = $ab_variant === 'a' ? 'What I build' : 'See my work';
 
 // Configuration
 $config = [
@@ -181,6 +194,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/app.css?v=<?php echo $cssVersion; ?>">
 
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://plausible.io/js/pa-JqqQJVxsU6l36GPzFI8OK.js"></script>
+    <script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
+
     <!-- Schema.org markup -->
     <script type="application/ld+json">
     {
@@ -194,9 +211,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         "image": "<?php echo htmlspecialchars($scheme . '://' . $host . '/assets/portrait.jpg'); ?>",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "<?php echo htmlspecialchars($config['company_address']); ?>"
+            "addressLocality": "Munich",
+            "addressRegion": "Bavaria",
+            "addressCountry": "DE"
         },
-        "areaServed": "Munich, Bavaria, Germany",
+        "areaServed": {
+            "@type": "City",
+            "name": "Munich"
+        },
         "sameAs": [
             "https://github.com/Amerigo2020",
             "https://www.linkedin.com/in/amerigo-velletti-b888a9304"
@@ -241,6 +263,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
     }
     </script>
 
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What services does Velletti Consulting offer?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We build complete systems for startups: AI & Automation, Web Applications & Hosting, and DevOps & Deployment pipelines."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Where is Velletti Consulting based?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Velletti Consulting is based in Munich, Bavaria, Germany. We serve clients locally and remotely."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How can I start a project with Velletti Consulting?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use the contact form on our website or send an email to vel-consulting@ame.velletti.de. We reply to every inquiry within 24 hours."
+                }
+            }
+        ]
+    }
+    </script>
+
 </head>
 
 <body>
@@ -254,6 +310,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
             <nav class="nav" role="navigation" aria-label="Main navigation">
                 <a href="#experience" class="nav__link">About</a>
                 <a href="#services" class="nav__link">What I build</a>
+                <a href="/blog/" class="nav__link">Blog</a>
                 <a href="#contact" class="nav__link">Contact</a>
             </nav>
 
@@ -287,6 +344,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                 <nav class="nav" role="navigation" aria-label="Mobile navigation">
                     <a href="#experience" class="nav__link" onclick="closeMobileMenu()">About</a>
                     <a href="#services" class="nav__link" onclick="closeMobileMenu()">What I build</a>
+                    <a href="/blog/" class="nav__link" onclick="closeMobileMenu()">Blog</a>
                     <a href="#contact" class="nav__link" onclick="closeMobileMenu()">Contact</a>
                 </nav>
             </div>
@@ -306,8 +364,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                             and the deployment — so you don't have to manage a developer.
                         </p>
                         <div class="hero__actions">
-                            <a href="#contact" class="btn btn--primary">Start a project</a>
-                            <a href="#services" class="btn btn--ghost">What I build</a>
+                            <a href="#contact" class="btn btn--primary" onclick="if(typeof plausible!=='undefined'){var p=new URLSearchParams(location.search);plausible('cta_click',{props:{label:'hero_primary',variant:'<?php echo $ab_variant; ?>',source:p.get('utm_source')||'direct'}})}"><?php echo htmlspecialchars($hero_cta_primary); ?></a>
+                            <a href="#services" class="btn btn--ghost" onclick="if(typeof plausible!=='undefined'){var p=new URLSearchParams(location.search);plausible('cta_click',{props:{label:'hero_secondary',variant:'<?php echo $ab_variant; ?>',source:p.get('utm_source')||'direct'}})}"><?php echo htmlspecialchars($hero_cta_secondary); ?></a>
                         </div>
                     </div>
                     <div class="hero__portrait-wrap">
@@ -487,6 +545,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                 <p>Bei Nutzung des Kontaktformulars verarbeiten wir die von Ihnen eingegebenen Daten (Name, E-Mail,
                     Nachricht; optional Telefon) zur Bearbeitung Ihrer Anfrage. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b
                     DSGVO. Die Daten werden nur so lange gespeichert, wie es zur Bearbeitung erforderlich ist.</p>
+                <h3>Webanalyse</h3>
+                <p>Diese Website nutzt Plausible Analytics, einen datenschutzfreundlichen Analysedienst. Plausible
+                    erhebt keine personenbezogenen Daten, setzt keine Cookies und ist vollständig DSGVO-konform.
+                    Es werden ausschließlich anonymisierte, aggregierte Nutzungsdaten erfasst. Weitere Informationen:
+                    <a href="https://plausible.io/data-policy" target="_blank" rel="noopener">plausible.io/data-policy</a>.</p>
                 <h3>Externe Dienste</h3>
                 <p>Beim Öffnen der verlinkten LinkedIn- oder GitHub-Profile werden Daten an die jeweiligen Anbieter
                     übertragen. Es gelten die Datenschutzbestimmungen dieser Anbieter.</p>
@@ -727,6 +790,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                         responseBox.textContent = 'Thank you! Your message has been sent.';
                         responseBox.style.display = 'block';
                         form.reset();
+                        if (typeof plausible !== 'undefined') {
+                            const params = new URLSearchParams(window.location.search);
+                            const variant = document.cookie.match(/ab_hero=([ab])/)?.[1] || 'unknown';
+                            plausible('contact_form_submit', {props: {
+                                source: params.get('utm_source') || 'direct',
+                                medium: params.get('utm_medium') || 'none',
+                                variant: variant
+                            }});
+                        }
                         if (data.csrf_token) {
                             const csrfEl = form.querySelector('input[name="csrf_token"]');
                             if (csrfEl) csrfEl.value = data.csrf_token;

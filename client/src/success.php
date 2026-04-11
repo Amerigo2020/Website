@@ -2,6 +2,7 @@
 /**
  * Velletti Consulting - Checkout Success
  */
+require_once __DIR__ . '/includes/headers.php';
 session_start();
 
 $config = [
@@ -20,6 +21,9 @@ $cssVersion = @filemtime(__DIR__ . '/assets/css/app.css') ?: time();
         <?php echo htmlspecialchars($config['site_title']); ?>
     </title>
     <link rel="stylesheet" href="assets/css/app.css?v=<?php echo $cssVersion; ?>">
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://plausible.io/js/pa-JqqQJVxsU6l36GPzFI8OK.js"></script>
+    <script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
     <style>
         .msg-box {
             max-width: 500px;
@@ -61,6 +65,7 @@ $cssVersion = @filemtime(__DIR__ . '/assets/css/app.css') ?: time();
             <a href="/" class="cta-button">Zurück zur Startseite</a>
         </div>
     </main>
+    <script>if(typeof plausible!=='undefined')plausible('payment_success');</script>
 </body>
 
 </html>
