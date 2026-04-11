@@ -31,9 +31,9 @@ $hero_cta_secondary = $ab_variant === 'a' ? 'What I build' : 'See my work';
 
 // Configuration
 $config = [
-    'site_title' => 'Amerigo Velletti | Systems Builder for Startups, Munich',
-    'meta_description' => 'I build complete systems, from backend to UI, for startups and small teams that need one person to own the technical side. Based in Munich, studying Business Informatics at TUM.',
-    'meta_keywords' => 'Amerigo Velletti, systems developer, full-stack developer, startup developer, Munich, TUM, Business Informatics, automation, web development, DevOps',
+    'site_title' => 'Amerigo Velletti | Freelance Entwickler München, AI & Full-Stack',
+    'meta_description' => 'Freelance Entwickler und Founding Engineer in München. Ich baue komplette Systeme (Backend, Frontend, DevOps) für Startups. AI-Automatisierung, Webentwicklung und Deployment aus einer Hand. TUM Wirtschaftsinformatik.',
+    'meta_keywords' => 'Amerigo Velletti, Freelance Entwickler München, Full-Stack Developer Munich, Startup Developer, AI Automatisierung, Webentwicklung München, DevOps Engineer, TUM Wirtschaftsinformatik, YC Startup, Founding Engineer',
     'company_name' => 'Velletti Consulting',
     'company_email' => 'vel-consulting@ame.velletti.de',
     'company_phone' => '+49 176 45531533',
@@ -160,6 +160,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php echo htmlspecialchars($config['meta_description']); ?>">
     <meta name="keywords" content="<?php echo htmlspecialchars($config['meta_keywords']); ?>">
+    <meta name="geo.region" content="DE-BY">
+    <meta name="geo.placename" content="Munich">
+    <meta name="geo.position" content="48.137154;11.576124">
+    <meta name="ICBM" content="48.137154, 11.576124">
     <meta name="author" content="<?php echo htmlspecialchars($config['company_name']); ?>">
     <meta name="robots" content="index,follow">
     <meta name="google-site-verification" content="S8XgRO3zITWu2fLmLr5jS7O_vZM_sEskdm2DiaGHrzc" />
@@ -170,6 +174,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="<?php echo htmlspecialchars($config['company_name']); ?>">
     <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="de_DE">
     <meta property="og:url" content="<?php echo htmlspecialchars($canonical); ?>">
     <meta property="og:image"
         content="<?php echo htmlspecialchars($scheme . '://' . $host . '/assets/portrait.jpg'); ?>">
@@ -189,10 +194,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="canonical" href="<?php echo htmlspecialchars($canonical); ?>">
+    <link rel="alternate" hreflang="en" href="<?php echo htmlspecialchars($canonical); ?>">
+    <link rel="alternate" hreflang="de" href="<?php echo htmlspecialchars($canonical); ?>">
+    <link rel="alternate" hreflang="x-default" href="<?php echo htmlspecialchars($canonical); ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/app.css?v=<?php echo $cssVersion; ?>">
+    <link rel="preload" href="assets/css/app.css?v=<?php echo $cssVersion; ?>" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@400;500&display=swap" as="style" crossorigin>
 
     <!-- Privacy-friendly analytics by Plausible -->
     <script async src="https://plausible.io/js/pa-JqqQJVxsU6l36GPzFI8OK.js"></script>
@@ -203,22 +213,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
     {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
+        "@id": "https://ame.velletti.de/#business",
         "name": "<?php echo htmlspecialchars($config['company_name']); ?>",
         "description": "<?php echo htmlspecialchars($config['meta_description']); ?>",
         "email": "<?php echo htmlspecialchars($config['company_email']); ?>",
         "telephone": "<?php echo htmlspecialchars($config['company_phone']); ?>",
         "url": "<?php echo htmlspecialchars($canonical); ?>",
         "image": "<?php echo htmlspecialchars($scheme . '://' . $host . '/assets/portrait.jpg'); ?>",
+        "priceRange": "€€",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Munich",
             "addressRegion": "Bavaria",
             "addressCountry": "DE"
         },
-        "areaServed": {
-            "@type": "City",
-            "name": "Munich"
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "48.137154",
+            "longitude": "11.576124"
         },
+        "areaServed": [
+            {"@type": "City", "name": "Munich"},
+            {"@type": "State", "name": "Bavaria"},
+            {"@type": "Country", "name": "Germany"}
+        ],
         "sameAs": [
             "https://github.com/Amerigo2020",
             "https://www.linkedin.com/in/amerigo-velletti-b888a9304"
@@ -292,6 +310,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                     "@type": "Answer",
                     "text": "Use the contact form on our website or send an email to vel-consulting@ame.velletti.de. We reply to every inquiry within 24 hours."
                 }
+            },
+            {
+                "@type": "Question",
+                "name": "Welche Technologien nutzt Velletti Consulting?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "PHP, Python, JavaScript/TypeScript, React, Node.js, Docker, CI/CD Pipelines und AI-Frameworks wie LangChain und RAG-Systeme."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Was kostet ein Projekt bei Velletti Consulting?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Jedes Projekt beginnt mit einer Erstberatung für €99. Projektkosten werden individuell auf Basis des Umfangs kalkuliert."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://ame.velletti.de/"
             }
         ]
     }
@@ -515,6 +564,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                     <details class="faq-item">
                         <summary class="faq-question">How can I start a project?</summary>
                         <p class="faq-answer">Use the <a href="#contact">contact form</a> above or send an email to <a href="mailto:<?php echo htmlspecialchars($config['company_email']); ?>"><?php echo htmlspecialchars($config['company_email']); ?></a>. I reply to every inquiry within 24 hours. We'll have a short discovery call, then I'll send you a proposal.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">Welche Technologien nutzt Velletti Consulting?</summary>
+                        <p class="faq-answer">Ich arbeite mit PHP, Python, JavaScript/TypeScript, React, Node.js, Docker, CI/CD Pipelines und modernen AI-Frameworks wie LangChain und RAG-Systemen. Die Technologie wird immer passend zum Projekt gewählt.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">Was kostet ein Projekt bei Velletti Consulting?</summary>
+                        <p class="faq-answer">Jedes Projekt beginnt mit einer Erstberatung für €99, in der wir Anforderungen klären und einen konkreten Plan erstellen. Die Projektkosten werden dann individuell auf Basis des Umfangs kalkuliert.</p>
                     </details>
                 </div>
             </div>

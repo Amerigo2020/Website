@@ -34,12 +34,15 @@ $date = $meta['date'] ?? '';
     <title><?php echo $pageTitle; ?></title>
     <?php if ($post): ?>
     <meta name="description" content="<?php echo $description; ?>">
+    <meta name="robots" content="index,follow">
     <meta name="author" content="<?php echo $author; ?>">
     <link rel="canonical" href="<?php echo htmlspecialchars($canonical); ?>">
 
     <meta property="og:title" content="<?php echo $pageTitle; ?>">
     <meta property="og:description" content="<?php echo $description; ?>">
     <meta property="og:type" content="article">
+    <meta property="og:image" content="<?php echo htmlspecialchars($scheme . '://' . $host . '/assets/portrait.jpg'); ?>">
+    <meta property="og:image:alt" content="<?php echo $pageTitle; ?>">
     <meta property="og:url" content="<?php echo htmlspecialchars($canonical); ?>">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="<?php echo $pageTitle; ?>">
@@ -52,6 +55,7 @@ $date = $meta['date'] ?? '';
         "headline": "<?php echo htmlspecialchars($meta['title'] ?? $slug, ENT_QUOTES); ?>",
         "description": "<?php echo $description; ?>",
         "datePublished": "<?php echo htmlspecialchars($date); ?>",
+        "dateModified": "<?php echo htmlspecialchars($date); ?>",
         "author": {
             "@type": "Person",
             "name": "<?php echo $author; ?>",
@@ -65,6 +69,17 @@ $date = $meta['date'] ?? '';
         "mainEntityOfPage": "<?php echo htmlspecialchars($canonical); ?>"
     }
     </script>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://ame.velletti.de/"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://ame.velletti.de/blog/"},
+        {"@type": "ListItem", "position": 3, "name": "<?php echo htmlspecialchars($meta['title'] ?? $slug, ENT_QUOTES); ?>", "item": "<?php echo htmlspecialchars($canonical); ?>"}
+    ]
+}
+</script>
     <?php endif; ?>
 
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">

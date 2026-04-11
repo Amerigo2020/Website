@@ -66,6 +66,30 @@ $cssVersion = @filemtime(__DIR__ . '/../assets/css/app.css') ?: time();
         .blog-header p { color: var(--text-secondary); max-width: var(--max-width-prose); }
         .blog-empty { color: var(--text-tertiary); font-style: italic; }
     </style>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Blog | Velletti Consulting",
+    "description": "Insights on AI automation, DevOps, and building tech for startups.",
+    "url": "<?php echo htmlspecialchars($canonical); ?>",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Velletti Consulting",
+        "url": "https://ame.velletti.de/"
+    }
+}
+</script>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://ame.velletti.de/"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://ame.velletti.de/blog/"}
+    ]
+}
+</script>
 </head>
 <body>
     <header class="header">

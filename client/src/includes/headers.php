@@ -18,3 +18,6 @@ if ($isStaticAsset) {
 } else {
     header('Cache-Control: public, max-age=3600, must-revalidate');
 }
+
+session_cache_limiter('none');
+header('Vary: Accept-Encoding');
