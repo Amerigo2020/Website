@@ -3,7 +3,7 @@
         'name' => 'amerigo2020/website',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '35be6df61d828becac7370e88d401e7d2eb7a667',
+        'reference' => '2b426e3ce0979a268086b14964d9b489323812a3',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'amerigo2020/website' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '35be6df61d828becac7370e88d401e7d2eb7a667',
+            'reference' => '2b426e3ce0979a268086b14964d9b489323812a3',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

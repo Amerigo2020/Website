@@ -2,9 +2,9 @@
 /**
  * Velletti Consulting - Stripe Webhook Handler
  */
-require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->safeLoad();
 
 // The library needs to be configured with your account's secret key.

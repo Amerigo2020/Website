@@ -4,7 +4,7 @@
  * Handles Markdown front-matter parsing, post listing, and rendering.
  */
 
-require_once __DIR__ . '/../../../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 function get_posts_dir(): string {
     return __DIR__ . '/../content/posts';
