@@ -67,6 +67,27 @@ Da dieses Projekt auf purem PHP basiert, ist das Setup extrem unkompliziert. Es 
 3. Im Browser öffnen:
    [http://localhost:8000](http://localhost:8000)
 
+## 🌐 Deployment (Produktion)
+
+**Hosting:** IONOS Webspace (webspace.io)  
+**Domain:** [ame.velletti.de](https://ame.velletti.de)  
+**Document Root:** `client/src/`  
+**Deployment:** Auto-Deploy via GitHub (main branch)
+
+### SSH-Zugang
+
+```bash
+ssh a960163@access-5016342267.webspace-host.com
+# Passwort: siehe Sticky Note
+```
+
+### Wichtige Hinweise
+
+- **Kein `composer install` auf dem Server nötig.** Parsedown ist direkt in `includes/Parsedown.php` eingebunden.
+- **Stripe Checkout** nutzt einen direkten [Stripe Payment Link](https://book.stripe.com/7sY6oH4UP1yYfxAasYafS04), keine API-basierte Checkout-Session. Daher keine `.env` mit Stripe-Keys nötig.
+- **`vendor/`** wird zwar im Repo mitgeliefert (`client/src/vendor/`), ist aber nur für lokale Entwicklung relevant (Stripe SDK, Dotenv).
+- Neue Dateien werden automatisch deployed wenn auf `main` gepusht wird.
+
 ## 💼 Über Velletti Consulting
 
 Wir bauen digitale Lösungen, die funktionieren. Von der Automatisierung mühsamer Geschäftsprozesse durch modernste **KI (Künstliche Intelligenz)** bis zur Entwicklung und dem extrem stabilen Hosting von Webseiten. 

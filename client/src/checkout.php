@@ -27,8 +27,7 @@ $cssVersion = @filemtime(__DIR__ . '/assets/css/app.css') ?: time();
     <!-- Privacy-friendly analytics by Plausible -->
     <script async src="https://plausible.io/js/pa-JqqQJVxsU6l36GPzFI8OK.js"></script>
     <script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
-    <!-- Stripe.js -->
-    <script src="https://js.stripe.com/v3/"></script>
+    
     <style>
         .checkout-box {
             max-width: 450px;
@@ -99,11 +98,11 @@ $cssVersion = @filemtime(__DIR__ . '/assets/css/app.css') ?: time();
                 <li>Kostenschätzung für die Umsetzung</li>
             </ul>
 
-            <form action="create-checkout-session.php" method="POST" onsubmit="if(typeof plausible!=='undefined')plausible('checkout_click')">
-                <button type="submit" class="cta-button" style="width: 100%;">
-                    Beratung buchen
-                </button>
-            </form>
+            <a href="https://book.stripe.com/7sY6oH4UP1yYfxAasYafS04"
+               class="cta-button" style="width: 100%; display: inline-block; text-align: center; text-decoration: none;"
+               onclick="if(typeof plausible!=='undefined')plausible('checkout_click')">
+                Beratung buchen
+            </a>
             <p style="margin-top: var(--space-3); font-size: 0.85rem; opacity: 0.7;">
                 Sichere Zahlung via Stripe. Weitere Projektkosten werden individuell besprochen.
             </p>
