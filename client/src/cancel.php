@@ -26,21 +26,17 @@ $cssVersion = @filemtime(__DIR__ . '/assets/css/app.css') ?: time();
     <style>
         .msg-box {
             max-width: 500px;
-            margin: var(--spacing-2xl) auto;
+            margin: calc(var(--nav-height) + var(--space-16)) auto var(--space-16);
             text-align: center;
-            padding: var(--spacing-xl);
-            background: var(--color-white);
-            border-radius: 12px;
-            box-shadow: var(--shadow-lg);
-        }
-
-        :root[data-theme='dark'] .msg-box {
-            background: #0f172a;
+            padding: var(--space-12);
+            background: var(--bg-surface);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-subtle);
         }
 
         .icon {
             font-size: 4rem;
-            margin-bottom: var(--spacing-md);
+            margin-bottom: var(--space-4);
         }
     </style>
 </head>

@@ -31,8 +31,8 @@ $hero_cta_secondary = $ab_variant === 'a' ? 'What I build' : 'See my work';
 
 // Configuration
 $config = [
-    'site_title' => 'Amerigo Velletti | Systems Builder for Startups — Munich',
-    'meta_description' => 'I build complete systems — from backend to UI — for startups and small teams that need one person to own the technical side. Based in Munich, studying Business Informatics at TUM.',
+    'site_title' => 'Amerigo Velletti | Systems Builder for Startups, Munich',
+    'meta_description' => 'I build complete systems, from backend to UI, for startups and small teams that need one person to own the technical side. Based in Munich, studying Business Informatics at TUM.',
     'meta_keywords' => 'Amerigo Velletti, systems developer, full-stack developer, startup developer, Munich, TUM, Business Informatics, automation, web development, DevOps',
     'company_name' => 'Velletti Consulting',
     'company_email' => 'vel-consulting@ame.velletti.de',
@@ -173,10 +173,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
     <meta property="og:url" content="<?php echo htmlspecialchars($canonical); ?>">
     <meta property="og:image"
         content="<?php echo htmlspecialchars($scheme . '://' . $host . '/assets/portrait.jpg'); ?>">
-    <meta property="og:image:alt" content="Portrait — Amerigo Velletti">
+    <meta property="og:image:alt" content="Portrait of Amerigo Velletti">
     <meta name="twitter:image"
         content="<?php echo htmlspecialchars($scheme . '://' . $host . '/assets/portrait.jpg'); ?>">
-    <meta name="twitter:image:alt" content="Portrait — Amerigo Velletti">
+    <meta name="twitter:image:alt" content="Portrait of Amerigo Velletti">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
@@ -358,10 +358,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                 <div class="hero__grid">
                     <div class="hero__text">
                         <p class="hero__eyebrow">Amerigo Velletti · Munich</p>
-                        <h1 class="hero__title">I build complete systems — from backend to UI — for startups that need one person to own the technical side.</h1>
+                        <h1 class="hero__title">I build complete systems, from backend to UI, for startups that need one person to own the technical side.</h1>
                         <p class="hero__subtitle">
                             From the first conversation to production. I own the architecture, the code,
-                            and the deployment — so you don't have to manage a developer.
+                            and the deployment, so you don't have to manage a developer.
                         </p>
                         <div class="hero__actions">
                             <a href="#contact" class="btn btn--primary" onclick="if(typeof plausible!=='undefined'){var p=new URLSearchParams(location.search);plausible('cta_click',{props:{label:'hero_primary',variant:'<?php echo $ab_variant; ?>',source:p.get('utm_source')||'direct'}})}"><?php echo htmlspecialchars($hero_cta_primary); ?></a>
@@ -388,7 +388,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
             <div class="container">
                 <h2>About</h2>
                 <div class="about__prose">
-                    <p>I grew up helping run my family's IT services company, Jörg Velletti EDV Service — which meant debugging production systems long before I enrolled at university. At TUM studying Business Informatics, I developed the systems-thinking framing that connects technical decisions to business outcomes. Today I work as a student at EY in Transfer Pricing and compete in hackathons to keep shipping under pressure. I've won at the Enactus Germany Worldcup (Bangkok 2025) and placed top 3 at the MSG Hackathon.</p>
+                    <p>I grew up helping run my family's IT services company, Jörg Velletti EDV Service, which meant debugging production systems long before I enrolled at university. At TUM studying Business Informatics, I developed the systems-thinking framing that connects technical decisions to business outcomes. Today I work as a student at EY in Transfer Pricing and compete in hackathons to keep shipping under pressure. I've won at the Enactus Germany Worldcup (Bangkok 2025) and placed top 3 at the MSG Hackathon.</p>
                 </div>
             </div>
         </section>
@@ -402,17 +402,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                 <div class="capabilities reveal-children">
                     <div class="capability">
                         <span class="capability-label">AI & Automation</span>
-                        <p>I automate the workflows your team wastes hours on. The result: AI-assisted processes that run without manual intervention, integrated into the systems you already use.</p>
+                        <p>I automate the workflows your team wastes hours on. AI-assisted processes that run without manual intervention, integrated into the systems you already use.</p>
                     </div>
 
                     <div class="capability">
                         <span class="capability-label">Web Applications & Hosting</span>
-                        <p>A complete web presence: fast, accessible, and maintained. I handle the domain, the hosting, the deployment pipeline, and the monitoring — so the site stays up and you stay focused on your business.</p>
+                        <p>A complete web presence: fast, accessible, and maintained. I handle the domain, the hosting, the deployment pipeline, and the monitoring, so the site stays up and you stay focused on your business.</p>
                     </div>
 
                     <div class="capability">
                         <span class="capability-label">DevOps & Deployment</span>
-                        <p>I set up the pipelines that let you ship without fear. CI/CD, infrastructure as code, observability — so every release is predictable and every incident is visible.</p>
+                        <p>I set up the pipelines that let you ship without fear. CI/CD, infrastructure as code, observability, so every release is predictable and every incident is visible.</p>
                     </div>
                 </div>
 
@@ -426,20 +426,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
 
                 <div class="proof__list reveal-children">
                     <div class="proof-item">
-                        <span class="proof-item__label">Enactus Germany Worldcup — Bangkok 2025</span>
-                        <p class="proof-item__context">Represented Germany at the international Enactus competition and won — the team built a working product under competition conditions in Bangkok.</p>
+                        <span class="proof-item__label">Enactus Germany Worldcup, Bangkok 2025</span>
+                        <p class="proof-item__context">Represented Germany at the international Enactus competition and won. The team built a working product under competition conditions in Bangkok.</p>
                     </div>
                     <div class="proof-item">
-                        <span class="proof-item__label">MSG Hackathon — Code & Create</span>
+                        <span class="proof-item__label">MSG Hackathon, Code &amp; Create</span>
                         <p class="proof-item__context">Placed top 3 at the MSG Code & Create hackathon, shipping a functional prototype within 24 hours against a field of professional developers.</p>
                     </div>
                     <div class="proof-item">
-                        <span class="proof-item__label">EY — Working Student, Transfer Pricing</span>
+                        <span class="proof-item__label">EY, Working Student, Transfer Pricing</span>
                         <p class="proof-item__context">Currently working at EY Munich in Transfer Pricing, applying analytical systems thinking in a Big Four advisory environment.</p>
                     </div>
                     <div class="proof-item">
                         <span class="proof-item__label">Jörg Velletti EDV Service</span>
-                        <p class="proof-item__context">Grew up maintaining production systems at the family IT business — which meant real accountability for real clients before starting university.</p>
+                        <p class="proof-item__context">Grew up maintaining production systems at the family IT business, which meant real accountability for real clients before starting university.</p>
                     </div>
                 </div>
             </div>
@@ -448,7 +448,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         <section class="section" style="padding: var(--space-8) 0;">
             <div class="container" style="text-align: center;">
                 <p style="color: var(--text-secondary); margin-bottom: var(--space-3);">Looking for ongoing support?</p>
-                <a href="checkout.php" class="btn btn--ghost">Premium Service — €99/mo</a>
+                <a href="checkout.php" class="btn btn--ghost">Erstberatung buchen, €99</a>
             </div>
         </section>
 
@@ -520,86 +520,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
             </div>
         </section>
 
-        <!-- Legal: Impressum (Germany) -->
-        <section id="impressum" class="section legal">
-            <div class="container">
-                <h2>Impressum</h2>
-                <p>Dienstanbieter gemäß § 5 TMG</p>
-                <p>
-                    <strong><?php echo htmlspecialchars($config['company_name']); ?></strong><br>
-                    <?php echo htmlspecialchars($config['company_address']); ?><br>
-                    Telefon: <a
-                        href="tel:<?php echo htmlspecialchars($config['company_phone']); ?>"><?php echo htmlspecialchars($config['company_phone']); ?></a><br>
-                    E-Mail: <a
-                        href="mailto:<?php echo htmlspecialchars($config['company_email']); ?>"><?php echo htmlspecialchars($config['company_email']); ?></a>
-                </p>
-                <h3>Haftung für Inhalte</h3>
-                <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den
-                    allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir jedoch nicht verpflichtet,
-                    übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen,
-                    die auf eine rechtswidrige Tätigkeit hinweisen.</p>
-                <h3>Haftung für Links</h3>
-                <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss
-                    haben. Für diese fremden Inhalte übernehmen wir keine Gewähr. Für die Inhalte der verlinkten Seiten
-                    ist stets der jeweilige Anbieter oder Betreiber verantwortlich.</p>
-                <h3>Urheberrecht</h3>
-                <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem
-                    deutschen Urheberrecht. Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung
-                    außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors
-                    bzw. Erstellers.</p>
-            </div>
-        </section>
-
-        <!-- Legal: Datenschutz (Privacy Policy) -->
-        <section id="privacy" class="section legal">
-            <div class="container">
-                <h2>Datenschutzerklärung</h2>
-                <p>Verantwortlicher im Sinne der DSGVO:</p>
-                <p>
-                    <strong><?php echo htmlspecialchars($config['company_name']); ?></strong><br>
-                    <?php echo htmlspecialchars($config['company_address']); ?><br>
-                    E-Mail: <a
-                        href="mailto:<?php echo htmlspecialchars($config['company_email']); ?>"><?php echo htmlspecialchars($config['company_email']); ?></a>
-                </p>
-                <h3>Allgemeines</h3>
-                <p>Wir verarbeiten personenbezogene Daten nur, soweit dies zur Bereitstellung einer funktionsfähigen
-                    Website sowie unserer Inhalte und Leistungen erforderlich ist. Rechtsgrundlagen sind insbesondere
-                    Art. 6 Abs. 1 lit. a, b und f DSGVO.</p>
-                <h3>Server-Logs</h3>
-                <p>Beim Aufruf dieser Website können durch den Hoster technisch notwendige Daten (z. B. IP-Adresse,
-                    Zeitpunkt, abgerufene Seiten) in Logfiles verarbeitet werden. Die Speicherung erfolgt aus
-                    Sicherheitsgründen und zur Sicherstellung der Funktionsfähigkeit.</p>
-                <h3>Kontaktformular</h3>
-                <p>Bei Nutzung des Kontaktformulars verarbeiten wir die von Ihnen eingegebenen Daten (Name, E-Mail,
-                    Nachricht; optional Telefon) zur Bearbeitung Ihrer Anfrage. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b
-                    DSGVO. Die Daten werden nur so lange gespeichert, wie es zur Bearbeitung erforderlich ist.</p>
-                <h3>Webanalyse</h3>
-                <p>Diese Website nutzt Plausible Analytics, einen datenschutzfreundlichen Analysedienst. Plausible
-                    erhebt keine personenbezogenen Daten und ist vollständig DSGVO-konform.
-                    Es werden ausschließlich anonymisierte, aggregierte Nutzungsdaten erfasst. Weitere Informationen:
-                    <a href="https://plausible.io/data-policy" target="_blank" rel="noopener">plausible.io/data-policy</a>.</p>
-                <h3>Cookies</h3>
-                <p>Diese Website setzt ein technisch notwendiges Cookie (<code>ab_hero</code>) zur Optimierung der
-                    Benutzeroberfläche. Es enthält keine personenbezogenen Daten, sondern lediglich eine zufällige
-                    Variante (a/b) zur Anzeige unterschiedlicher Schaltflächen-Texte. Das Cookie wird nach 30 Tagen
-                    automatisch gelöscht. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an
-                    der Optimierung des Webangebots).</p>
-                <h3>Google Fonts</h3>
-                <p>Diese Website nutzt Google Fonts zur einheitlichen Darstellung von Schriftarten. Beim Aufruf
-                    der Seite stellt Ihr Browser eine Verbindung zu den Servern von Google LLC her. Dabei kann Ihre
-                    IP-Adresse an Google übertragen werden. Weitere Informationen:
-                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Datenschutzerklärung</a>.</p>
-                <h3>Externe Dienste</h3>
-                <p>Beim Öffnen der LinkedIn- oder GitHub-Vorschau im Modal werden Daten an die jeweiligen Anbieter
-                    übertragen (LinkedIn: platform.linkedin.com; GitHub: api.github.com). Dies geschieht erst nach
-                    aktivem Klick durch den Nutzer. Es gelten die Datenschutzbestimmungen dieser Anbieter.</p>
-                <h3>Ihre Rechte</h3>
-                <p>Sie haben Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung,
-                    Datenübertragbarkeit sowie Widerspruch (Art. 15 bis 21 DSGVO). Zudem besteht ein Beschwerderecht bei
-                    einer Aufsichtsbehörde.</p>
-                <p>Stand: <?php echo date('Y-m-d'); ?></p>
-            </div>
-        </section>
     </main>
 
     <!-- Footer -->
@@ -627,8 +547,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                 <div>
                     <p class="footer__col-title">Legal</p>
                     <ul class="footer__links">
-                        <li><a href="#impressum">Impressum</a></li>
-                        <li><a href="#privacy">Datenschutz</a></li>
+                        <li><a href="/impressum.php">Impressum</a></li>
+                        <li><a href="/datenschutz.php">Datenschutz</a></li>
                     </ul>
                     <p class="footer__col-title" style="margin-top: var(--space-6);">Social</p>
                     <ul class="footer__links">

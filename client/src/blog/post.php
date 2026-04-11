@@ -1,6 +1,6 @@
 <?php
 /**
- * Single Blog Post — Renders a Markdown post by slug.
+ * Single Blog Post: Renders a Markdown post by slug.
  */
 require_once __DIR__ . '/../includes/headers.php';
 require_once __DIR__ . '/../includes/blog-helpers.php';
@@ -10,11 +10,11 @@ $post = get_post_by_slug($slug);
 
 if (!$post) {
     http_response_code(404);
-    $pageTitle = '404 — Post Not Found';
+    $pageTitle = '404: Post Not Found';
     $content = '<p>This post does not exist. <a href="/blog/">Back to blog</a>.</p>';
 } else {
     $meta = $post['meta'];
-    $pageTitle = htmlspecialchars($meta['title'] ?? $slug) . ' — Velletti Consulting';
+    $pageTitle = htmlspecialchars($meta['title'] ?? $slug) . ' | Velletti Consulting';
     $content = render_markdown($post['body']);
 }
 
@@ -140,7 +140,7 @@ $date = $meta['date'] ?? '';
 
                         <div class="post-cta">
                             <h3>Need help building this?</h3>
-                            <p>I build complete systems for startups — from backend to deployment.</p>
+                            <p>I build complete systems for startups, from backend to deployment.</p>
                             <a href="/#contact" class="btn btn--primary" onclick="if(typeof plausible!=='undefined')plausible('cta_click',{props:{label:'blog_post_cta'}})">Start a project</a>
                         </div>
                     </article>
@@ -149,7 +149,7 @@ $date = $meta['date'] ?? '';
                         <a href="/blog/">&larr; All posts</a>
                     </div>
                 <?php else: ?>
-                    <h1>404 — Post Not Found</h1>
+                    <h1>404: Post Not Found</h1>
                     <?php echo $content; ?>
                 <?php endif; ?>
             </div>
@@ -160,7 +160,7 @@ $date = $meta['date'] ?? '';
         <div class="container">
             <div class="footer__content">
                 <p>&copy; <?php echo date('Y'); ?> Velletti Consulting. All rights reserved.</p>
-                <p><a href="/#impressum">Impressum</a> · <a href="/#privacy">Datenschutz</a></p>
+                <p><a href="/impressum.php">Impressum</a> · <a href="/datenschutz.php">Datenschutz</a></p>
             </div>
         </div>
     </footer>

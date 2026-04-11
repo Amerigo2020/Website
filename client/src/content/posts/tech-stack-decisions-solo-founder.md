@@ -1,6 +1,6 @@
 ---
 title: "Tech Stack Decisions as a Solo Founder: What Actually Matters"
-description: "Choosing your tech stack is one of the first decisions you'll make — and one of the most overanalyzed. Here's a practical framework for founders building alone."
+description: "Choosing your tech stack is one of the first decisions you'll make, and one of the most overanalyzed. Here's a practical framework for founders building alone."
 date: "2026-04-09"
 author: "Amerigo Velletti"
 tags: "Startups, Tech Stack, Architecture, Solo Founder"
@@ -57,7 +57,7 @@ Instead of obsessing over frameworks, spend your limited decision-making energy 
 
 ### 1. Data Model
 
-Get your database schema roughly right. Not perfect — you'll change it. But understand your core entities and their relationships. A bad data model creates exponentially more work than a suboptimal framework choice.
+Get your database schema roughly right. Not perfect, you'll change it. But understand your core entities and their relationships. A bad data model creates exponentially more work than a suboptimal framework choice.
 
 ### 2. Authentication
 
@@ -65,7 +65,7 @@ Don't build your own crypto. Use established libraries. For PHP, that's `passwor
 
 ### 3. Payment Integration
 
-If you're charging money, integrate Stripe early. Not "when we're ready to monetize" — now. You'll discover edge cases in your product by forcing yourself to define what people are paying for.
+If you're charging money, integrate Stripe early. Not "when we're ready to monetize", now. You'll discover edge cases in your product by forcing yourself to define what people are paying for.
 
 ### 4. Deployment Pipeline
 
@@ -77,7 +77,7 @@ Set up a basic CI/CD pipeline on day one. It takes an hour with GitHub Actions a
 
 **The "Future Scale" Trap**: "But what if we get 10,000 users?" You won't have that problem for months, probably years. A single PostgreSQL instance handles millions of rows. A VPS with 4GB of RAM serves thousands of concurrent users. Optimize when you have data, not when you have assumptions.
 
-**The "Developer Experience" Trap**: Hot module replacement, type checking, linting rules, automated formatting — these are productivity tools for teams. As a solo founder, the fastest developer experience is the stack you already know.
+**The "Developer Experience" Trap**: Hot module replacement, type checking, linting rules, automated formatting: these are productivity tools for teams. As a solo founder, the fastest developer experience is the stack you already know.
 
 **The "Shiny New Thing" Trap**: Every month there's a new framework promising to solve all your problems. It won't. Use what shipped your last project. Save the experimentation for side projects.
 
@@ -85,12 +85,12 @@ Set up a basic CI/CD pipeline on day one. It takes an hour with GitHub Actions a
 
 Here's the stack I'd use to launch a B2B SaaS product next week:
 
-- **PHP 8.3** with no framework — just a router, PDO for database access, and Parsedown for Markdown rendering
+- **PHP 8.3** with no framework, just a router, PDO for database access, and Parsedown for Markdown rendering
 - **PostgreSQL** on the same VPS
 - **Plain HTML/CSS** with one small JavaScript file for interactive elements
-- **Stripe Checkout** for payments — no custom payment forms
+- **Stripe Checkout** for payments, no custom payment forms
 - **Caddy** as the web server with automatic HTTPS
-- **GitHub Actions** for CI/CD — test, build Docker image, deploy
+- **GitHub Actions** for CI/CD: test, build Docker image, deploy
 
 Total setup time: one day. Total monthly cost: €10-15. Time to first paying customer: however fast I can build the core feature.
 
@@ -100,4 +100,4 @@ Your competitive advantage as a solo founder isn't your tech stack. It's your sp
 
 Every technology choice should be evaluated against that standard. Does it make you faster? Use it. Does it add complexity you don't need yet? Skip it.
 
-Ship the product. Get feedback. Iterate. The stack is just a tool — and the best tool is the one that doesn't get in your way.
+Ship the product. Get feedback. Iterate. The stack is just a tool, and the best tool is the one that doesn't get in your way.

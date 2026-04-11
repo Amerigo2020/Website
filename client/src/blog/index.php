@@ -1,6 +1,6 @@
 <?php
 /**
- * Blog Index — Lists all published posts.
+ * Blog Index: Lists all published posts.
  */
 require_once __DIR__ . '/../includes/headers.php';
 require_once __DIR__ . '/../includes/blog-helpers.php';
@@ -16,12 +16,12 @@ $cssVersion = @filemtime(__DIR__ . '/../assets/css/app.css') ?: time();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog — Velletti Consulting</title>
+    <title>Blog | Velletti Consulting</title>
     <meta name="description" content="Insights on AI automation, DevOps, and building tech for startups. By Amerigo Velletti, Munich.">
     <meta name="robots" content="index,follow">
     <link rel="canonical" href="<?php echo htmlspecialchars($canonical); ?>">
 
-    <meta property="og:title" content="Blog — Velletti Consulting">
+    <meta property="og:title" content="Blog | Velletti Consulting">
     <meta property="og:description" content="Insights on AI automation, DevOps, and building tech for startups.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?php echo htmlspecialchars($canonical); ?>">

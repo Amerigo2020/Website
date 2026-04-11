@@ -27,21 +27,17 @@ $cssVersion = @filemtime(__DIR__ . '/assets/css/app.css') ?: time();
     <style>
         .msg-box {
             max-width: 500px;
-            margin: var(--spacing-2xl) auto;
+            margin: calc(var(--nav-height) + var(--space-16)) auto var(--space-16);
             text-align: center;
-            padding: var(--spacing-xl);
-            background: var(--color-white);
-            border-radius: 12px;
-            box-shadow: var(--shadow-lg);
-        }
-
-        :root[data-theme='dark'] .msg-box {
-            background: #0f172a;
+            padding: var(--space-12);
+            background: var(--bg-surface);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-subtle);
         }
 
         .icon {
             font-size: 4rem;
-            margin-bottom: var(--spacing-md);
+            margin-bottom: var(--space-4);
         }
     </style>
 </head>
@@ -58,9 +54,8 @@ $cssVersion = @filemtime(__DIR__ . '/assets/css/app.css') ?: time();
     <main class="container">
         <div class="msg-box">
             <div class="icon">🎉</div>
-            <h2>Vielen Dank für dein Abo!</h2>
-            <p>Deine Zahlung war erfolgreich. Wir haben dir eine Bestätigung per E-Mail gesendet und werden uns in Kürze
-                bei dir melden, um das Onboarding zu starten.</p>
+            <h2>Vielen Dank für deine Buchung!</h2>
+            <p>Deine Zahlung war erfolgreich. Wir haben dir eine Bestätigung per E-Mail gesendet und melden uns innerhalb von 24 Stunden, um einen Termin für die Erstberatung zu vereinbaren.</p>
             <br>
             <a href="/" class="cta-button">Zurück zur Startseite</a>
         </div>

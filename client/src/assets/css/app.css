@@ -627,8 +627,15 @@ a:focus {
   background: var(--bg-base);
 }
 
+.legal h1 {
+  margin-bottom: var(--space-6);
+}
+
 .legal h2 {
+  margin-top: var(--space-8);
   margin-bottom: var(--space-4);
+  font-size: var(--text-xl);
+  color: var(--accent);
 }
 
 .legal h3 {
@@ -636,7 +643,25 @@ a:focus {
 }
 
 .legal p {
-  opacity: 0.9;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: var(--max-width-prose);
+}
+
+.legal__breadcrumb {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-8);
+}
+
+.legal__breadcrumb a {
+  color: var(--text-tertiary);
+}
+
+.legal__breadcrumb a:hover {
+  color: var(--accent);
+  outline: none;
 }
 
 /* Footer */
@@ -747,7 +772,7 @@ a:focus {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .nav {
+  .header__container > .nav {
     display: none;
   }
 
