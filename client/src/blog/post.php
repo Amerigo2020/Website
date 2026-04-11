@@ -164,5 +164,6 @@ $date = $meta['date'] ?? '';
             </div>
         </div>
     </footer>
+    <script src="../assets/js/scroll-animations.js" defer></script>
 </body>
 </html>

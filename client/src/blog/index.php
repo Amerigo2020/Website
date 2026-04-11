@@ -119,5 +119,6 @@ $cssVersion = @filemtime(__DIR__ . '/../assets/css/app.css') ?: time();
             </div>
         </div>
     </footer>
+    <script src="../assets/js/scroll-animations.js" defer></script>
 </body>
 </html>

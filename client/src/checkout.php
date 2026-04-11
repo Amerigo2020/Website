@@ -36,47 +36,42 @@ $cssVersion = @filemtime(__DIR__ . '/assets/css/app.css') ?: time();
     <style>
         .checkout-box {
             max-width: 450px;
-            margin: var(--spacing-2xl) auto;
-            background: var(--color-white);
-            padding: var(--spacing-xl);
-            border-radius: 12px;
-            box-shadow: var(--shadow-lg);
+            margin: var(--space-24) auto;
+            background: var(--bg-surface);
+            padding: var(--space-12);
+            border-radius: var(--radius-lg);
             text-align: center;
-            border: 1px solid rgba(16, 37, 66, 0.1);
-        }
-
-        :root[data-theme='dark'] .checkout-box {
-            background: #0f172a;
-            border-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--border-subtle);
         }
 
         .price {
             font-size: 3rem;
             font-weight: 800;
-            color: var(--color-primary);
-            margin: var(--spacing-md) 0;
+            color: var(--accent);
+            margin: var(--space-4) 0;
         }
 
         .price span {
             font-size: 1.2rem;
-            color: var(--color-text-secondary);
+            color: var(--text-secondary);
         }
 
         .features {
             text-align: left;
-            margin-bottom: var(--spacing-lg);
+            margin-bottom: var(--space-8);
             list-style: none;
         }
 
         .features li {
-            margin-bottom: var(--spacing-xs);
+            margin-bottom: var(--space-2);
             padding-left: 24px;
             position: relative;
+            color: var(--text-secondary);
         }
 
         .features li::before {
-            content: "✓";
-            color: var(--color-success);
+            content: "\2713";
+            color: var(--accent);
             position: absolute;
             left: 0;
             font-weight: bold;

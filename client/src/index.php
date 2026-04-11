@@ -384,7 +384,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         </section>
 
         <!-- About / Story Section -->
-        <section id="experience" class="section about">
+        <section id="experience" class="section about reveal">
             <div class="container">
                 <h2>About</h2>
                 <div class="about__prose">
@@ -394,12 +394,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         </section>
 
         <!-- Services Section -->
-        <section id="services" class="section services">
+        <section id="services" class="section services reveal">
             <div class="container">
                 <h2>What I build</h2>
                 <p class="services__intro">You describe a problem. Some weeks later, you have a system that runs: a backend that handles your business logic, a front end your team can actually use, and deployments that don't require you to call me at 2am.</p>
 
-                <div class="capabilities">
+                <div class="capabilities reveal-children">
                     <div class="capability">
                         <span class="capability-label">AI & Automation</span>
                         <p>I automate the workflows your team wastes hours on. The result: AI-assisted processes that run without manual intervention, integrated into the systems you already use.</p>
@@ -420,11 +420,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         </section>
 
         <!-- Proof Section -->
-        <section id="proof" class="section proof">
+        <section id="proof" class="section proof reveal">
             <div class="container">
                 <h2>Selected proof</h2>
 
-                <div class="proof__list">
+                <div class="proof__list reveal-children">
                     <div class="proof-item">
                         <span class="proof-item__label">Enactus Germany Worldcup — Bangkok 2025</span>
                         <p class="proof-item__context">Represented Germany at the international Enactus competition and won — the team built a working product under competition conditions in Bangkok.</p>
@@ -445,8 +445,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
             </div>
         </section>
 
+        <section class="section" style="padding: var(--space-8) 0;">
+            <div class="container" style="text-align: center;">
+                <p style="color: var(--text-secondary); margin-bottom: var(--space-3);">Looking for ongoing support?</p>
+                <a href="checkout.php" class="btn btn--ghost">Premium Service — €99/mo</a>
+            </div>
+        </section>
+
         <!-- Contact Section -->
-        <section id="contact" class="section contact">
+        <section id="contact" class="section contact reveal">
             <div class="container">
                 <h2>Start a conversation</h2>
                 <p>Tell me about your project. I reply to every inquiry within 24 hours.</p>
@@ -489,6 +496,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                         value="<?php echo htmlspecialchars($_SESSION['csrf_token']); ?>">
                     <button type="submit" class="form-submit">Send Message</button>
                 </form>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section reveal">
+            <div class="container">
+                <h2>Frequently asked questions</h2>
+                <div class="faq-list">
+                    <details class="faq-item" open>
+                        <summary class="faq-question">What services does Velletti Consulting offer?</summary>
+                        <p class="faq-answer">I build complete systems for startups: AI & Automation to eliminate repetitive work, Web Applications & Hosting with full deployment pipelines, and DevOps & Deployment infrastructure so your team can ship without fear.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">Where is Velletti Consulting based?</summary>
+                        <p class="faq-answer">I'm based in Munich, Bavaria, Germany and serve clients both locally and remotely. Most of my work is done asynchronously, so timezone differences are rarely a problem.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">How can I start a project?</summary>
+                        <p class="faq-answer">Use the <a href="#contact">contact form</a> above or send an email to <a href="mailto:<?php echo htmlspecialchars($config['company_email']); ?>"><?php echo htmlspecialchars($config['company_email']); ?></a>. I reply to every inquiry within 24 hours. We'll have a short discovery call, then I'll send you a proposal.</p>
+                    </details>
+                </div>
             </div>
         </section>
 
@@ -547,15 +575,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                     DSGVO. Die Daten werden nur so lange gespeichert, wie es zur Bearbeitung erforderlich ist.</p>
                 <h3>Webanalyse</h3>
                 <p>Diese Website nutzt Plausible Analytics, einen datenschutzfreundlichen Analysedienst. Plausible
-                    erhebt keine personenbezogenen Daten, setzt keine Cookies und ist vollständig DSGVO-konform.
+                    erhebt keine personenbezogenen Daten und ist vollständig DSGVO-konform.
                     Es werden ausschließlich anonymisierte, aggregierte Nutzungsdaten erfasst. Weitere Informationen:
                     <a href="https://plausible.io/data-policy" target="_blank" rel="noopener">plausible.io/data-policy</a>.</p>
+                <h3>Cookies</h3>
+                <p>Diese Website setzt ein technisch notwendiges Cookie (<code>ab_hero</code>) zur Optimierung der
+                    Benutzeroberfläche. Es enthält keine personenbezogenen Daten, sondern lediglich eine zufällige
+                    Variante (a/b) zur Anzeige unterschiedlicher Schaltflächen-Texte. Das Cookie wird nach 30 Tagen
+                    automatisch gelöscht. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an
+                    der Optimierung des Webangebots).</p>
+                <h3>Google Fonts</h3>
+                <p>Diese Website nutzt Google Fonts zur einheitlichen Darstellung von Schriftarten. Beim Aufruf
+                    der Seite stellt Ihr Browser eine Verbindung zu den Servern von Google LLC her. Dabei kann Ihre
+                    IP-Adresse an Google übertragen werden. Weitere Informationen:
+                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Datenschutzerklärung</a>.</p>
                 <h3>Externe Dienste</h3>
-                <p>Beim Öffnen der verlinkten LinkedIn- oder GitHub-Profile werden Daten an die jeweiligen Anbieter
-                    übertragen. Es gelten die Datenschutzbestimmungen dieser Anbieter.</p>
+                <p>Beim Öffnen der LinkedIn- oder GitHub-Vorschau im Modal werden Daten an die jeweiligen Anbieter
+                    übertragen (LinkedIn: platform.linkedin.com; GitHub: api.github.com). Dies geschieht erst nach
+                    aktivem Klick durch den Nutzer. Es gelten die Datenschutzbestimmungen dieser Anbieter.</p>
                 <h3>Ihre Rechte</h3>
                 <p>Sie haben Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung,
-                    Datenübertragbarkeit sowie Widerspruch (Art. 15–21 DSGVO). Zudem besteht ein Beschwerderecht bei
+                    Datenübertragbarkeit sowie Widerspruch (Art. 15 bis 21 DSGVO). Zudem besteht ein Beschwerderecht bei
                     einer Aufsichtsbehörde.</p>
                 <p>Stand: <?php echo date('Y-m-d'); ?></p>
             </div>
@@ -566,23 +606,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
     <footer class="footer">
         <div class="container">
             <div class="footer__content">
-                <div class="footer__contact">
-                    <p><strong><?php echo htmlspecialchars($config['company_name']); ?></strong></p>
-                    <p><?php echo htmlspecialchars($config['company_address']); ?></p>
-                    <p>Phone: <a
-                            href="tel:<?php echo htmlspecialchars($config['company_phone']); ?>"><?php echo htmlspecialchars($config['company_phone']); ?></a>
-                    </p>
-                    <p>Email: <a
-                            href="mailto:<?php echo htmlspecialchars($config['company_email']); ?>"><?php echo htmlspecialchars($config['company_email']); ?></a>
+                <div class="footer__brand">
+                    <span class="footer__brand-name"><?php echo htmlspecialchars($config['company_name']); ?></span>
+                    <p class="footer__tagline">Systems, automation, and deployment for startups.</p>
+                    <p style="margin-bottom:0;">
+                        <a href="mailto:<?php echo htmlspecialchars($config['company_email']); ?>"><?php echo htmlspecialchars($config['company_email']); ?></a><br>
+                        <a href="tel:<?php echo htmlspecialchars($config['company_phone']); ?>"><?php echo htmlspecialchars($config['company_phone']); ?></a>
                     </p>
                 </div>
-
-                <p>&copy; <?php echo date('Y'); ?> <?php echo htmlspecialchars($config['company_name']); ?>. All rights
-                    reserved.</p>
-                <p>
-                    <a href="#impressum">Impressum</a> ·
-                    <a href="#privacy">Datenschutz</a>
-                </p>
+                <div>
+                    <p class="footer__col-title">Navigate</p>
+                    <ul class="footer__links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="checkout.php">Premium</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="footer__col-title">Legal</p>
+                    <ul class="footer__links">
+                        <li><a href="#impressum">Impressum</a></li>
+                        <li><a href="#privacy">Datenschutz</a></li>
+                    </ul>
+                    <p class="footer__col-title" style="margin-top: var(--space-6);">Social</p>
+                    <ul class="footer__links">
+                        <li><a href="https://www.linkedin.com/in/amerigo-velletti-b888a9304" target="_blank" rel="noopener">LinkedIn</a></li>
+                        <li><a href="https://github.com/Amerigo2020" target="_blank" rel="noopener">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <span>&copy; <?php echo date('Y'); ?> <?php echo htmlspecialchars($config['company_name']); ?></span>
+                <span><?php echo htmlspecialchars($config['company_address']); ?></span>
             </div>
         </div>
     </footer>
@@ -815,6 +872,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
             });
         });
     </script>
+    <script src="assets/js/scroll-animations.js" defer></script>
 </body>
 
 </html>

@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(cat /c/Users/ameri/Documents/Programming/ContactLensesApp/lib/services/firebase_service.dart)"
+      "Bash(cat /c/Users/ameri/Documents/Programming/ContactLensesApp/lib/services/firebase_service.dart)",
+      "Skill(gsd:discuss-phase)",
+      "Skill(gsd:execute-phase)"
     ],
     "deny": [],
     "ask": []
