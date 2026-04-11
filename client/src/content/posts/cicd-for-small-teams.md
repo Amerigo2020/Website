@@ -8,7 +8,7 @@ tags: "DevOps, CI/CD, GitHub Actions, Docker, Deployment"
 
 Most small teams deploy one of two ways: they either push directly to production and pray, or they have a process so painful that shipping becomes a weekly event instead of a daily one.
 
-Neither works. Here's how to set up a deployment pipeline that a two-person team can maintain — in under a day.
+Neither works. Here's how to set up a deployment pipeline that a two-person team can maintain, in under a day.
 
 ## Why Small Teams Avoid CI/CD
 
@@ -57,7 +57,7 @@ COPY vendor/ /var/www/vendor/
 RUN a2enmod rewrite
 ```
 
-Build and push it in your CI pipeline. Use GitHub Container Registry — it's free for public repos and cheap for private ones.
+Build and push it in your CI pipeline. Use GitHub Container Registry. It's free for public repos and cheap for private ones.
 
 ### Step 3: Deploy with Zero Downtime
 
