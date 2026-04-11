@@ -384,7 +384,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         </section>
 
         <!-- About / Story Section -->
-        <section id="experience" class="section about reveal">
+        <section id="experience" class="section about" data-reveal>
             <div class="container">
                 <h2>About</h2>
                 <div class="about__prose">
@@ -394,12 +394,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         </section>
 
         <!-- Services Section -->
-        <section id="services" class="section services reveal">
+        <section id="services" class="section services" data-reveal>
             <div class="container">
                 <h2>What I build</h2>
                 <p class="services__intro">You describe a problem. Some weeks later, you have a system that runs: a backend that handles your business logic, a front end your team can actually use, and deployments that don't require you to call me at 2am.</p>
 
-                <div class="capabilities reveal-children">
+                <div class="capabilities" data-reveal-children>
                     <div class="capability">
                         <span class="capability-label">AI & Automation</span>
                         <p>I automate the workflows your team wastes hours on. AI-assisted processes that run without manual intervention, integrated into the systems you already use.</p>
@@ -420,11 +420,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         </section>
 
         <!-- Proof Section -->
-        <section id="proof" class="section proof reveal">
+        <section id="proof" class="section proof" data-reveal>
             <div class="container">
                 <h2>Selected proof</h2>
 
-                <div class="proof__list reveal-children">
+                <div class="proof__list" data-reveal-children>
                     <div class="proof-item">
                         <span class="proof-item__label">Enactus World Cup, Bangkok 2025</span>
                         <p class="proof-item__context">Represented Germany at the international Enactus competition and won. We built a working product under competition conditions in Bangkok.</p>
@@ -453,7 +453,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="section contact reveal">
+        <section id="contact" class="section contact" data-reveal>
             <div class="container">
                 <h2>Start a conversation</h2>
                 <p>Tell me about your project. I reply to every inquiry within 24 hours.</p>
@@ -500,7 +500,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         </section>
 
         <!-- FAQ Section -->
-        <section id="faq" class="section reveal">
+        <section id="faq" class="section" data-reveal>
             <div class="container">
                 <h2>Frequently asked questions</h2>
                 <div class="faq-list">

@@ -34,27 +34,21 @@ try {
     exit();
 }
 
-// Handle the event
+// Handle the event (one-time payment for consultation booking)
 switch ($event->type) {
     case 'checkout.session.completed':
         $session = $event->data->object;
-        // Optionally save to DB or send welcome email
-        error_log("Checkout Session completed for customer: " . $session->customer);
+        error_log("Consultation booked: " . ($session->customer_email ?? $session->customer));
         break;
 
-    case 'invoice.paid':
-        $invoice = $event->data->object;
-        error_log("Invoice paid for subscription: " . $invoice->subscription);
+    case 'payment_intent.succeeded':
+        $intent = $event->data->object;
+        error_log("Payment received: " . $intent->id . " (" . $intent->amount . " " . $intent->currency . ")");
         break;
 
-    case 'invoice.payment_failed':
-        $invoice = $event->data->object;
-        error_log("Invoice payment failed for subscription: " . $invoice->subscription);
-        break;
-
-    case 'customer.subscription.deleted':
-        $subscription = $event->data->object;
-        error_log("Subscription deleted: " . $subscription->id);
+    case 'payment_intent.payment_failed':
+        $intent = $event->data->object;
+        error_log("Payment failed: " . $intent->id);
         break;
 
     default:

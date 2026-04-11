@@ -114,8 +114,28 @@ $cssVersion = @filemtime(__DIR__ . '/../assets/css/app.css') ?: time();
     <footer class="footer">
         <div class="container">
             <div class="footer__content">
-                <p>&copy; <?php echo date('Y'); ?> Velletti Consulting. All rights reserved.</p>
-                <p><a href="/#impressum">Impressum</a> · <a href="/#privacy">Datenschutz</a></p>
+                <div class="footer__brand">
+                    <span class="footer__brand-name">Velletti Consulting</span>
+                    <p class="footer__tagline">Systems, automation, and deployment for startups.</p>
+                </div>
+                <div>
+                    <p class="footer__col-title">Navigate</p>
+                    <ul class="footer__links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="footer__col-title">Legal</p>
+                    <ul class="footer__links">
+                        <li><a href="/impressum.php">Impressum</a></li>
+                        <li><a href="/datenschutz.php">Datenschutz</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <span>&copy; <?php echo date('Y'); ?> Velletti Consulting</span>
             </div>
         </div>
     </footer>
