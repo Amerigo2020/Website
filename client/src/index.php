@@ -388,7 +388,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
             <div class="container">
                 <h2>About</h2>
                 <div class="about__prose">
-                    <p>I grew up helping run my family's IT services company, Jörg Velletti EDV Service, which meant debugging production systems long before I enrolled at university. At TUM studying Business Informatics, I developed the systems-thinking framing that connects technical decisions to business outcomes. Today I work as a student at EY in Transfer Pricing and compete in hackathons to keep shipping under pressure. I've won at the Enactus Germany Worldcup (Bangkok 2025) and placed top 3 at the MSG Hackathon.</p>
+                    <p>I grew up helping run my family's IT services company, Jörg Velletti EDV Service, which meant debugging production systems long before I enrolled at university. At TUM studying Business Informatics, I developed the systems-thinking framing that connects technical decisions to business outcomes. Today I'm a Founding Engineer at a stealth-mode YC-backed SaaS studio and compete in hackathons to keep shipping under pressure. Our team won the Enactus World Cup (Bangkok 2025) and I placed top 3 at the MSG Hackathon.</p>
                 </div>
             </div>
         </section>
@@ -426,16 +426,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
 
                 <div class="proof__list reveal-children">
                     <div class="proof-item">
-                        <span class="proof-item__label">Enactus Germany Worldcup, Bangkok 2025</span>
-                        <p class="proof-item__context">Represented Germany at the international Enactus competition and won. The team built a working product under competition conditions in Bangkok.</p>
+                        <span class="proof-item__label">Enactus World Cup, Bangkok 2025</span>
+                        <p class="proof-item__context">Represented Germany at the international Enactus competition and won. We built a working product under competition conditions in Bangkok.</p>
                     </div>
                     <div class="proof-item">
                         <span class="proof-item__label">MSG Hackathon, Code &amp; Create</span>
                         <p class="proof-item__context">Placed top 3 at the MSG Code & Create hackathon, shipping a functional prototype within 24 hours against a field of professional developers.</p>
                     </div>
                     <div class="proof-item">
-                        <span class="proof-item__label">EY, Working Student, Transfer Pricing</span>
-                        <p class="proof-item__context">Currently working at EY Munich in Transfer Pricing, applying analytical systems thinking in a Big Four advisory environment.</p>
+                        <span class="proof-item__label">Founding Engineer, YC-backed SaaS Studio (Stealth)</span>
+                        <p class="proof-item__context">Building B2B SaaS products at a Y Combinator-founded studio. Previously working student at EY Munich in Transfer Pricing.</p>
                     </div>
                     <div class="proof-item">
                         <span class="proof-item__label">Jörg Velletti EDV Service</span>
