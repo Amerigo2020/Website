@@ -26,14 +26,14 @@ if (!$ab_variant || !in_array($ab_variant, ['a', 'b'], true)) {
     setcookie('ab_hero', $ab_variant, time() + 86400 * 30, '/', '', true, true);
 }
 
-$hero_cta_primary = $ab_variant === 'a' ? 'Projekt starten' : 'Kontakt aufnehmen';
+$hero_cta_primary = $ab_variant === 'a' ? 'Projekt starten' : 'Lass uns bauen';
 $hero_cta_secondary = $ab_variant === 'a' ? 'Leistungen ansehen' : 'Referenzen ansehen';
 
 // Configuration
 $config = [
     'site_title' => 'Amerigo Velletti | Freelance Entwickler München, AI & Full-Stack',
-    'meta_description' => 'Freelance Entwickler und Founding Engineer in München. Ich baue komplette Systeme (Backend, Frontend, DevOps) für Startups. AI-Automatisierung, Webentwicklung und Deployment aus einer Hand. TUM Wirtschaftsinformatik.',
-    'meta_keywords' => 'Amerigo Velletti, Freelance Entwickler München, Full-Stack Developer Munich, Startup Developer, AI Automatisierung, Webentwicklung München, DevOps Engineer, TUM Wirtschaftsinformatik, YC Startup, Founding Engineer',
+    'meta_description' => 'Freelance Entwickler und Founding Engineer in München. Scraper, AI-Automatisierung und Webseiten, die verkaufen — von Architektur bis Deployment aus einer Hand, in Wochen statt Quartalen. TUM Wirtschaftsinformatik.',
+    'meta_keywords' => 'Amerigo Velletti, Freelance Entwickler München, Full-Stack Developer Munich, Startup Developer, Web Scraping, Scraper Entwicklung, AI Automatisierung, Webentwicklung München, DevOps Engineer, TUM Wirtschaftsinformatik, YC Startup, Founding Engineer',
     'company_name' => 'Velletti Consulting',
     'company_email' => 'vel-consulting@ame.velletti.de',
     'company_phone' => '+49 176 45531533',
@@ -244,6 +244,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         "knowsAbout": [
             "Artificial Intelligence",
             "Automation",
+            "Web Scraping",
             "Web Development",
             "Web Hosting",
             "DevOps",
@@ -254,8 +255,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
             "@type": "OfferCatalog",
             "name": "What I Build",
             "itemListElement": [
-                { "@type": "Offer", "name": "AI & Automation" },
-                { "@type": "Offer", "name": "Web Applications & Hosting" },
+                { "@type": "Offer", "name": "Scraper & AI-Automatisierung" },
+                { "@type": "Offer", "name": "Webseiten & Hosting" },
                 { "@type": "Offer", "name": "DevOps & Deployment" }
             ]
         }
@@ -292,7 +293,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                 "name": "Welche Leistungen bietet Velletti Consulting an?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Ich baue komplette Systeme für Startups: AI & Automatisierung um repetitive Arbeit zu eliminieren, Webanwendungen & Hosting mit kompletten Deployment-Pipelines, und DevOps & Deployment-Infrastruktur damit dein Team ohne Angst shippen kann."
+                    "text": "Ich baue komplette Systeme für Startups: Scraper & AI-Automatisierung um Daten zu sammeln und repetitive Arbeit zu eliminieren, Webseiten & Hosting mit kompletten Deployment-Pipelines, und DevOps-Infrastruktur damit dein Team ohne Angst shippen kann."
                 }
             },
             {
@@ -406,10 +407,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
             <div class="container">
                 <div class="hero__grid">
                     <div class="hero__text">
-                        <p class="hero__eyebrow">Amerigo Velletti · München</p>
-                        <h1 class="hero__title">Ich baue komplette Systeme, vom Backend bis zum UI, für Startups die eine Person brauchen, die die Technik verantwortet.</h1>
+                        <p class="hero__eyebrow">Amerigo Velletti · Founding Engineer · München</p>
+                        <h1 class="hero__title">Ich baue, was dein Startup schneller macht: Scraper, AI&#8209;Automatisierung und Webseiten, die verkaufen.</h1>
                         <p class="hero__subtitle">
-                            Vom ersten Gespräch bis zur Produktion. Ich verantworte Architektur, Code und Deployment, damit du keinen Entwickler managen musst.
+                            Du beschreibst das Problem, ich shippe das System. Architektur, Code und Deployment aus einer Hand — Founder-Tempo statt Agentur-Prozess, in Wochen statt Quartalen.
                         </p>
                         <div class="hero__actions">
                             <a href="#contact" class="btn btn--primary" onclick="if(typeof plausible!=='undefined'){var p=new URLSearchParams(location.search);plausible('cta_click',{props:{label:'hero_primary',variant:'<?php echo $ab_variant; ?>',source:p.get('utm_source')||'direct'}})}"><?php echo htmlspecialchars($hero_cta_primary); ?></a>
@@ -445,22 +446,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         <section id="services" class="section services" data-reveal>
             <div class="container">
                 <h2>Leistungen</h2>
-                <p class="services__intro">Du beschreibst ein Problem. Einige Wochen später hast du ein System, das läuft: ein Backend für deine Geschäftslogik, ein Frontend das dein Team tatsächlich nutzen kann, und Deployments die keinen Anruf um 2 Uhr nachts erfordern.</p>
+                <p class="services__intro">Du beschreibst das Problem. Ein paar Wochen später läuft das System — kein Pflichtenheft, kein Projektmanager, kein Overhead. Nur ein Entwickler, der die Technik komplett verantwortet.</p>
 
                 <div class="capabilities" data-reveal-children>
                     <div class="capability">
-                        <span class="capability-label">AI & Automation</span>
-                        <p>Ich automatisiere die Workflows, für die dein Team Stunden verschwendet. KI-gestützte Prozesse, die ohne manuelles Eingreifen laufen und in die Systeme integriert sind, die du bereits nutzt.</p>
+                        <span class="capability-label">Scraper & AI-Automatisierung</span>
+                        <p>Scraper, die Daten aus dem Web ziehen, während du schläfst. AI-Workflows, die repetitive Arbeit eliminieren — sauber integriert in die Tools, die du schon nutzt, statt als weiteres Dashboard, das keiner öffnet.</p>
                     </div>
 
                     <div class="capability">
-                        <span class="capability-label">Webanwendungen & Hosting</span>
-                        <p>Eine komplette Webpräsenz: schnell, barrierefrei und gewartet. Ich kümmere mich um Domain, Hosting, Deployment-Pipeline und Monitoring, damit die Seite läuft und du dich auf dein Geschäft konzentrieren kannst.</p>
+                        <span class="capability-label">Webseiten & Hosting</span>
+                        <p>Webseiten, die nicht nur schön aussehen, sondern verkaufen. Schnell, barrierefrei, komplett gehostet: Domain, Deployment-Pipeline und Monitoring inklusive. Du kümmerst dich ums Geschäft, ich um den Rest.</p>
                     </div>
 
                     <div class="capability">
                         <span class="capability-label">DevOps & Deployment</span>
-                        <p>Ich baue die Pipelines, mit denen du ohne Angst deployen kannst. CI/CD, Infrastructure as Code, Observability, damit jedes Release vorhersehbar und jeder Incident sichtbar ist.</p>
+                        <p>Deployen ohne Schweißausbruch. CI/CD, Infrastructure as Code, Observability — jedes Release vorhersehbar, jeder Incident sichtbar, kein Anruf um 2 Uhr nachts.</p>
                     </div>
                 </div>
 
@@ -495,7 +496,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
 
         <section class="section" style="padding: var(--space-8) 0;">
             <div class="container" style="text-align: center;">
-                <p style="color: var(--text-secondary); margin-bottom: var(--space-3);">Laufende Unterstützung gesucht?</p>
+                <p style="color: var(--text-secondary); margin-bottom: var(--space-3);">Bereit loszulegen? In 60 Minuten weißt du, was zu bauen ist.</p>
                 <a href="checkout.php" class="btn btn--ghost">Erstberatung buchen, €99</a>
             </div>
         </section>
@@ -504,7 +505,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
         <section id="contact" class="section contact" data-reveal>
             <div class="container">
                 <h2>Kontakt aufnehmen</h2>
-                <p>Erzähl mir von deinem Projekt. Ich antworte auf jede Anfrage innerhalb von 24 Stunden.</p>
+                <p>Erzähl mir, was du bauen willst. Ich antworte innerhalb von 24 Stunden — meistens schneller.</p>
 
                 <div id="contactResponse" class="form-success" style="display:none"></div>
 
@@ -554,7 +555,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                 <div class="faq-list">
                     <details class="faq-item" open>
                         <summary class="faq-question">Welche Leistungen bietet Velletti Consulting an?</summary>
-                        <p class="faq-answer">Ich baue komplette Systeme für Startups: AI & Automatisierung um repetitive Arbeit zu eliminieren, Webanwendungen & Hosting mit kompletten Deployment-Pipelines, und DevOps & Deployment-Infrastruktur damit dein Team ohne Angst shippen kann.</p>
+                        <p class="faq-answer">Ich baue komplette Systeme für Startups: Scraper & AI-Automatisierung um Daten zu sammeln und repetitive Arbeit zu eliminieren, Webseiten & Hosting mit kompletten Deployment-Pipelines, und DevOps-Infrastruktur damit dein Team ohne Angst shippen kann.</p>
                     </details>
                     <details class="faq-item">
                         <summary class="faq-question">Wo ist Velletti Consulting ansässig?</summary>
@@ -584,7 +585,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
             <div class="footer__content">
                 <div class="footer__brand">
                     <span class="footer__brand-name"><?php echo htmlspecialchars($config['company_name']); ?></span>
-                    <p class="footer__tagline">Systeme, Automatisierung und Deployment für Startups.</p>
+                    <p class="footer__tagline">Scraper, AI-Automatisierung und Webseiten für Startups, die shippen wollen.</p>
                     <p style="margin-bottom:0;">
                         <a href="mailto:<?php echo htmlspecialchars($config['company_email']); ?>"><?php echo htmlspecialchars($config['company_email']); ?></a><br>
                         <a href="tel:<?php echo htmlspecialchars($config['company_phone']); ?>"><?php echo htmlspecialchars($config['company_phone']); ?></a>
