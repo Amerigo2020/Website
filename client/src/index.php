@@ -201,8 +201,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/app.css?v=<?php echo $cssVersion; ?>">
-    <link rel="preload" href="assets/css/app.css?v=<?php echo $cssVersion; ?>" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@400;500&display=swap" as="style" crossorigin>
 
     <!-- Privacy-friendly analytics by Plausible -->
     <script async src="https://plausible.io/js/pa-JqqQJVxsU6l36GPzFI8OK.js"></script>
@@ -507,31 +505,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                 <h2>Kontakt aufnehmen</h2>
                 <p>Erzähl mir, was du bauen willst. Ich antworte innerhalb von 24 Stunden — meistens schneller.</p>
 
-                <div id="contactResponse" class="form-success" style="display:none"></div>
+                <div id="contactResponse" class="form-success" style="display:none" role="status" aria-live="polite"></div>
 
                 <form id="contactForm" class="contact-form" method="POST" action="contact.php" novalidate>
                     <div class="form-group">
                         <label for="name" class="form-label">Name *</label>
-                        <input type="text" id="name" name="name" class="form-input" required autocomplete="name">
+                        <input type="text" id="name" name="name" class="form-input" required autocomplete="name" aria-describedby="name-error">
                         <div class="form-error visually-hidden" id="name-error"></div>
                     </div>
 
                     <div class="form-group">
                         <label for="email" class="form-label">Email *</label>
-                        <input type="email" id="email" name="email" class="form-input" required autocomplete="email">
+                        <input type="email" id="email" name="email" class="form-input" required autocomplete="email" aria-describedby="email-error">
                         <div class="form-error visually-hidden" id="email-error"></div>
                     </div>
 
                     <div class="form-group">
                         <label for="phone" class="form-label">Telefon</label>
-                        <input type="tel" id="phone" name="phone" class="form-input" autocomplete="tel">
+                        <input type="tel" id="phone" name="phone" class="form-input" autocomplete="tel" aria-describedby="phone-error">
                         <div class="form-error visually-hidden" id="phone-error"></div>
                     </div>
 
                     <div class="form-group">
                         <label for="message" class="form-label">Nachricht *</label>
                         <textarea id="message" name="message" class="form-textarea" required
-                            placeholder="Wie kann ich helfen?"></textarea>
+                            placeholder="Wie kann ich helfen?" aria-describedby="message-error"></textarea>
                         <div class="form-error visually-hidden" id="message-error"></div>
                     </div>
 
@@ -714,16 +712,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
             wireModalButton('btnGitHub2', '#githubModal');
 
             // Modal open/close utilities
+            const FOCUSABLE = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
             function openModal(modal) {
                 const previouslyFocused = document.activeElement;
                 modal.dataset.prevFocus = previouslyFocused ? previouslyFocused.id || '' : '';
                 modal.setAttribute('aria-hidden', 'false');
                 // focus first focusable
-                const focusable = modal.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+                const focusable = modal.querySelector(FOCUSABLE);
                 focusable && focusable.focus();
                 if (modal.id === 'linkedinModal') initLinkedIn();
                 if (modal.id === 'githubModal') initGitHub();
             }
+            // Keep Tab inside the open modal
+            document.addEventListener('keydown', (e) => {
+                if (e.key !== 'Tab') return;
+                const modal = document.querySelector('.modal[aria-hidden="false"]');
+                if (!modal) return;
+                const items = Array.from(modal.querySelectorAll(FOCUSABLE)).filter(el => el.offsetParent !== null);
+                if (!items.length) return;
+                const first = items[0], last = items[items.length - 1];
+                if (e.shiftKey && document.activeElement === first) {
+                    e.preventDefault(); last.focus();
+                } else if (!e.shiftKey && document.activeElement === last) {
+                    e.preventDefault(); first.focus();
+                } else if (!modal.contains(document.activeElement)) {
+                    e.preventDefault(); first.focus();
+                }
+            });
             function closeModal(modal) {
                 modal.setAttribute('aria-hidden', 'true');
                 const prevId = modal.dataset.prevFocus;
