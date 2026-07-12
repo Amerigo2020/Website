@@ -358,6 +358,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
             <nav class="nav" role="navigation" aria-label="Main navigation">
                 <a href="#experience" class="nav__link">Über mich</a>
                 <a href="#services" class="nav__link">Leistungen</a>
+                <a href="/apps/" class="nav__link">Apps</a>
                 <a href="/blog/" class="nav__link">Blog</a>
                 <a href="#contact" class="nav__link">Kontakt</a>
             </nav>
@@ -392,6 +393,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
                 <nav class="nav" role="navigation" aria-label="Mobile navigation">
                     <a href="#experience" class="nav__link" onclick="closeMobileMenu()">Über mich</a>
                     <a href="#services" class="nav__link" onclick="closeMobileMenu()">Leistungen</a>
+                    <a href="/apps/" class="nav__link" onclick="closeMobileMenu()">Apps</a>
                     <a href="/blog/" class="nav__link" onclick="closeMobileMenu()">Blog</a>
                     <a href="#contact" class="nav__link" onclick="closeMobileMenu()">Kontakt</a>
                 </nav>

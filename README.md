@@ -39,6 +39,10 @@
  ┃   ┃ ┃ ┗ 📜 app.css         # Maßgeschneidertes CSS & Design System
  ┃   ┃ ┣ 📂 js                # Frontend Logik (z.B. Mobile Menu)
  ┃   ┃ ┗ 🖼️ portrait.jpg     # Medien
+ ┃   ┣ 📂 apps                # App-Produktseite + Store-Rechtsseiten (Remtio, LensGuard)
+ ┃   ┃ ┣ 📜 index.php         # Apps-Übersicht (/apps)
+ ┃   ┃ ┣ 📂 remtio            # Datenschutz DE/EN
+ ┃   ┃ ┗ 📂 lensguard         # Datenschutz DE/EN + Kontolöschung (Play "Account deletion URL")
  ┃   ┣ 📜 index.php           # Haupt-Landingpage (inkl. CSRF & Form-Logik)
  ┃   ┣ 📜 contact.php         # Kontaktformular-Verarbeitung
  ┃   ┣ 📜 robots.txt          # SEO Richtlinien

@@ -13,6 +13,37 @@
     <priority>0.80</priority>
   </url>
   <url>
+    <loc>https://ame.velletti.de/apps/</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://ame.velletti.de/apps/remtio/datenschutz</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
+  </url>
+  <url>
+    <loc>https://ame.velletti.de/apps/remtio/datenschutz/en</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
+  </url>
+  <url>
+    <loc>https://ame.velletti.de/apps/lensguard/datenschutz</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
+  </url>
+  <url>
+    <loc>https://ame.velletti.de/apps/lensguard/datenschutz/en</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
+  </url>
+  <url>
+    <loc>https://ame.velletti.de/apps/lensguard/konto-loeschen</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
+  </url>
+  <url>
     <loc>https://ame.velletti.de/impressum.php</loc>
     <changefreq>yearly</changefreq>
     <priority>0.30</priority>
